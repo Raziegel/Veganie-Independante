@@ -36,9 +36,56 @@ angular.module('starter', ['ionic'])
          templateUrl: "accueil.html",
          controller: "accueilController"
        })
-
+       //Inscription
+       .state('incription', {
+           url: "/incription",
+           templateUrl: "incription.html",
+           controller: "incriptionController"
+         })
+       //Connexion
+       .state('connexion', {
+           url: "/connexion",
+           templateUrl: "connexion.html",
+           controller: "connexionController"
+         })
+       // Restauration
+       .state('restauration', {
+           url: "/restauration",
+           templateUrl: "restauration.html",
+           controller: "restaurationController"
+         })
+       // Decouverte
+       .state('decouverte', {
+           url: "/decouverte",
+           templateUrl: "decouverte.html",
+           controller: "decouverteController"
+         })
+       //Mon compte
+       .state('moncompte', {
+           url: "/moncompte",
+           templateUrl: "moncompte.html",
+           controller: "moncompteController"
+         })
+       // un restaurant
+       .state('restaurant', {
+           url: "/restaurant",
+           templateUrl: "restaurant.html",
+           controller: "restaurantController"
+         })
+       // une activité
+       .state('activite', {
+           url: "/activite",
+           templateUrl: "activite.html",
+           controller: "activiteController"
+         })
+       // Mes reservations
+       .state('reservations', {
+           url: "/reservations",
+           templateUrl: "reservations.html",
+           controller: "reservationsController"
+         })
    //Par défaut, redirection sur la page d'accueil'
-   $urlRouterProvider.otherwise('/accueil')
+   $urlRouterProvider.otherwise('/connexion')
 
  })
 
@@ -49,5 +96,30 @@ dans les paramètres de la fonction,
 on ajoute toutes les dépendances
 dont on a besoin (ici en exemple $scope et $state)*/
 .controller('accueilController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+
+.controller('inscriptionController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('connexionController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('restaurationController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('decouverteController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('moncompteController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('restaurantController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('activiteController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
+})
+.controller('reservationsController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
 })

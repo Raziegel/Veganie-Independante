@@ -3,6 +3,11 @@ body{
 }
 
 img{
-  width: auto;
-  height: auto;
+
+  width: 90px;
+
+}
+ion-header-bar{
+height: 100px;
+
 }

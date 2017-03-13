@@ -51,6 +51,3 @@ dont on a besoin (ici en exemple $scope et $state)*/
 .controller('accueilController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
 })
-
-
-// comment

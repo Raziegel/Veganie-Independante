@@ -21,4 +21,33 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+
+})
+
+.config( function($stateProvider,$urlRouterProvider){
+
+   $stateProvider
+   /*à partir d'ici, décrire les différents
+états posiibles dans l'application.*/
+
+     //Accueil
+     .state('accueil', {
+         url: "/accueil",
+         templateUrl: "accueil.html",
+         controller: "accueilController"
+       })
+
+   //Par défaut, redirection sur la page d'accueil'
+   $urlRouterProvider.otherwise('/accueil')
+
+ })
+
+
+/*controleur de la page d'accueil,
+il sera activé à l'initialisation de celle-ci
+dans les paramètres de la fonction,
+on ajoute toutes les dépendances
+dont on a besoin (ici en exemple $scope et $state)*/
+.controller('accueilController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
 })

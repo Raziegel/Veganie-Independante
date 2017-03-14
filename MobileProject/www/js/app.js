@@ -158,8 +158,9 @@ il sera activé à l'initialisation de celle-ci
 dans les paramètres de la fonction,
 on ajoute toutes les dépendances
 dont on a besoin (ici en exemple $scope et $state)*/
-.controller('accueilController', function($scope, $state){
- //Choses à faire à l'initialisation de la page
+.controller('accueilController', function(Touriste, $scope, $state){
+  $scope.NomRecu = Touriste.getNom();
+  $scope.PrenomRecu = Touriste.getPrenom();
 })
 
 .controller('inscriptionController', function($scope, $state){

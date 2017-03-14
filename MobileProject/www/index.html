@@ -68,17 +68,66 @@
     <!--Page d'accueil-->
 <script id="accueil.html" type="text/ng-template">
 <ion-view title="Accueil">
-
-  <ion-header-bar class="bar-dark" >
-  <h1 class="title"> K & E Pro - Driver</h1>
+<ion-header-bar class="bar-dark" >
+  <h1 class="title"> K  E Pro - Driver</h1>
 </ion-header-bar>
-  <ion-content class="padding">
-
-    <h2 class="title">Bienvenue</h2>
-
-    </ion-content>
+<ion-content class="padding">
+  <div class="bar bar-dark" style="position: relative; top: 0px;">
+    <h1 class="title">Bienvenue {{PrenomRecu}}  {{NomRecu}}</h1>
+  </div>
+  <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+  <div style="text-align: center">
+    K&E Service Premium vous propose un large choix d'activités aux alentours de votre hôtel
+    (restauration, visites, dégustations, soirées, ...) ainsi que la possibilité de vous y emmener.
+  </div>
+  <div class="bar bar-dark" style="position: relative; top: 5px;">
+    <h1 class="title">Quelques idées</h1>
+  </div>
+    <div class="list" style="top: 15px;">
+      <a class="item item-thumbnail-left" href="#">
+        <img src="img/veggie_avenue_logo.jpg">
+        <h2>Veggie Avenue</h2>
+        <p>Découvrir la culture et les valeurs<br />
+          végans dans une magnifique <br />
+          avenue.</p>
+        </a>
+        <a class="item item-thumbnail-left" href="#">
+          <img src="img/veggie_world_logo.png">
+          <h2>Veggie World</h2>
+          <p>Découvrir les plats végans dans <br />
+            une atmosphère détendue.</p>
+          </a>
+          <a class="item item-thumbnail-left" href="#">
+            <img src="img/veggie_avenue_logo.jpg">
+            <h2>Veggie Avenue</h2>
+            <p>Découvrir la culture et les valeurs<br />
+              végans dans une magnifique <br />
+              avenue.</p>
+            </a>
+            <a class="item item-thumbnail-left" href="#">
+              <img src="img/veggie_world_logo.png">
+              <h2>Veggie World</h2>
+              <p>Découvrir les plats végans dans <br />
+                une atmosphère détendue.</p>
+              </a>
+              <a class="item item-thumbnail-left" href="#">
+                <img src="img/veggie_avenue_logo.jpg">
+                <h2>Veggie Avenue</h2>
+                <p>Découvrir la culture et les valeurs<br />
+                  végans dans une magnifique <br />
+                  avenue.</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#">
+                  <img src="img/veggie_world_logo.png">
+                  <h2>Veggie World</h2>
+                  <p>Découvrir les plats végans dans <br />
+                    une atmosphère détendue.</p>
+                  </a>
+                </div>
+      </ion-content>
   </ion-view>
 </script>
+
   <!--Page d'inscription-->
 <script id="inscription.html" type="text/ng-template">
 <ion-view title="Inscription">
@@ -236,24 +285,26 @@ Voici des activités qui pourraient vous intéresser
     </ion-header-bar>
 
     <ion-content class="padding">
-      <div class="bar bar-dark">
+      <div class="bar bar-dark" style="position: relative; top: 0px;">
         <h2 class="title">Vos informations personnelles</h2>
       </div>
-      <p>
-        <br><br><br>
-        <b> Nom : </b> {{NomRecu}}  <br />
-        <b> Prénom : </b> {{PrenomRecu}} <br />
-        <b> Adresse mail : </b> {{MailRecu}}  <br />
-        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
-        <b> Hôtel : </b> {{HotelRecu}}  <br />
-        <b> Pseudo : </b> {{PseudoRecu}}  <br />
-        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
-      </p>
-      <div class="bar bar-dark">
+      <div style="position: relative; top: 5px">
+        <p>
+
+          <b> Nom : </b> {{NomRecu}}  <br />
+          <b> Prénom : </b> {{PrenomRecu}} <br />
+          <b> Adresse mail : </b> {{MailRecu}}  <br />
+          <b> Numéro de télephone : </b> {{TelRecu}}  <br />
+          <b> Hôtel : </b> {{HotelRecu}}  <br />
+          <b> Pseudo : </b> {{PseudoRecu}}  <br />
+          <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+        </p>
+      </div>
+
+      <div class="bar bar-dark" style="position: relative; top: 0px;">
         <h2 class="title">Vos activités</h2>
       </div>
-      <br><br><br>
-      <div class="list">
+      <div class="list" style="position: relative; top: 5px">
         <a class="item item-avatar" href="#">
           <img src="img/veggie_world_logo.png">
           <h2>Veggie World</h2>

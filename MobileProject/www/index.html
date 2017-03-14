@@ -36,7 +36,6 @@
 
  <ion-nav-bar class="bar-dark">
    <ion-nav-back-button>
-
    </ion-nav-back-button>
  </ion-nav-bar>
       <ion-nav-view></ion-nav-view>
@@ -66,7 +65,7 @@
 
 
 
-    <!--Page d'accueil-->
+  <!--Page d'accueil-->
 <script id="accueil.html" type="text/ng-template">
 <ion-view title="Accueil">
 <ion-header-bar class="bar-dark" >
@@ -128,7 +127,6 @@
       </ion-content>
   </ion-view>
 </script>
-
   <!--Page d'inscription-->
 <script id="inscription.html" type="text/ng-template">
 <ion-view title="Inscription">
@@ -214,7 +212,6 @@
     </ion-content>
   </ion-view>
 </script>
-
 <!--Page de restauration-->
 <script id="restauration.html" type="text/ng-template">
 <ion-view title="Restauration">
@@ -284,30 +281,27 @@ Voici des activités qui pourraient vous intéresser
   <ion-view title="Mon Compte">
     <ion-header-bar class="bar-dark" >
       <h1 class="title">Mon compte</h1>
-
     </ion-header-bar>
 
     <ion-content class="padding">
-      <div class="bar bar-dark" style="position: relative; top: 0px;">
+      <div class="bar bar-dark">
         <h2 class="title">Vos informations personnelles</h2>
       </div>
-      <div style="position: relative; top: 5px">
-        <p>
-
-          <b> Nom : </b> {{NomRecu}}  <br />
-          <b> Prénom : </b> {{PrenomRecu}} <br />
-          <b> Adresse mail : </b> {{MailRecu}}  <br />
-          <b> Numéro de télephone : </b> {{TelRecu}}  <br />
-          <b> Hôtel : </b> {{HotelRecu}}  <br />
-          <b> Pseudo : </b> {{PseudoRecu}}  <br />
-          <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
-        </p>
-      </div>
-
-      <div class="bar bar-dark" style="position: relative; top: 0px;">
+      <p>
+        <br><br><br>
+        <b> Nom : </b> {{NomRecu}}  <br />
+        <b> Prénom : </b> {{PrenomRecu}} <br />
+        <b> Adresse mail : </b> {{MailRecu}}  <br />
+        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
+        <b> Hôtel : </b> {{HotelRecu}}  <br />
+        <b> Pseudo : </b> {{PseudoRecu}}  <br />
+        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+      </p>
+      <div class="bar bar-dark">
         <h2 class="title">Vos activités</h2>
       </div>
-      <div class="list" style="position: relative; top: 5px">
+      <br><br><br>
+      <div class="list">
         <a class="item item-avatar" href="#">
           <img src="img/veggie_world_logo.png">
           <h2>Veggie World</h2>
@@ -329,9 +323,10 @@ Voici des activités qui pourraient vous intéresser
 <ion-header-bar class="bar-dark" >
 <h1 class="title"> Détails</h1>
 </ion-header-bar>
-<ion-content class="padding">
+<ion-content class="padding" ng-controller="restaurantActionController">
 
 Détails d'un restaurant
+<button class="button button-block button-positive" ng-click='showPopup()'>Réserver</button>
   </ion-content>
 </ion-view>
 </script>

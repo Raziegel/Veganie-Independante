@@ -323,9 +323,10 @@ Voici des activités qui pourraient vous intéresser
 <ion-header-bar class="bar-dark" >
 <h1 class="title"> Détails</h1>
 </ion-header-bar>
-<ion-content class="padding">
+<ion-content class="padding" ng-controller="restaurantActionController">
 
 Détails d'un restaurant
+<button class="button button-block button-positive" ng-click='showPopup()'>Réserver</button>
   </ion-content>
 </ion-view>
 </script>

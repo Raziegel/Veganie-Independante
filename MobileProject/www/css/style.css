@@ -3,10 +3,19 @@ body{
 }
 
 img{
-
   width: 90px;
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
+
+#logoAcc{
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
 ion-header-bar{
 height: 100px;
 

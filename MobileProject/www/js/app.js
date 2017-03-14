@@ -29,12 +29,20 @@ angular.module('starter', ['ionic'])
    $stateProvider
    /*à partir d'ici, décrire les différents
 états posiibles dans l'application.*/
-
+.state('onglets', {
+    url: "/onglets",
+    templateUrl: "onglets.html",
+    abstract: true
+  })
      //Accueil
-     .state('accueil', {
+     .state('onglets.accueil', {
          url: "/accueil",
-         templateUrl: "accueil.html",
-         controller: "accueilController"
+         views: {
+        'accueil-tab': {
+          templateUrl: "accueil.html",
+          controller: "accueilController"
+        }
+      }
        })
        //Inscription
        .state('incription', {
@@ -49,41 +57,64 @@ angular.module('starter', ['ionic'])
            controller: "connexionController"
          })
        // Restauration
-       .state('restauration', {
+       .state('onglets.restauration', {
            url: "/restauration",
-           templateUrl: "restauration.html",
-           controller: "restaurationController"
-         })
+           views: {
+          'restauration-tab': {
+            templateUrl: "restauration.html",
+            controller: "restaurationController"
+          }}
+          })
        // Decouverte
-       .state('decouverte', {
+       .state('onglets.decouverte', {
            url: "/decouverte",
+           views: {
+          'decouverte-tab': {
            templateUrl: "decouverte.html",
            controller: "decouverteController"
-         })
+         }
+       }
+       })
        //Mon compte
-       .state('moncompte', {
+       .state('onglets.moncompte', {
            url: "/moncompte",
+           views: {
+          'moncompte-tab': {
            templateUrl: "moncompte.html",
            controller: "moncompteController"
-         })
+         }
+       }
+       })
        // un restaurant
-       .state('restaurant', {
+       .state('onglets.restaurant', {
            url: "/restaurant",
+           views: {
+          'restaurant-tab': {
            templateUrl: "restaurant.html",
            controller: "restaurantController"
-         })
+         }
+       }
+       })
        // une activité
-       .state('activite', {
+       .state('onglets.activite', {
            url: "/activite",
+           views: {
+          'activite-tab': {
            templateUrl: "activite.html",
            controller: "activiteController"
-         })
+         }
+       }
+       })
        // Mes reservations
-       .state('reservations', {
+       .state('onglets.reservations', {
            url: "/reservations",
+           views: {
+          'reservations-tab': {
            templateUrl: "reservations.html",
            controller: "reservationsController"
-         })
+         }
+       }
+       })
    //Par défaut, redirection sur la page d'accueil'
    $urlRouterProvider.otherwise('/connexion')
 

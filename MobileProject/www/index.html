@@ -189,7 +189,7 @@
   <h1 class="title">Connexion</h1>
 </ion-header-bar>
   <ion-content class="padding" ng-controller="connexionFormController">
-Veuillez vous connecter:
+<h4>Veuillez vous connecter :</h4>
       <!-- formulaire de connexion-->
       <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
         <label for="pseudo"  class="item item-input item-floating-label">
@@ -201,7 +201,7 @@ Veuillez vous connecter:
           <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
         </label>
         <div class="submit">
-          <button class="button button-block button-positive">
+          <button class="button button-block button-dark">
             Se connecter
           </button>
         </div>
@@ -234,7 +234,7 @@ Voici des restaurants qui pourraient vous intéresser
     </p>
     <p>
       <br />
-    <a ui-sref="onglets.restaurant" class="button button-royal"> Détails du restaurant</a>
+    <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
     </p>
     <br />
     <a class="item item-icon-left balanced" href="#">
@@ -267,7 +267,7 @@ Voici des activités qui pourraient vous intéresser
     <p>Nantes 44000</p>
     <p>
       <br />
-    <a ui-sref="onglets.activite" class="button button-royal"> Détails de l'activité</a>
+    <a ui-sref="onglets.activite" class="button button-dark" > Détails de l'activité</a>
     </p>
     <br />
     <a class="item item-icon-left balanced" href="#">

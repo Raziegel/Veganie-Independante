@@ -121,7 +121,7 @@ angular.module('starter', ['ionic'])
        .state('onglets.restaurant', {
            url: "/restaurant",
            views: {
-          'restaurant-tab': {
+          'restauration-tab': {
            templateUrl: "restaurant.html",
            controller: "restaurantController"
          }
@@ -131,7 +131,7 @@ angular.module('starter', ['ionic'])
        .state('onglets.activite', {
            url: "/activite",
            views: {
-          'activite-tab': {
+          'decouverte-tab': {
            templateUrl: "activite.html",
            controller: "activiteController"
          }

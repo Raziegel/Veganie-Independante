@@ -73,14 +73,54 @@
   </ion-view>
 </script>
   <!--Page d'inscription-->
-<script id="incription.html" type="text/ng-template">
-<ion-view title="Incription">
+<script id="inscription.html" type="text/ng-template">
+<ion-view title="Inscription">
   <ion-header-bar class="bar-dark" >
-  <h1 class="title">Incription</h1>
+  <h1 class="title">Inscription</h1>
 </ion-header-bar>
-  <ion-content class="padding">
-
+  <ion-content class="padding" ng-controller="inscriptionFormController">
     <!-- formulaire d'inscription-->
+    <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
+      <label for="nom"  class="item item-input item-floating-label">
+        <span class="input-label">Nom</span>
+        <input type="text" placeholder="Nom" ng-model="nom" id="nom" required>
+      </label>
+      <label for="prenom" class="item item-input item-floating-label">
+        <span class="input-label">Prénom</span>
+        <input type="text" placeholder="Prénom" ng-model="prenom" id="prenom" required>
+      </label>
+      <label for="email" class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Adresse mail" ng-model="email" id="email" required>
+      </label>
+      <label for="tel" class="item item-input item-floating-label">
+        <span class="input-label">Numéro de télephone</span>
+        <input type="text" placeholder="Numéro de télephone" ng-model="tel" id="tel" required>
+      </label>
+      <label for="hotel" class="item item-input item-select">
+        <div class="input-label">
+          Hotel
+        </div>
+        <select ng-model="hotel" id="hotel">
+          <option>Hotel 1</option>
+          <option>Hotel 2</option>
+          <option>Hotel 3</option>
+        </select>
+      </label>
+      <label for="pseudo"  class="item item-input item-floating-label">
+        <span class="input-label">Pseudo</span>
+        <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+      </label>
+      <label for="motdepasse" class="item item-input item-floating-label">
+        <span class="input-label">Mot de passe</span>
+        <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+      </label>
+      <div class="submit">
+        <button class="button button-block button-positive">
+          S'inscrire
+        </button>
+      </div>
+    </form>
 
     </ion-content>
   </ion-view>
@@ -91,12 +131,25 @@
   <ion-header-bar class="bar-positive" >
   <h1 class="title">Connexion</h1>
 </ion-header-bar>
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="connexionFormController">
 Veuillez vous connecter:
       <!-- formulaire de connexion-->
-        <a ui-sref="onglets.accueil" class="button button-block button-balanced" >Accès</a>
-
-
+      <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
+        <label for="pseudo"  class="item item-input item-floating-label">
+          <span class="input-label">Pseudo</span>
+          <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+        </label>
+        <label for="motdepasse" class="item item-input item-floating-label">
+          <span class="input-label">Mot de passe</span>
+          <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+        </label>
+        <div class="submit">
+          <button class="button button-block button-positive">
+            Se connecter
+          </button>
+        </div>
+      </form>
+      Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a>
     </ion-content>
   </ion-view>
 </script>
@@ -163,16 +216,23 @@ Voici des activités qui pourraient vous intéresser
 
 <!--Page Mon Compte-->
 <script id="moncompte.html" type="text/ng-template">
-<ion-view title="Mon Compte">
-<ion-header-bar class="bar-dark" >
-<h1 class="title">Mon compte</h1>
-</ion-header-bar>
-<ion-content class="padding">
-
-Voici les informations que vous avez renseignées.
-
-  </ion-content>
-</ion-view>
+  <ion-view title="Mon Compte">
+    <ion-header-bar class="bar-dark" >
+      <h1 class="title">Mon compte</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <h3>Voici les informations que vous avez renseignées.</h3>
+      <p>
+        <b> Nom : </b> {{NomRecu}}  <br />
+        <b> Prénom : </b> {{PrenomRecu}} <br />
+        <b> Adresse mail : </b> {{MailRecu}}  <br />
+        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
+        <b> Hôtel : </b> {{HotelRecu}}  <br />
+        <b> Pseudo : </b> {{PseudoRecu}}  <br />
+        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+      </p>
+    </ion-content>
+  </ion-view>
 </script>
 <!--Page d'un restaurant-->
 <script id="restaurant.html" type="text/ng-template">

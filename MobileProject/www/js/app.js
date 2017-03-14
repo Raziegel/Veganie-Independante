@@ -23,6 +23,38 @@ angular.module('starter', ['ionic'])
   });
 
 })
+.factory("Touriste", function(){
+  var Pseudo
+  var MotDePasse
+  var Nom
+  var Prenom
+  var NumTel
+  var Mail
+  var Hotel
+  return{
+    getNom: function(){
+      return this.Nom
+    },
+    getPrenom: function(){
+      return this.Prenom
+    },
+    getNumTel: function(){
+      return this.NumTel
+    },
+    getMail: function(){
+      return this.Mail
+    },
+    getHotel: function(){
+      return this.Hotel
+    },
+    getPseudo: function(){
+      return this.Pseudo
+    },
+    getMotDePasse: function(){
+      return this.MotDePasse
+    }
+  }
+})
 
 .config( function($stateProvider,$urlRouterProvider){
 
@@ -45,10 +77,10 @@ angular.module('starter', ['ionic'])
       }
        })
        //Inscription
-       .state('incription', {
-           url: "/incription",
-           templateUrl: "incription.html",
-           controller: "incriptionController"
+       .state('inscription', {
+           url: "/inscription",
+           templateUrl: "inscription.html",
+           controller: "inscriptionController"
          })
        //Connexion
        .state('connexion', {
@@ -142,8 +174,14 @@ dont on a besoin (ici en exemple $scope et $state)*/
 .controller('decouverteController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
 })
-.controller('moncompteController', function($scope, $state){
- //Choses à faire à l'initialisation de la page
+.controller('moncompteController', function(Touriste, $scope, $state){
+  $scope.NomRecu = Touriste.getNom();
+  $scope.PrenomRecu = Touriste.getPrenom();
+  $scope.MailRecu = Touriste.getMail();
+  $scope.TelRecu = Touriste.getNumTel();
+  $scope.HotelRecu = Touriste.getHotel();
+  $scope.PseudoRecu = Touriste.getPseudo();
+  $scope.MotDePasseRecu = Touriste.getMotDePasse();
 })
 .controller('restaurantController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
@@ -153,4 +191,24 @@ dont on a besoin (ici en exemple $scope et $state)*/
 })
 .controller('reservationsController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
+})
+.controller('inscriptionFormController', function (Touriste, $scope, $state) {
+  $scope.chercher = function (nom, prenom, mail, tel, hotel, pseudo, motdepasse) {
+    Touriste.Nom = nom
+    Touriste.Prenom = prenom
+    Touriste.Mail = mail
+    Touriste.NumTel = tel
+    Touriste.Hotel = hotel
+    Touriste.Pseudo = pseudo
+    Touriste.MotDePasse = motdepasse
+    $state.go('onglets.accueil')
+  }
+})
+
+.controller('connexionFormController', function (Touriste, $scope, $state) {
+  $scope.seconnecter = function (pseudo, motdepasse) {
+    Touriste.Pseudo = pseudo
+    Touriste.MotDePasse = motdepasse
+    $state.go('onglets.accueil')
+  }
 })

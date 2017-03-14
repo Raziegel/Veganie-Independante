@@ -216,13 +216,13 @@ dont on a besoin (ici en exemple $scope et $state)*/
  //controller d'actions au sein de la page
  $scope.showPopup= function(){
 var Confirm = $ionicPopup.show({
-title : "<div class='energized' style='padding: 0; margin:5px'>Effectuer une r&eacute;servation</div>",
-template : '<label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" required></label>',
+title : '<div class="bar bar-header bar-dark"><h1 class="title">Effectuer une r&eacute;servation</h1></div>',
+template : '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
 buttons: [
        { text: 'Annuler' },
        {
          text: "Envoyer",
-         type: "button-positive",
+         type: "button-dark",
          onTap: function(e) {
           if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
             //don't allow the user to close unless he enters wifi password

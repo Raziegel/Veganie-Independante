@@ -297,3 +297,49 @@ $scope.EmmenePopup= function() {
 }
 
 })
+.controller("restaurationActionController", function($scope, $state, $ionicPopup){
+  $scope.EmmenePopup= function() {
+    var pop2 = $ionicPopup.show({
+      title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+      template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+      buttons: [
+             { text: 'Annuler' },
+             {
+               text: "Envoyer",
+               type: "button-dark",
+               onTap: function(e) {
+                if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                  //don't allow the user to close unless he enters wifi password
+                  e.preventDefault();
+                } else {
+                  //do things
+                }
+             }
+      }]
+    })
+  }
+
+})
+.controller("decouverteActionController", function($scope, $state, $ionicPopup){
+  $scope.EmmenePopup= function() {
+    var pop2 = $ionicPopup.show({
+      title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+      template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+      buttons: [
+             { text: 'Annuler' },
+             {
+               text: "Envoyer",
+               type: "button-dark",
+               onTap: function(e) {
+                if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                  //don't allow the user to close unless he enters wifi password
+                  e.preventDefault();
+                } else {
+                  //do things
+                }
+             }
+      }]
+    })
+  }
+
+})

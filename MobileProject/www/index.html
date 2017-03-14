@@ -234,7 +234,7 @@ Voici des restaurants qui pourraient vous intéresser
     <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
     </p>
     <br />
-    <a class="item item-icon-left balanced" ng-click="EmmenePopup()">
+    <a class="item item-icon-left dark" ng-click="EmmenePopup()">
       <i class="icon ion-ios-navigate-outline"></i>
     M'y emmener
     </a>
@@ -267,7 +267,7 @@ Voici des activités qui pourraient vous intéresser
     <a ui-sref="onglets.activite" class="button button-dark" > Détails de l'activité</a>
     </p>
     <br />
-    <a class="item item-icon-left balanced" ng-click="EmmenePopup()" >
+    <a class="item item-icon-left dark" ng-click="EmmenePopup()" >
       <i class="icon ion-ios-navigate-outline"></i>
     M'y emmener
     </a>
@@ -284,11 +284,10 @@ Voici des activités qui pourraient vous intéresser
     </ion-header-bar>
 
     <ion-content class="padding">
-      <div class="bar bar-dark">
+      <div class="bar bar-dark" >
         <h2 class="title">Vos informations personnelles</h2>
       </div>
-      <p>
-        <br><br><br>
+      <p style="position: relative; top: 50px;">
         <b> Nom : </b> {{NomRecu}}  <br />
         <b> Prénom : </b> {{PrenomRecu}} <br />
         <b> Adresse mail : </b> {{MailRecu}}  <br />
@@ -297,11 +296,12 @@ Voici des activités qui pourraient vous intéresser
         <b> Pseudo : </b> {{PseudoRecu}}  <br />
         <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
       </p>
-      <div class="bar bar-dark">
+      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
+
+      <div class="bar bar-dark" style="position: relative; top: 60px;">
         <h2 class="title">Vos activités</h2>
       </div>
-      <br><br><br>
-      <div class="list">
+      <div class="list" style="position: relative; top: 70px; font-size: 15px;">
         <a class="item item-avatar" href="#">
           <img src="img/veggie_world_logo.png">
           <h2>Veggie World</h2>

@@ -296,7 +296,7 @@ Voici des activités qui pourraient vous intéresser
         <b> Pseudo : </b> {{PseudoRecu}}  <br />
         <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
       </p>
-      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
+      <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
 
       <div class="bar bar-dark" style="position: relative; top: 60px;">
         <h2 class="title">Vos activités</h2>
@@ -347,6 +347,7 @@ Détails d'une activité
   </ion-content>
 </ion-view>
 </script>
+
 <!--Page de mes reservations-->
 <script id="reservations.html" type="text/ng-template">
 <ion-view title="Mes reservations ">
@@ -359,6 +360,48 @@ Vos dernières reservations
 
   </ion-content>
 </ion-view>
+</script>
+
+<!--Page Modifier mes informations-->
+<script id="modifinfos.html" type="text/ng-template">
+  <ion-view title="modifier mes informations">
+    <ion-header-bar class="bar-dark" >
+      <h1 class="title">Modifier mes informations</h1>
+    </ion-header-bar>
+
+    <ion-content class="padding">
+      <div class="bar bar-dark" >
+        <h2 class="title">Vos informations personnelles</h2>
+      </div>
+      <p style="position: relative; top: 50px;">
+        <b> Nom : </b> {{NomRecu}}  <br />
+        <b> Prénom : </b> {{PrenomRecu}} <br />
+        <b> Adresse mail : </b> {{MailRecu}}  <br />
+        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
+        <b> Hôtel : </b> {{HotelRecu}}  <br />
+        <b> Pseudo : </b> {{PseudoRecu}}  <br />
+        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+      </p>
+      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
+
+      <div class="bar bar-dark" style="position: relative; top: 60px;">
+        <h2 class="title">Vos activités</h2>
+      </div>
+      <div class="list" style="position: relative; top: 70px; font-size: 15px;">
+        <a class="item item-avatar" href="#">
+          <img src="img/veggie_world_logo.png">
+          <h2>Veggie World</h2>
+          <p>Samedi 18 Mars - 15h00 <br />
+          Chauffeur demandé pour 14h30.</p>
+        </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/veggie_avenue_logo.jpg">
+          <h2>Veggie Avenue</h2>
+          <p>Samedi 18 Mars - 19h30</p>
+        </a>
+      </div>
+    </ion-content>
+  </ion-view>
 </script>
 
   </body>

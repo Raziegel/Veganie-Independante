@@ -117,6 +117,7 @@ angular.module('starter', ['ionic'])
          }
        }
        })
+       // Modifier mes informations
        .state('onglets.modifinfos', {
            url: "/modifinfos",
            views: {
@@ -195,6 +196,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
   $scope.deconnexion = function(){
 
   }
+
 })
 .controller('modifinfosController', function(Touriste, $scope, $state){
   $scope.NomRecu = Touriste.getNom();

@@ -34,12 +34,18 @@
   </head>
   <body ng-app="starter">
 
+ <ion-nav-bar class="bar-dark">
+   <ion-nav-back-button>
+   </ion-nav-back-button>
+ </ion-nav-bar>
       <ion-nav-view></ion-nav-view>
       <!-- Menu -->
       <script id="onglets.html" type="text/ng-template">
+
       <ion-tabs class="tabs-icon-top tabs-dark">
 
       <ion-tab title="Acceuil" icon="ion-home" ui-sref="onglets.accueil">
+
         <ion-nav-view name="accueil-tab"></ion-nav-view>
       </ion-tab>
 
@@ -62,6 +68,7 @@
     <!--Page d'accueil-->
 <script id="accueil.html" type="text/ng-template">
 <ion-view title="Accueil">
+
   <ion-header-bar class="bar-dark" >
   <h1 class="title"> K & E Pro - Driver</h1>
 </ion-header-bar>
@@ -115,8 +122,11 @@ Voici des restaurants qui pourraient vous intéresser
     <h2>Veggie Avenue</h2>
     <p>Nantes 44000</p>
     <p>
+      Street food
+    </p>
+    <p>
       <br />
-    <a ui-sref="onglets.restauration" class="button button-royal"> Détails du restaurant</a>
+    <a ui-sref="onglets.restaurant" class="button button-royal"> Détails du restaurant</a>
     </p>
     <br />
     <a class="item item-icon-left balanced" href="#">
@@ -145,11 +155,11 @@ Voici des activités qui pourraient vous intéresser
 <div  class="list card">
   <div class="item item-avatar" >
     <img src="img/veggie_world_logo.png">
-    <h2>Veggie Avenue</h2>
+    <h2>Veggie World</h2>
     <p>Nantes 44000</p>
     <p>
       <br />
-    <a ui-sref="onglets.restauration" class="button button-royal"> Détails de l'activité</a>
+    <a ui-sref="onglets.activite" class="button button-royal"> Détails de l'activité</a>
     </p>
     <br />
     <a class="item item-icon-left balanced" href="#">
@@ -178,12 +188,11 @@ Voici les informations que vous avez renseignées.
 <script id="restaurant.html" type="text/ng-template">
 <ion-view title="détails de ">
 <ion-header-bar class="bar-dark" >
-<h1 class="title"></h1>
+<h1 class="title"> Détails</h1>
 </ion-header-bar>
 <ion-content class="padding">
 
-
-
+Détails d'un restaurant
   </ion-content>
 </ion-view>
 </script>
@@ -191,10 +200,10 @@ Voici les informations que vous avez renseignées.
 <script id="activite.html" type="text/ng-template">
 <ion-view title="détails de ">
 <ion-header-bar class="bar-dark" >
-<h1 class="title"></h1>
+<h1 class="title">Détails de</h1>
 </ion-header-bar>
 <ion-content class="padding">
-
+Détails d'une activité
 
 
   </ion-content>

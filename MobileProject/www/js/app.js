@@ -117,6 +117,15 @@ angular.module('starter', ['ionic'])
          }
        }
        })
+       .state('onglets.modifinfos', {
+           url: "/modifinfos",
+           views: {
+          'moncompte-tab': {
+           templateUrl: "modifinfos.html",
+           controller: "modifinfosController"
+         }
+       }
+       })
        // un restaurant
        .state('onglets.restaurant', {
            url: "/restaurant",
@@ -176,6 +185,15 @@ dont on a besoin (ici en exemple $scope et $state)*/
  //Choses à faire à l'initialisation de la page
 })
 .controller('moncompteController', function(Touriste, $scope, $state){
+  $scope.NomRecu = Touriste.getNom();
+  $scope.PrenomRecu = Touriste.getPrenom();
+  $scope.MailRecu = Touriste.getMail();
+  $scope.TelRecu = Touriste.getNumTel();
+  $scope.HotelRecu = Touriste.getHotel();
+  $scope.PseudoRecu = Touriste.getPseudo();
+  $scope.MotDePasseRecu = Touriste.getMotDePasse();
+})
+.controller('modifinfosController', function(Touriste, $scope, $state){
   $scope.NomRecu = Touriste.getNom();
   $scope.PrenomRecu = Touriste.getPrenom();
   $scope.MailRecu = Touriste.getMail();

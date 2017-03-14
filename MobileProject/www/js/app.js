@@ -192,6 +192,9 @@ dont on a besoin (ici en exemple $scope et $state)*/
   $scope.HotelRecu = Touriste.getHotel();
   $scope.PseudoRecu = Touriste.getPseudo();
   $scope.MotDePasseRecu = Touriste.getMotDePasse();
+  $scope.deconnexion = function(){
+
+  }
 })
 .controller('modifinfosController', function(Touriste, $scope, $state){
   $scope.NomRecu = Touriste.getNom();

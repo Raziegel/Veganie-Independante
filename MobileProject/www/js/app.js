@@ -158,9 +158,8 @@ il sera activé à l'initialisation de celle-ci
 dans les paramètres de la fonction,
 on ajoute toutes les dépendances
 dont on a besoin (ici en exemple $scope et $state)*/
-.controller('accueilController', function(Touriste, $scope, $state){
-  $scope.NomRecu = Touriste.getNom();
-  $scope.PrenomRecu = Touriste.getPrenom();
+.controller('accueilController', function($scope, $state){
+ //Choses à faire à l'initialisation de la page
 })
 
 .controller('inscriptionController', function($scope, $state){
@@ -212,4 +211,27 @@ dont on a besoin (ici en exemple $scope et $state)*/
     Touriste.MotDePasse = motdepasse
     $state.go('onglets.accueil')
   }
+})
+.controller('restaurantActionController', function($scope, $state, $ionicPopup){
+ //controller d'actions au sein de la page
+ $scope.showPopup= function(){
+var Confirm = $ionicPopup.show({
+title : "<div class='energized' style='padding: 0; margin:5px'>Effectuer une r&eacute;servation</div>",
+template : '<label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" required></label>',
+buttons: [
+       { text: 'Annuler' },
+       {
+         text: "Envoyer",
+         type: "button-positive",
+         onTap: function(e) {
+          if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            //do things
+          }
+       }
+}]})
+}
+
 })

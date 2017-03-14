@@ -233,12 +233,31 @@ buttons: [
        }
 }]})
 }
-
+$scope.EmmenePopup= function() {
+  var pop2 = $ionicPopup.show({
+    title: "<div class='balanced' style='padding: 0; margin:5px'>Commander un transport</div>",
+    template: '<label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" required></label>',
+    buttons: [
+           { text: 'Annuler' },
+           {
+             text: "Envoyer",
+             type: "button-positive",
+             onTap: function(e) {
+              if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                //don't allow the user to close unless he enters wifi password
+                e.preventDefault();
+              } else {
+                //do things
+              }
+           }
+    }]
+  })
+}
 })
 .controller('activiteActionController', function($scope, $state, $ionicPopup){
  //controller d'actions au sein de la page
  $scope.showPopup= function(){
-var Confirm = $ionicPopup.show({
+var pop1 = $ionicPopup.show({
 title : "<div class='energized' style='padding: 0; margin:5px'>Effectuer une r&eacute;servation</div>",
 template : '<label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" required></label>',
 buttons: [
@@ -255,6 +274,26 @@ buttons: [
           }
        }
 }]})
+}
+$scope.EmmenePopup= function() {
+  var pop2 = $ionicPopup.show({
+    title: "<div class='balanced' style='padding: 0; margin:5px'>Commander un transport</div>",
+    template: '<label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" required></label>',
+    buttons: [
+           { text: 'Annuler' },
+           {
+             text: "Envoyer",
+             type: "button-positive",
+             onTap: function(e) {
+              if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                //don't allow the user to close unless he enters wifi password
+                e.preventDefault();
+              } else {
+                //do things
+              }
+           }
+    }]
+  })
 }
 
 })

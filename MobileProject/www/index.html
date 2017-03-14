@@ -43,7 +43,7 @@
         <ion-nav-view name="accueil-tab"></ion-nav-view>
       </ion-tab>
 
-      <ion-tab title="Découverte" icon="ion-ios-navigate" ui-sref="onglets.decouverte">
+      <ion-tab title="Découverte" icon="ion-alert" ui-sref="onglets.decouverte">
         <ion-nav-view name="decouverte-tab"></ion-nav-view>
       </ion-tab>
 
@@ -109,6 +109,26 @@ Veuillez vous connecter:
 <ion-content class="padding">
 
 Voici des restaurants qui pourraient vous intéresser
+<div  class="list card">
+  <div class="item item-avatar" >
+    <img src="img/veggie_avenue_logo.jpg">
+    <h2>Veggie Avenue</h2>
+    <p>Nantes 44000</p>
+    <p>
+      <br />
+    <a ui-sref="onglets.restauration" class="button button-royal"> Détails du restaurant</a>
+    </p>
+    <br />
+    <a class="item item-icon-left balanced" href="#">
+      <i class="icon ion-ios-navigate-outline"></i>
+    M'y emmener
+    </a>
+  </div>
+
+
+
+
+</div>
 
   </ion-content>
 </ion-view>
@@ -122,7 +142,21 @@ Voici des restaurants qui pourraient vous intéresser
 <ion-content class="padding">
 
 Voici des activités qui pourraient vous intéresser
-
+<div  class="list card">
+  <div class="item item-avatar" >
+    <img src="img/veggie_world_logo.png">
+    <h2>Veggie Avenue</h2>
+    <p>Nantes 44000</p>
+    <p>
+      <br />
+    <a ui-sref="onglets.restauration" class="button button-royal"> Détails de l'activité</a>
+    </p>
+    <br />
+    <a class="item item-icon-left balanced" href="#">
+      <i class="icon ion-ios-navigate-outline"></i>
+    M'y emmener
+    </a>
+  </div>
   </ion-content>
 </ion-view>
 </script>

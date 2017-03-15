@@ -294,7 +294,7 @@ Voici des activités qui pourraient vous intéresser
         <b> Numéro de télephone : </b> {{TelRecu}}  <br />
         <b> Hôtel : </b> {{HotelRecu}}  <br />
         <b> Pseudo : </b> {{PseudoRecu}}  <br />
-        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+        
       </p>
       <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()">Se deconnecter</a>
 
@@ -391,33 +391,44 @@ Vos dernières reservations
       <div class="bar bar-dark" >
         <h2 class="title">Vos informations personnelles</h2>
       </div>
+      <!-- Formulaire de modifications d'informations -->
       <p style="position: relative; top: 50px;">
-        <b> Nom : </b> {{NomRecu}}  <br />
-        <b> Prénom : </b> {{PrenomRecu}} <br />
-        <b> Adresse mail : </b> {{MailRecu}}  <br />
-        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
-        <b> Hôtel : </b> {{HotelRecu}}  <br />
-        <b> Pseudo : </b> {{PseudoRecu}}  <br />
-        <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
+        <label for="nom" class="item item-input item-stacked-label" style="top: 10px;">
+          <span class="input-label">Votre nom</span>
+          <input type="text" value="{{NomRecu}}" />
+        </label><br/>
+        <label for="prenom" class="item item-input item-stacked-label" style="top: 10px;">
+          <span class="input-label">Votre prénom</span>
+           <input type="text" value="{{PrenomRecu}}" />
+         </label> <br />
+         <label for="mail" class="item item-input item-stacked-label" style="top: 10px;">
+           <span class="input-label">Votre adresse mail</span>
+           <input type="text" value="{{MailRecu}}"  />
+         </label>  <br />
+         <label for="telephone" class="item item-input item-stacked-label" style="top: 10px;">
+           <span class="input-label">Votre numéro de téléphone</span>
+           <input type="tel" value="{{TelRecu}}" />
+         </label>  <br />
+         <label for="hotel" class="item item-input item-stacked-label" style="top: 10px;">
+           <span class="input-label">Votre hotel actuel</span><br />
+           <select name="htoellist" form="hotelform">
+             <option value="hotel1">hotel1</option>
+             <option value="hotel2">hotel2</option>
+             <option value="hotel2">hotel3</option>
+             <option value="hotel2">hotel4</option>
+           </select>
+         </label>  <br />
+         <label for="pseudo" class="item item-input item-stacked-label" style="top: 10px;">
+           <span class="input-label">Votre pseudo</span>
+           <input type="text" value="{{PseudoRecu}}"  />
+         </label>  <br />
+         <label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;">
+           <span class="input-label">Votre mot de passe</span>
+            <input type="text" value="{{MotDePasseRecu}}"  />
+          </label>  <br />
       </p>
-      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
+      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Enregistrer les modifications</a>
 
-      <div class="bar bar-dark" style="position: relative; top: 60px;">
-        <h2 class="title">Vos activités</h2>
-      </div>
-      <div class="list" style="position: relative; top: 70px; font-size: 15px;">
-        <a class="item item-avatar" href="#">
-          <img src="img/veggie_world_logo.png">
-          <h2>Veggie World</h2>
-          <p>Samedi 18 Mars - 15h00 <br />
-          Chauffeur demandé pour 14h30.</p>
-        </a>
-        <a class="item item-avatar" href="#">
-          <img src="img/veggie_avenue_logo.jpg">
-          <h2>Veggie Avenue</h2>
-          <p>Samedi 18 Mars - 19h30</p>
-        </a>
-      </div>
     </ion-content>
   </ion-view>
 </script>

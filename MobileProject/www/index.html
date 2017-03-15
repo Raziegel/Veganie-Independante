@@ -458,15 +458,15 @@ Vos dernières reservations
         </label>
         <label for="prenom" class="item item-input item-stacked-label">
           <span class="input-label">Votre prénom</span>
-           <input type="text" value="{{PrenomRecu}}"/>
+           <input type="text" value="{{maReponseRecue[0].Prenom}}"/>
          </label>
          <label for="mail" class="item item-input item-stacked-label">
            <span class="input-label">Votre adresse mail</span>
-           <input type="text" value="{{MailRecu}}" />
+           <input type="text" value="{{maReponseRecue[0].Mail}}" />
          </label>
          <label for="telephone" class="item item-input item-stacked-label">
            <span class="input-label">Votre numéro de téléphone</span>
-           <input type="tel" value="{{TelRecu}}" />
+           <input type="tel" value="{{maReponseRecue[0].NumTel}}" />
          </label>
          <label for="hotel" class="item item-input item-select">
            <span class="input-label">Votre hôtel</span>
@@ -484,11 +484,11 @@ Vos dernières reservations
          </label>
          <label for="pseudo" class="item item-input item-stacked-label">
            <span class="input-label">Votre pseudo</span>
-           <input type="text" value="{{PseudoRecu}}" />
+           <input type="text" value="{{maReponseRecue[0].Pseudo}}" />
          </label>
          <label for="motdepasse" class="item item-input item-stacked-label">
            <span class="input-label">Votre mot de passe</span>
-            <input type="text" value="{{MotDePasseRecu}}" />
+            <input type="text" value="{{maReponseRecue[0].Password}}" />
           </label>
       </p>
       <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>

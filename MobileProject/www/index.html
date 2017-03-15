@@ -318,12 +318,11 @@ Voici des restaurants qui pourraient vous intéresser
 </ion-header-bar>
 <ion-content class="padding" ng-controller="decouverteActionController">
 
-Voici des activités qui pourraient vous intéresser
 <div  class="list card">
   <div class="item item-avatar" >
-    <img src="img/veggie_world_logo.png">
-    <h2>Veggie World</h2>
-    <p>Nantes 44000</p>
+    <img src="img/simulateurvol.jpg">
+    <h2>Simulateur de vol sur Boeing</h2>
+    <p>Paris 75013</p>
     <p>
       <br />
     <a ui-sref="onglets.activite" class="button button-dark" > Détails de l'activité</a>
@@ -531,14 +530,23 @@ Voici des activités qui pourraient vous intéresser
 
 <!--Page d'une activité-->
 <script id="activite.html" type="text/ng-template">
-<ion-view title="détails de ">
+<ion-view title="Simulateur de vol sur Boeing">
 <ion-header-bar class="bar-dark" >
-<h1 class="title">Détails de</h1>
+<h1 class="title">Simulateur de vol sur Boeing</h1>
 </ion-header-bar>
 <ion-content class="padding" ng-controller="activiteActionController">
-Détails d'une activité
-<button class="button button-block button-dark" ng-click='showPopup()'>Réserver</button>
-<button class="button button-block button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+  <img class="illustration" src="img/simulateurvol.jpg" ></img>
+  <h3> Simulateur de vol sur Boeing </h3>
+  <p> 21 Quai d'Austerlitz, <br />  75013 Paris <br />  </p>
+  <p class="description">Piloter un avion, c'est un rêve de gosse pour beaucoup
+     d'entre nous. Dans ce simulateur de Boeing 737-800 NG, vous pourrez choisir
+      plusieurs circuits de 30 ou 60 minutes pour vous glisser dans la peau
+       d'un vrai pilote de ligne.
+    </p>
+
+  <p class="description"><b>Prix à partir de : <span class="prix"> 179 € <span></b></p>
+<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
+<button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
 
   </ion-content>

@@ -198,7 +198,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
   }
 
 })
-.controller('modifinfosController', function(Touriste, $scope, $state){
+.controller('modifinfosController', function(Touriste, $scope, $state,$http){
   $scope.NomRecu = Touriste.getNom();
   $scope.PrenomRecu = Touriste.getPrenom();
   $scope.MailRecu = Touriste.getMail();
@@ -206,6 +206,15 @@ dont on a besoin (ici en exemple $scope et $state)*/
   $scope.HotelRecu = Touriste.getHotel();
   $scope.PseudoRecu = Touriste.getPseudo();
   $scope.MotDePasseRecu = Touriste.getMotDePasse();
+var url = "https://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0";
+$http.get(url).success(function (response) {
+  alert("ok")
+         $scope.maReponseRecue = response;    }).error(function(data, status, headers, config){
+
+}).error(function(){
+  alert("erreur")
+})
+
 })
 .controller('restaurantController', function($scope, $state){
  //Choses à faire à l'initialisation de la page

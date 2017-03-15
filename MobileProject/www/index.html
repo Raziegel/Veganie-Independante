@@ -388,36 +388,33 @@ Vos dernières reservations
 
 <!--Page Modifier mes informations-->
 <script id="modifinfos.html" type="text/ng-template">
-  <ion-view title="modifier mes informations">
+  <ion-view title="Modifier mes informations">
     <ion-header-bar class="bar-dark" >
       <h1 class="title">Modifier mes informations</h1>
     </ion-header-bar>
 
     <ion-content class="padding">
-      <div class="bar bar-dark" >
-        <h2 class="title">Vos informations personnelles</h2>
-      </div>
       <!-- Formulaire de modifications d'informations -->
-      <p style="position: relative; top: 50px;">
-        <label for="nom" class="item item-input item-stacked-label" style="top: 10px;">
+      <p>
+        <label for="nom" class="item item-input item-stacked-label">
           <span class="input-label">Votre nom</span>
           <input type="text" value="{{NomRecu}}" />
-        </label><br/>
-        <label for="prenom" class="item item-input item-stacked-label" style="top: 10px;">
+        </label>
+        <label for="prenom" class="item item-input item-stacked-label">
           <span class="input-label">Votre prénom</span>
-           <input type="text" value="{{PrenomRecu}}" />
-         </label> <br />
-         <label for="mail" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{PrenomRecu}}"/>
+         </label>
+         <label for="mail" class="item item-input item-stacked-label">
            <span class="input-label">Votre adresse mail</span>
-           <input type="text" value="{{MailRecu}}"  />
-         </label>  <br />
-         <label for="telephone" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{MailRecu}}" />
+         </label>
+         <label for="telephone" class="item item-input item-stacked-label">
            <span class="input-label">Votre numéro de téléphone</span>
            <input type="tel" value="{{TelRecu}}" />
-         </label>  <br />
-         <label for="hotel" class="item item-input item-stacked-label" style="top: 10px;">
-           <span class="input-label">Votre hotel actuel</span><br />
-           <select name="htoellist" form="hotelform">
+         </label>
+         <label for="hotel" class="item item-input item-select">
+           <span class="input-label">Votre hôtel</span>
+           <select ng-model="hotel" id="hotel">
              <option>Hostellerie du Marais</option>
              <option>Hotel Signature St Germain des Prés</option>
              <option>Hotel WO - Wilson Opera</option>
@@ -428,18 +425,17 @@ Vos dernières reservations
              <option>Maison Souquet</option>
              <option>Le Bristol Paris</option>
            </select>
-         </label>  <br />
-         <label for="pseudo" class="item item-input item-stacked-label" style="top: 10px;">
+         </label>
+         <label for="pseudo" class="item item-input item-stacked-label">
            <span class="input-label">Votre pseudo</span>
-           <input type="text" value="{{PseudoRecu}}"  />
-         </label>  <br />
-         <label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{PseudoRecu}}" />
+         </label>
+         <label for="motdepasse" class="item item-input item-stacked-label">
            <span class="input-label">Votre mot de passe</span>
-            <input type="text" value="{{MotDePasseRecu}}"  />
-          </label>  <br />
+            <input type="text" value="{{MotDePasseRecu}}" />
+          </label>
       </p>
-      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Enregistrer les modifications</a>
-
+      <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
     </ion-content>
   </ion-view>
 </script>

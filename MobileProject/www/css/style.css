@@ -6,6 +6,21 @@ img{
   width: 90px;
 }
 
+input{
+  background-color: #EAEAEA !important;
+  margin: 2.5%;
+  width: 97.5% !important;
+}
+
+select{
+  background-color: #EAEAEA !important;
+  margin: 2%;
+}
+
+label{
+  margin-top: 5px !important;
+}
+
 #logoAcc{
   width: 300px;
   display: block;

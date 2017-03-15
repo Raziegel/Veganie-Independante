@@ -257,7 +257,7 @@ Voici des restaurants qui pourraient vous intéresser
     </p>
     <p>
       <br />
-    <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
+    <a ui-sref="onglets.restaurant1" class="button button-dark"> Détails du restaurant</a>
     </p>
     <br />
     <a class="item item-icon-left dark" ng-click="EmmenePopup()">
@@ -277,7 +277,7 @@ Voici des restaurants qui pourraient vous intéresser
     </p>
     <p>
       <br />
-    <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
+    <a ui-sref="onglets.restaurant2" class="button button-dark"> Détails du restaurant</a>
     </p>
     <br />
     <a class="item item-icon-left dark" ng-click="EmmenePopup()">
@@ -297,7 +297,7 @@ Voici des restaurants qui pourraient vous intéresser
     </p>
     <p>
       <br />
-    <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
+    <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails du restaurant</a>
     </p>
     <br />
     <a class="item item-icon-left dark" ng-click="EmmenePopup()">
@@ -405,6 +405,112 @@ Voici des activités qui pourraient vous intéresser
       </div>
     </div>
 <p class="description"><b>Prix moyen : <span class="prix"> 150 - 200€ <span></b></p>
+<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+
+
+  </ion-content>
+</ion-view>
+</script>
+
+<!--Page d'un restaurant1-->
+<script id="restaurant1.html" type="text/ng-template">
+<ion-view title="Le Pré Catelan">
+<ion-header-bar class="bar-dark" >
+<h1 class="title"> Détails</h1>
+</ion-header-bar>
+<ion-content class="padding" ng-controller="restaurantActionController">
+<img class="illustration" src="img/logo_le_pre_catelan.jpg" ></img>
+<h3> Le Pré Catelan </h3>
+<p> rte de Suresnes <br /> 75016 Paris <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+<p class="description">Par la grâce d'un pélerinage, la fôret royale de Rouvray,
+   célèbre par ses chênes "rouvres", devint, au XVIe siècle, le Bois de Boulogne.
+    Un bois de Boulogne encore très sauvage, repaire de bandits et de loups, mais
+     soigneusement reboisé au Grand Siècle et dont quelques arpents du lieu-dit
+      "Pré Catelan" évoquent le nom et le souvenir d'un séduisant Capitaine des
+      Chasses de Louis XVI. Sous Napoléon III, la futaie du Pré Catelan devint
+      un parc enchanteur, autour du plus grand arbre de Paris : un hêtre pourpre
+      bicentenaire. En 1905, y fut édifié le Restaurant du Pré Catelan, dont les
+      frises ont été dessinées par Caran d'Ache dans un merveilleux cadre de
+      verdure, de calme et de détente.
+  </p>
+    <div class="card" id="suggestions">
+      <div class="item item-divider">
+        <b>Suggestions</b>
+      </div>
+      <div class="item item-text-wrap">
+        Salade vegan à seulement 32€ <br />
+        Desserts vegan dès 58€
+      </div>
+    </div>
+<p class="description"><b>Prix moyen : <span class="prix"> 130 - 280 € <span></b></p>
+<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+
+
+  </ion-content>
+</ion-view>
+</script>
+
+<!--Page d'un restaurant2-->
+<script id="restaurant2.html" type="text/ng-template">
+<ion-view title="Alléno Paris au Pavillon Ledoyen">
+<ion-header-bar class="bar-dark" >
+<h1 class="title"> Détails</h1>
+</ion-header-bar>
+<ion-content class="padding" ng-controller="restaurantActionController">
+<img class="illustration" src="img/LOGO-ALLENO.jpg" ></img>
+<h3> Alléno Paris au Pavillon Ledoyen </h3>
+<p> 8 av. Dutuit (carré Champs-Élysées) <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+<p class="description">Ledoyen, le plus secret des restaurants 3 étoiles.
+   Derrière le majestueux bâtiment Napoléon III se cache une adresse de goût.
+    On l’imagine classique, on y découvre une cuisine moderne et créative :
+    celle qui associe spontanéité et haute gastronomie, audace et exigence.
+  </p>
+    <div class="card" id="suggestions">
+      <div class="item item-divider">
+        <b>Suggestions</b>
+      </div>
+      <div class="item item-text-wrap">
+        Salade vegan à seulement 32€ <br />
+        Desserts vegan dès 58€
+      </div>
+    </div>
+<p class="description"><b>Prix moyen : <span class="prix"> 135 - 340 € <span></b></p>
+<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+
+
+  </ion-content>
+</ion-view>
+</script>
+
+<!--Page d'un restaurant3-->
+<script id="restaurant3.html" type="text/ng-template">
+<ion-view title="Pierre Gagnaire">
+<ion-header-bar class="bar-dark" >
+<h1 class="title"> Détails</h1>
+</ion-header-bar>
+<ion-content class="padding" ng-controller="restaurantActionController">
+<img class="illustration" src="img/logo_pierre_gagnaire.jpg" ></img>
+<h3> Pierre Gagnaire </h3>
+<p> 6 Rue Balzac <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+<p class="description">Une longue histoire qui continue. Toute la cohérence de
+   mon développement passe par la rigueur, la régularité, l’absolue nécessité
+   de ne pas tricher. Ici tout se joue, c’est le modèle originel. L’esthétique
+   formelle de l’assiette est toujours la règle, mais je m’attache depuis
+   plusieurs années à produire des mets qui soient bien assaisonnés, bien cuits.
+    J’essaie d’éviter les fausses bonnes idées ! Après l'époque où je réglais
+    les plats de la carte sur un produit, j’aime maintenant développer des
+    thèmes, une ambiance, une sensation.
+  </p>
+    <div class="card" id="suggestions">
+      <div class="item item-divider">
+        <b>Suggestions</b>
+      </div>
+      <div class="item item-text-wrap">
+        Salade vegan à seulement 32€ <br />
+        Desserts vegan dès 58€
+      </div>
+    </div>
+<p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
 <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
 

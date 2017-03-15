@@ -57,6 +57,7 @@ ion-content{
 }
 
 .description{
+  margin-top: 25px !important;
   text-align: center !important;
   font-size: 15px;
 }

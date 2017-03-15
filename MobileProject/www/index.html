@@ -229,8 +229,8 @@
 Voici des restaurants qui pourraient vous intéresser
 
 
-  <div class="list" id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
-    <div  class="list card">
+  <div id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
+    <div  class="card">
       <div class="item item-avatar item-divider" >
         <img src="{{restaurant.Image}}">
         <h2>{{restaurant.Nom}}</h2>
@@ -435,7 +435,7 @@ Voici des restaurants qui pourraient vous intéresser
     </div>
 <p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
 <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-
+<br /> <br />
 
   </ion-content>
 </ion-view>

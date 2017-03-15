@@ -136,27 +136,27 @@
   <ion-content class="padding" ng-controller="inscriptionFormController">
     <!-- formulaire d'inscription-->
     <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
-      <label for="nom"  class="item item-input item-floating-label">
+      <label for="nom"  class="item item-input item-stacked-label">
         <span class="input-label">Nom</span>
-        <input type="text" placeholder="Nom" ng-model="nom" id="nom" required>
+        <input type="text" placeholder="Votre nom" ng-model="nom" id="nom" required>
       </label>
-      <label for="prenom" class="item item-input item-floating-label">
+      <label for="prenom" class="item item-input item-stacked-label">
         <span class="input-label">Prénom</span>
-        <input type="text" placeholder="Prénom" ng-model="prenom" id="prenom" required>
+        <input type="text" placeholder="Votre prénom" ng-model="prenom" id="prenom" required>
       </label>
-      <label for="email" class="item item-input item-floating-label">
+      <label for="email" class="item item-input item-stacked-label">
         <span class="input-label">Email</span>
-        <input type="text" placeholder="Adresse mail" ng-model="email" id="email" required>
+        <input type="text" placeholder="Votre adresse mail" ng-model="email" id="email" required>
       </label>
-      <label for="tel" class="item item-input item-floating-label">
+      <label for="tel" class="item item-input item-stacked-label">
         <span class="input-label">Numéro de télephone</span>
-        <input type="text" placeholder="Numéro de télephone" ng-model="tel" id="tel" required>
+        <input type="text" placeholder="Votre numéro de télephone" ng-model="tel" id="tel" required>
       </label>
       <label for="hotel" class="item item-input item-select">
         <div class="input-label">
-          Hotel
+          Hôtel
         </div>
-        <select ng-model="hotel" id="hotel">
+        <select ng-model="hotel" id="hotel" >
           <option>Hostellerie du Marais</option>
           <option>Hotel Signature St Germain des Prés</option>
           <option>Hotel WO - Wilson Opera</option>
@@ -168,13 +168,13 @@
           <option>Le Bristol Paris</option>
         </select>
       </label>
-      <label for="pseudo"  class="item item-input item-floating-label">
+      <label for="pseudo"  class="item item-input item-stacked-label">
         <span class="input-label">Pseudo</span>
-        <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+        <input type="text" placeholder="Choisissez votre pseudo ..." ng-model="pseudo" id="pseudo" required>
       </label>
-      <label for="motdepasse" class="item item-input item-floating-label">
+      <label for="motdepasse" class="item item-input item-stacked-label">
         <span class="input-label">Mot de passe</span>
-        <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+        <input type="password" placeholder="Choisissez votre mot de passe ..." ng-model="motdepasse" id="motdepasse" required>
       </label>
       <div class="submit">
         <button class="button button-block button-dark">
@@ -196,13 +196,13 @@
 <h4>Veuillez vous connecter :</h4>
       <!-- formulaire de connexion-->
       <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
-        <label for="pseudo"  class="item item-input item-floating-label">
+        <label for="pseudo"  class="item item-input item-stacked-label">
           <span class="input-label">Pseudo</span>
-          <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+          <input type="text" placeholder="Votre pseudo" ng-model="pseudo" id="pseudo" required>
         </label>
-        <label for="motdepasse" class="item item-input item-floating-label">
+        <label for="motdepasse" class="item item-input item-stacked-label">
           <span class="input-label">Mot de passe</span>
-          <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+          <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
         </label>
         <div class="submit">
           <button class="button button-block button-dark">
@@ -550,36 +550,33 @@ Vos dernières reservations
 
 <!--Page Modifier mes informations-->
 <script id="modifinfos.html" type="text/ng-template">
-  <ion-view title="modifier mes informations">
+  <ion-view title="Modifier mes informations">
     <ion-header-bar class="bar-dark" >
       <h1 class="title">Modifier mes informations</h1>
     </ion-header-bar>
 
     <ion-content class="padding">
-      <div class="bar bar-dark" >
-        <h2 class="title">Vos informations personnelles</h2>
-      </div>
       <!-- Formulaire de modifications d'informations -->
-      <p style="position: relative; top: 50px;">
-        <label for="nom" class="item item-input item-stacked-label" style="top: 10px;">
+      <p>
+        <label for="nom" class="item item-input item-stacked-label">
           <span class="input-label">Votre nom</span>
-          <input type="text" value="{{NomRecu}}" />
-        </label><br/>
-        <label for="prenom" class="item item-input item-stacked-label" style="top: 10px;">
+          <input type="text" value="{{maReponseRecue[0].Nom}}" />
+        </label>
+        <label for="prenom" class="item item-input item-stacked-label">
           <span class="input-label">Votre prénom</span>
-           <input type="text" value="{{PrenomRecu}}" />
-         </label> <br />
-         <label for="mail" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{PrenomRecu}}"/>
+         </label>
+         <label for="mail" class="item item-input item-stacked-label">
            <span class="input-label">Votre adresse mail</span>
-           <input type="text" value="{{MailRecu}}"  />
-         </label>  <br />
-         <label for="telephone" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{MailRecu}}" />
+         </label>
+         <label for="telephone" class="item item-input item-stacked-label">
            <span class="input-label">Votre numéro de téléphone</span>
            <input type="tel" value="{{TelRecu}}" />
-         </label>  <br />
-         <label for="hotel" class="item item-input item-stacked-label" style="top: 10px;">
-           <span class="input-label">Votre hotel actuel</span><br />
-           <select name="htoellist" form="hotelform">
+         </label>
+         <label for="hotel" class="item item-input item-select">
+           <span class="input-label">Votre hôtel</span>
+           <select ng-model="hotel" id="hotel">
              <option>Hostellerie du Marais</option>
              <option>Hotel Signature St Germain des Prés</option>
              <option>Hotel WO - Wilson Opera</option>
@@ -590,18 +587,17 @@ Vos dernières reservations
              <option>Maison Souquet</option>
              <option>Le Bristol Paris</option>
            </select>
-         </label>  <br />
-         <label for="pseudo" class="item item-input item-stacked-label" style="top: 10px;">
+         </label>
+         <label for="pseudo" class="item item-input item-stacked-label">
            <span class="input-label">Votre pseudo</span>
-           <input type="text" value="{{PseudoRecu}}"  />
-         </label>  <br />
-         <label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;">
+           <input type="text" value="{{PseudoRecu}}" />
+         </label>
+         <label for="motdepasse" class="item item-input item-stacked-label">
            <span class="input-label">Votre mot de passe</span>
-            <input type="text" value="{{MotDePasseRecu}}"  />
-          </label>  <br />
+            <input type="text" value="{{MotDePasseRecu}}" />
+          </label>
       </p>
-      <a id="boutdeco" class="button button-dark" ng-click="modifierInfos()" style="position: relative; top: 50px; font-size: 15px;">Enregistrer les modifications</a>
-
+      <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
     </ion-content>
   </ion-view>
 </script>

@@ -136,27 +136,27 @@
   <ion-content class="padding" ng-controller="inscriptionFormController">
     <!-- formulaire d'inscription-->
     <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
-      <label for="nom"  class="item item-input item-floating-label">
+      <label for="nom"  class="item item-input item-stacked-label">
         <span class="input-label">Nom</span>
-        <input type="text" placeholder="Nom" ng-model="nom" id="nom" required>
+        <input type="text" placeholder="Votre nom" ng-model="nom" id="nom" required>
       </label>
-      <label for="prenom" class="item item-input item-floating-label">
+      <label for="prenom" class="item item-input item-stacked-label">
         <span class="input-label">Prénom</span>
-        <input type="text" placeholder="Prénom" ng-model="prenom" id="prenom" required>
+        <input type="text" placeholder="Votre prénom" ng-model="prenom" id="prenom" required>
       </label>
-      <label for="email" class="item item-input item-floating-label">
+      <label for="email" class="item item-input item-stacked-label">
         <span class="input-label">Email</span>
-        <input type="text" placeholder="Adresse mail" ng-model="email" id="email" required>
+        <input type="text" placeholder="Votre adresse mail" ng-model="email" id="email" required>
       </label>
-      <label for="tel" class="item item-input item-floating-label">
+      <label for="tel" class="item item-input item-stacked-label">
         <span class="input-label">Numéro de télephone</span>
-        <input type="text" placeholder="Numéro de télephone" ng-model="tel" id="tel" required>
+        <input type="text" placeholder="Votre numéro de télephone" ng-model="tel" id="tel" required>
       </label>
       <label for="hotel" class="item item-input item-select">
         <div class="input-label">
-          Hotel
+          Hôtel
         </div>
-        <select ng-model="hotel" id="hotel">
+        <select ng-model="hotel" id="hotel" >
           <option>Hostellerie du Marais</option>
           <option>Hotel Signature St Germain des Prés</option>
           <option>Hotel WO - Wilson Opera</option>
@@ -168,13 +168,13 @@
           <option>Le Bristol Paris</option>
         </select>
       </label>
-      <label for="pseudo"  class="item item-input item-floating-label">
+      <label for="pseudo"  class="item item-input item-stacked-label">
         <span class="input-label">Pseudo</span>
-        <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+        <input type="text" placeholder="Choisissez votre pseudo ..." ng-model="pseudo" id="pseudo" required>
       </label>
-      <label for="motdepasse" class="item item-input item-floating-label">
+      <label for="motdepasse" class="item item-input item-stacked-label">
         <span class="input-label">Mot de passe</span>
-        <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+        <input type="password" placeholder="Choisissez votre mot de passe ..." ng-model="motdepasse" id="motdepasse" required>
       </label>
       <div class="submit">
         <button class="button button-block button-dark">
@@ -196,13 +196,13 @@
 <h4>Veuillez vous connecter :</h4>
       <!-- formulaire de connexion-->
       <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
-        <label for="pseudo"  class="item item-input item-floating-label">
+        <label for="pseudo"  class="item item-input item-stacked-label">
           <span class="input-label">Pseudo</span>
-          <input type="text" placeholder="Pseudo" ng-model="pseudo" id="pseudo" required>
+          <input type="text" placeholder="Votre pseudo" ng-model="pseudo" id="pseudo" required>
         </label>
-        <label for="motdepasse" class="item item-input item-floating-label">
+        <label for="motdepasse" class="item item-input item-stacked-label">
           <span class="input-label">Mot de passe</span>
-          <input type="password" placeholder="Mot de passe" ng-model="motdepasse" id="motdepasse" required>
+          <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
         </label>
         <div class="submit">
           <button class="button button-block button-dark">

@@ -228,11 +228,11 @@
 
 Voici des restaurants qui pourraient vous intéresser
 
-</div>
+
   <div class="list" id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
     <div  class="list card">
       <div class="item item-avatar item-divider" >
-        <img src="">
+        <img src="{{restaurant.Image}}">
         <h2>{{restaurant.Nom}}</h2>
         <p >{{restaurant.Adresse}}</p>
         <p>
@@ -261,20 +261,25 @@ Voici des restaurants qui pourraient vous intéresser
 </ion-header-bar>
 <ion-content class="padding" ng-controller="decouverteActionController">
 
-<div  class="list card">
-  <div class="item item-avatar" >
-    <img src="img/simulateurvol.jpg">
-    <h2>Simulateur de vol sur Boeing</h2>
-    <p>Paris 75013</p>
-    <p>
-      <br />
-    <a ui-sref="onglets.activite" class="button button-dark" > Détails de l'activité</a>
-    </p>
-    <br />
-    <a class="item item-icon-left dark" ng-click="EmmenePopup()" >
-      <i class="icon ion-ios-navigate-outline"></i>
-    M'y emmener
-    </a>
+
+  <div class="list" id="listeDecouverte"  ng-repeat="decouverte in maReponseRecue">
+    <div  class="list card">
+      <div class="item item-avatar item-divider" >
+        <img src="{{decouverte.Image}}">
+        <h2>{{decouverte.Nom}}</h2>
+        <p >{{decouverte.Adresse}}</p>
+
+        <p>
+          <br />
+        <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
+        </p>
+        <br />
+        <a class="item item-icon-left dark" ng-click="EmmenePopup()">
+          <i class="icon ion-ios-navigate-outline"></i>
+        M'y emmener
+        </a>
+      </div>
+    </div>
   </div>
   </ion-content>
 </ion-view>

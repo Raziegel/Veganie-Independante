@@ -220,8 +220,16 @@ dont on a besoin (ici en exemple $scope et $state)*/
    alert("erreur")
  })
 })
-.controller('decouverteController', function($scope, $state){
+.controller('decouverteController', function($scope, $state, $http){
  //Choses à faire à l'initialisation de la page
+ var url = "https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0";
+ $http.get(url).success(function (response) {
+   console.log(response)
+   $scope.maReponseRecue = response;
+ }).error(function(data, status, headers, config){
+
+   alert("erreur")
+ })
 })
 .controller('moncompteController', function(Touriste, $scope, $state){
   $scope.NomRecu = Touriste.getNom();

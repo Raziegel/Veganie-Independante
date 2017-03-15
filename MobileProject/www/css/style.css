@@ -25,11 +25,13 @@ img{
 #boutresa{
   float: left;
   width: 45%;
+  margin-left: 2.5%;
 }
 
 #boutemmen{
   float: right;
   width: 45%;
+  margin-right: 2.5%;
 }
 
 ion-header-bar{
@@ -56,13 +58,18 @@ ion-content{
 
 .description{
   text-align: center !important;
+  font-size: 15px;
 }
 
 .prix{
   font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #suggestions{
+  width:80%;
+  margin-left: 10%;
   margin-top: 10px;
   margin-bottom: 10px;
 }

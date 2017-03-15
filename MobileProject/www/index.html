@@ -260,20 +260,15 @@ Voici des restaurants qui pourraient vous intéresser
 <h1 class="title">Découverte</h1>
 </ion-header-bar>
 <ion-content class="padding" ng-controller="decouverteActionController">
-
-
-  <div class="list" id="listeDecouverte"  ng-repeat="decouverte in maReponseRecue">
-    <div  class="list card">
+  <div id="listeDecouverte"  ng-repeat="decouverte in maReponseRecue">
+    <div class="card">
       <div class="item item-avatar item-divider" >
         <img src="{{decouverte.Image}}">
         <h2>{{decouverte.Nom}}</h2>
         <p >{{decouverte.Adresse}}</p>
-
-        <p>
-          <br />
-        <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
-        </p>
         <br />
+        <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
+        <p><br /></p>
         <a class="item item-icon-left dark" ng-click="EmmenePopup()">
           <i class="icon ion-ios-navigate-outline"></i>
         M'y emmener

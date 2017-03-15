@@ -137,26 +137,7 @@ $ionicConfigProvider.platform.android.tabs.position("bottom");
          }
        }
        })
-       // un restaurant1
-       .state('onglets.restaurant1', {
-           url: "/restaurant1",
-           views: {
-          'restauration-tab': {
-           templateUrl: "restaurant1.html",
-           controller: "restaurantController"
-         }
-       }
-       })
-       // un restaurant2
-       .state('onglets.restaurant2', {
-           url: "/restaurant2",
-           views: {
-          'restauration-tab': {
-           templateUrl: "restaurant2.html",
-           controller: "restaurantController"
-         }
-       }
-       })
+
        // un restaurant3
        .state('onglets.restaurant3', {
            url: "/restaurant3",
@@ -218,6 +199,10 @@ dont on a besoin (ici en exemple $scope et $state)*/
  }).error(function(data, status, headers, config){
 
    alert("erreur")
+   alert(data)
+   alert(status)
+   alert(headers)
+   alert(config)
  })
 })
 .controller('decouverteController', function($scope, $state, $http){
@@ -229,6 +214,10 @@ dont on a besoin (ici en exemple $scope et $state)*/
  }).error(function(data, status, headers, config){
 
    alert("erreur")
+   alert(data)
+   alert(status)
+   alert(headers)
+   alert(config)
  })
 })
 .controller('moncompteController', function(Touriste, $scope, $state){
@@ -258,6 +247,10 @@ dont on a besoin (ici en exemple $scope et $state)*/
   }).error(function(data, status, headers, config){
   }).error(function(){
     alert("erreur")
+    alert(data)
+    alert(status)
+    alert(headers)
+    alert(config)
   })
 
 })

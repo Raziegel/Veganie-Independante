@@ -209,8 +209,16 @@ dont on a besoin (ici en exemple $scope et $state)*/
 .controller('connexionController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
 })
-.controller('restaurationController', function($scope, $state){
+.controller('restaurationController', function($scope, $state,$http){
  //Choses à faire à l'initialisation de la page
+ var url = "https://ke-services.azurewebsites.net/tables/Restauration?ZUMO-API-VERSION=2.0.0";
+ $http.get(url).success(function (response) {
+   console.log(response)
+   $scope.maReponseRecue = response;
+ }).error(function(data, status, headers, config){
+
+   alert("erreur")
+ })
 })
 .controller('decouverteController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
@@ -237,7 +245,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
   $scope.PseudoRecu = Touriste.getPseudo();
   $scope.MotDePasseRecu = Touriste.getMotDePasse();
   var url = "https://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0";
-  $http.get(url).success(function (response) {    
+  $http.get(url).success(function (response) {
     $scope.maReponseRecue = response;
   }).error(function(data, status, headers, config){
   }).error(function(){
@@ -247,6 +255,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
 })
 .controller('restaurantController', function($scope, $state){
  //Choses à faire à l'initialisation de la page
+
 })
 .controller('activiteController', function($scope, $state){
  //Choses à faire à l'initialisation de la page

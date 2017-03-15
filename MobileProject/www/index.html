@@ -296,7 +296,7 @@ Voici des activités qui pourraient vous intéresser
         <b> Pseudo : </b> {{PseudoRecu}}  <br />
         <b> Mot de passe : </b> {{MotDePasseRecu}}  <br />
       </p>
-      <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
+      <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()">Se deconnecter</a>
 
       <div class="bar bar-dark" style="position: relative; top: 60px;">
         <h2 class="title">Vos activités</h2>
@@ -317,21 +317,39 @@ Voici des activités qui pourraient vous intéresser
     </ion-content>
   </ion-view>
 </script>
+
 <!--Page d'un restaurant-->
 <script id="restaurant.html" type="text/ng-template">
-<ion-view title="détails de ">
+<ion-view title="Veggie Avenue">
 <ion-header-bar class="bar-dark" >
 <h1 class="title"> Détails</h1>
 </ion-header-bar>
 <ion-content class="padding" ng-controller="restaurantActionController">
+<img class="illustration" src="img/VeggieWorld_logo_web.jpg" ></img>
+<h3> Veggie World </h3>
+<p> 53, Rue Pergolese <br /> 75116 Paris <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+<p class="description">Pendant deux jours le Centquatre se transformera en veritable paradis
+   sans souffrance animale avec 7 000 visiteurs attendus ! Vous avez l’opportunité de vous
+   informer facilement sur le mode de vie végane et profiter des offres exceptionnelles.
+    Participez à une ou plusieurs de nos vingt-cinq conférences autour du véganisme.
+  </p>
+    <div class="card" id="suggestions">
+      <div class="item item-divider">
+        <b>Suggestions</b>
+      </div>
+      <div class="item item-text-wrap">
+        Salade vegan à seulement 32€ <br />
+        Desserts vegan dès 58€
+      </div>
+    </div>
+<p class="description"><b>Prix moyen : <span class="prix"> 150 - 200€ <span></b></p>
+<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
-Détails du restaurant
-<button class="button button-block button-dark" ng-click='showPopup()'>Réserver</button>
-<button class="button button-block button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
   </ion-content>
 </ion-view>
 </script>
+
 <!--Page d'une activité-->
 <script id="activite.html" type="text/ng-template">
 <ion-view title="détails de ">

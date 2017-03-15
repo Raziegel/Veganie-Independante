@@ -17,6 +17,19 @@ img{
   background-color: #F1F1F1;
   color: black;
   border-color: black;
+  position: relative;
+  top: 50px;
+  font-size: 15px;
+}
+
+#boutresa{
+  float: left;
+  width: 45%;
+}
+
+#boutemmen{
+  float: right;
+  width: 45%;
 }
 
 ion-header-bar{
@@ -29,4 +42,27 @@ ion-content{
 
 .item{
   background-color: #F1F1F1;
+}
+
+.illustration{
+  width: 12em;
+  float: left !important;
+  margin-right: 10px;
+}
+
+.etoile{
+  width: auto;
+}
+
+.description{
+  text-align: center !important;
+}
+
+.prix{
+  font-size: 20px;
+}
+
+#suggestions{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

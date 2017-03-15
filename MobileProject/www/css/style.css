@@ -62,13 +62,29 @@ ion-content{
 }
 
 .illustration{
-  width: 12em;
-  float: left !important;
+  width: auto;
+  height: 100px;
+  float: left;
   margin-right: 10px;
+}
+
+.photo{
+  width: 100%;
 }
 
 .etoile{
   width: auto;
+}
+
+.clock{
+  float: left;
+  width: auto;
+}
+
+.horaire{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 50px;
 }
 
 .description{
@@ -88,4 +104,5 @@ ion-content{
   margin-left: 10%;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }

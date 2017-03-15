@@ -137,6 +137,36 @@ $ionicConfigProvider.platform.android.tabs.position("bottom");
          }
        }
        })
+       // un restaurant1
+       .state('onglets.restaurant1', {
+           url: "/restaurant1",
+           views: {
+          'restauration-tab': {
+           templateUrl: "restaurant1.html",
+           controller: "restaurantController"
+         }
+       }
+       })
+       // un restaurant2
+       .state('onglets.restaurant2', {
+           url: "/restaurant2",
+           views: {
+          'restauration-tab': {
+           templateUrl: "restaurant2.html",
+           controller: "restaurantController"
+         }
+       }
+       })
+       // un restaurant3
+       .state('onglets.restaurant3', {
+           url: "/restaurant3",
+           views: {
+          'restauration-tab': {
+           templateUrl: "restaurant3.html",
+           controller: "restaurantController"
+         }
+       }
+       })
        // une activité
        .state('onglets.activite', {
            url: "/activite",

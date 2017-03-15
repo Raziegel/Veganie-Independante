@@ -56,8 +56,8 @@ angular.module('starter', ['ionic'])
   }
 })
 
-.config( function($stateProvider,$urlRouterProvider){
-
+.config( function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
+$ionicConfigProvider.platform.android.tabs.position("bottom");
    $stateProvider
    /*à partir d'ici, décrire les différents
 états posiibles dans l'application.*/

@@ -157,9 +157,15 @@
           Hotel
         </div>
         <select ng-model="hotel" id="hotel">
-          <option>Hotel 1</option>
-          <option>Hotel 2</option>
-          <option>Hotel 3</option>
+          <option>Hostellerie du Marais</option>
+          <option>Hotel Signature St Germain des Prés</option>
+          <option>Hotel WO - Wilson Opera</option>
+          <option>Hôtel Monge</option>
+          <option>Hotel La Tamise - Esprit de France</option>
+          <option>Le 10 Bis Hôtel</option>
+          <option>La Réserve Paris - Hotel and Spa</option>
+          <option>Maison Souquet</option>
+          <option>Le Bristol Paris</option>
         </select>
       </label>
       <label for="pseudo"  class="item item-input item-floating-label">
@@ -294,7 +300,7 @@ Voici des activités qui pourraient vous intéresser
         <b> Numéro de télephone : </b> {{TelRecu}}  <br />
         <b> Hôtel : </b> {{HotelRecu}}  <br />
         <b> Pseudo : </b> {{PseudoRecu}}  <br />
-        
+
       </p>
       <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos" style="position: relative; top: 50px; font-size: 15px;">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()" style="position: relative; top: 50px; font-size: 15px;">Se deconnecter</a>
 
@@ -394,10 +400,15 @@ Vos dernières reservations
          <label for="hotel" class="item item-input item-stacked-label" style="top: 10px;">
            <span class="input-label">Votre hotel actuel</span><br />
            <select name="htoellist" form="hotelform">
-             <option value="hotel1">hotel1</option>
-             <option value="hotel2">hotel2</option>
-             <option value="hotel2">hotel3</option>
-             <option value="hotel2">hotel4</option>
+             <option>Hostellerie du Marais</option>
+             <option>Hotel Signature St Germain des Prés</option>
+             <option>Hotel WO - Wilson Opera</option>
+             <option>Hôtel Monge</option>
+             <option>Hotel La Tamise - Esprit de France</option>
+             <option>Le 10 Bis Hôtel</option>
+             <option>La Réserve Paris - Hotel and Spa</option>
+             <option>Maison Souquet</option>
+             <option>Le Bristol Paris</option>
            </select>
          </label>  <br />
          <label for="pseudo" class="item item-input item-stacked-label" style="top: 10px;">

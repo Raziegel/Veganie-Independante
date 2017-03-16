@@ -90,7 +90,7 @@
               <h2>{{exRestau.Nom}}</h2>
               <p>{{exRestau.Description.substring(0,100)}} ...</p>
             </a>
-            <a class="item item-thumbnail-left item-text-wrap" href="onglets.activite:{{exDecou.Id}}">
+            <a class="item item-thumbnail-left item-text-wrap" ui-sref="onglets.activite">
               <img src="{{exDecou.Image}}">
               <h2>{{exDecou.Nom}}</h2>
               <p>{{exDecou.Description.substring(0,100)}} ...</p>
@@ -290,7 +290,7 @@
               <div class="item item-avatar item-text-wrap" >
                 <img src="{{decouverte.Image}}">
                 <h2>{{decouverte.Nom}}</h2>
-                <p >{{decouverte.Adresse}}</p>
+                <p >{{decouverte.Adresse}} </p>
                 <br />
                 <a ui-sref="onglets.restaurant" class="button button-dark"> Détails de l'activité</a>
                 <p><br /></p>
@@ -388,63 +388,21 @@
           </ion-view>
         </script>
 
-
-
-
-        <!--Page d'un restaurant3-->
-        <script id="restaurant3.html" type="text/ng-template">
-          <ion-view title="Pierre Gagnaire">
-            <ion-header-bar class="bar-dark" >
-              <h1 class="title"> Détails</h1>
-            </ion-header-bar>
-            <ion-content class="padding" ng-controller="restaurantActionController">
-              <img class="illustration" src="img/logo_pierre_gagnaire.jpg" ></img>
-              <h3> Pierre Gagnaire </h3>
-              <p> 6 Rue Balzac <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
-              <p class="description">Une longue histoire qui continue. Toute la cohérence de
-                mon développement passe par la rigueur, la régularité, l’absolue nécessité
-                de ne pas tricher. Ici tout se joue, c’est le modèle originel. L’esthétique
-                formelle de l’assiette est toujours la règle, mais je m’attache depuis
-                plusieurs années à produire des mets qui soient bien assaisonnés, bien cuits.
-                J’essaie d’éviter les fausses bonnes idées ! Après l'époque où je réglais
-                les plats de la carte sur un produit, j’aime maintenant développer des
-                thèmes, une ambiance, une sensation.
-              </p>
-              <div class="card" id="suggestions">
-                <div class="item item-divider">
-                  <b>Suggestions</b>
-                </div>
-                <div class="item item-text-wrap">
-                  Salade vegan à seulement 32€ <br />
-                  Desserts vegan dès 58€
-                </div>
-              </div>
-              <p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
-                <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-                <br /> <br />
-
-              </ion-content>
-            </ion-view>
-          </script>
-
           <!--Page d'une activité-->
           <script id="activite.html" type="text/ng-template">
-            <ion-view title="Simulateur de vol sur Boeing">
+            <ion-view title="{{decouv.Nom}}">
               <ion-header-bar class="bar-dark" >
                 <h1 class="title">Simulateur de vol sur Boeing</h1>
               </ion-header-bar>
               <ion-content class="padding" ng-controller="activiteActionController">
-                <img class="illustration" src="img/simulateurvol.jpg" ></img>
-                <h3> Simulateur de vol sur Boeing </h3>
-                <p> 21 Quai d'Austerlitz, <br />  75013 Paris <br />  </p>
-                <p class="description">Piloter un avion, c'est un rêve de gosse pour beaucoup
-                  d'entre nous. Dans ce simulateur de Boeing 737-800 NG, vous pourrez choisir
-                  plusieurs circuits de 30 ou 60 minutes pour vous glisser dans la peau
-                  d'un vrai pilote de ligne.
-
+                <img class="illustration" src="{{decouv.Image}}" ></img>
+                <h3> {{decouv.Nom}}</h3>
+                <p> {{decouv.Adresse}} <br /> {{decouv.Ville}} <br />  </p>
+                <p class="description">
+                  {{decouv.Description}}
                 </p>
 
-                <p class="description"><b>Prix à partir de : <span class="prix"> 179 € <span></b></p>
+                <p class="description"><b><span class="prix">{{decouv.Tarif}} <span></b></p>
                   <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
                   <button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 

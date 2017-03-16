@@ -202,7 +202,8 @@ angular.module('starter', ['ionic'])
   })
 
   .controller('connexionController', function ($scope, $state) {
-
+    document.getElementById("pseudo").value = "";
+    document.getElementById("motdepasse").value = "";
   })
 
   .controller('restaurationController', function ($scope, $state, $http) {
@@ -243,7 +244,7 @@ angular.module('starter', ['ionic'])
   .controller('decouverteController', function ($scope, $state, $http) {
 
   })
-  .controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup) {
+  .controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup, $ionicHistory) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()
     $scope.MailRecu = Touriste.getMail()
@@ -252,7 +253,15 @@ angular.module('starter', ['ionic'])
     $scope.PseudoRecu = Touriste.getPseudo()
     $scope.MotDePasseRecu = Touriste.getMotDePasse()
     $scope.deconnexion = function () {
-
+      Touriste.Nom = ""
+      Touriste.Prenom = ""
+      Touriste.Mail = ""
+      Touriste.NumTel = ""
+      Touriste.Hotel = ""
+      Touriste.Pseudo = ""
+      Touriste.MotDePasse = ""
+      $ionicHistory.clearCache()
+      $state.go('connexion',  {}, {reload: true});
     }
 
     //ici on créer le modèle de la popup
@@ -353,9 +362,7 @@ angular.module('starter', ['ionic'])
             Touriste.MotDePasse = user.Password
             var url = 'https://ke-services.azurewebsites.net/tables/Etablissement/' + user.Id_Etablissement + '?ZUMO-API-VERSION=2.0.0'
             $http.get(url).success(function (response) {
-
               $scope.hotelrecu = response
-              console.log(response)
               Touriste.Hotel = $scope.hotelrecu.Nom
             })
             connexionOK = true

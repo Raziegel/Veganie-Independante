@@ -217,7 +217,8 @@
           <h1 class="title">Connexion</h1>
         </ion-header-bar>
         <ion-content class="padding" ng-controller="connexionFormController">
-          <h4>Veuillez vous connecter :</h4>
+          <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+          <h4 style="text-align: center;">Veuillez vous connecter :</h4>
           <!-- formulaire de connexion-->
           <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
             <label for="pseudo"  class="item item-input item-stacked-label">
@@ -235,11 +236,7 @@
               </button>
             </div>
           </form>
-          Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a>
-          <br />
-          <br />
-          <br />
-          <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+          <p style="text-align: center;">Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a></p>
         </ion-content>
       </ion-view>
     </script>
@@ -397,7 +394,7 @@
               <ion-content class="padding" ng-controller="activiteActionController">
                 <img class="illustration" src="{{decouv.Image}}" ></img>
                 <h3> {{decouv.Nom}}</h3>
-                <p> {{decouv.Adresse}} <br /> {{decouv.Ville}} <br />  </p>
+                <p style="text-align: center;"> {{decouv.Adresse}} <br /> {{decouv.Ville}} <br />  </p>
                 <p class="description">
                   {{decouv.Description}}
                 </p>

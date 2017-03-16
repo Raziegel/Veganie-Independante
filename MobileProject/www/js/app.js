@@ -248,8 +248,41 @@ angular.module('starter', ['ionic'])
     })
 })
   .controller('decouverteController', function ($scope, $state, $http) {
+    //Popup d'annulation de la réservation
+    $scope.confirmPopup= function(){
+      var Confirm = $ionicPopup.confirm({
+        title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',
+        template : "<br />",
+        buttons: [
+               { text: 'Retour' },
+               {
+                 text: "Annuler l'évènement",
+                 type: "button-dark",
+                 onTap: function() {
+                   // supprimer l'évènement dans la bdd
+                  }
+               }
+        ]
 
+      })
+    }
+    //Choses à faire à l'initialisation de la page
+    var url = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
+    $http.get(url)
+    .success(function (response) {
+      console.log(response)
+      $scope.maReponseRecue = response
+
+})
+    .error(function (data, status, headers, config) {
+      alert('erreur')
+      alert(data)
+      alert(status)
+      alert(headers)
+      alert(config)
+    })
   })
+
   .controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup, $ionicHistory) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()

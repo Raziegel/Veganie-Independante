@@ -217,7 +217,8 @@
           <h1 class="title">Connexion</h1>
         </ion-header-bar>
         <ion-content class="padding" ng-controller="connexionFormController">
-          <h4>Veuillez vous connecter :</h4>
+          <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+          <h4 style="text-align: center;">Veuillez vous connecter :</h4>
           <!-- formulaire de connexion-->
           <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
             <label for="pseudo"  class="item item-input item-stacked-label">
@@ -235,11 +236,7 @@
               </button>
             </div>
           </form>
-          Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a>
-          <br />
-          <br />
-          <br />
-          <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+          <p style="text-align: center;">Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a></p>
         </ion-content>
       </ion-view>
     </script>
@@ -249,10 +246,7 @@
         <ion-header-bar class="bar-dark" >
           <h1 class="title">Restauration</h1>
         </ion-header-bar>
-        <ion-content class="padding" ng-controller="restaurantActionController">
-
-          Voici des restaurants qui pourraient vous intéresser
-
+        <ion-content class="padding" ng-controller="restaurationActionController">
 
           <div id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
             <div  class="card">
@@ -265,7 +259,7 @@
                 </p>
                 <p>
                   <br />
-                  <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails du restaurant</a>
+                  <a ui-sref="onglets.restaurant" class="button button-dark" ng-click="Factpushing({{restaurant.Id}})"> Détails du restaurant</a>
                 </p>
                 <br />
                 <a class="item item-icon-left dark" ng-click="EmmenePopup()">
@@ -292,7 +286,7 @@
                 <h2>{{decouverte.Nom}}</h2>
                 <p >{{decouverte.Adresse}} </p>
                 <br />
-                <a ui-sref="onglets.restaurant" class="button button-dark"> Détails de l'activité</a>
+                <a ui-sref="onglets.activite" class="button button-dark" ng-click="Factpushing({{decouverte.Id}})"> Détails de l'activité</a>
                 <p><br /></p>
                 <a class="item item-icon-left dark" ng-click="EmmenePopup()">
                   <i class="icon ion-ios-navigate-outline"></i>
@@ -325,7 +319,7 @@
             <b> Pseudo : </b> {{PseudoRecu}}  <br />
 
           </p>
-          <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()">Se deconnecter</a>
+          <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="confirmPopup1()">Se deconnecter</a>
 
           <div class="bar bar-dark" style="position: relative; top: 60px;">
             <h2 class="title">Vos activités</h2>
@@ -356,21 +350,25 @@
 
       <!--Page d'un restaurant-->
       <script id="restaurant.html" type="text/ng-template">
-        <ion-view title="{{restau.Nom}}">
+        <ion-view title="Détails  {{restau.Nom}}">
           <ion-header-bar class="bar-dark" >
             <h1 class="title"> Détails </h1>
           </ion-header-bar>
           <ion-content class="padding" ng-controller="restaurantActionController">
-            <div style="margin-left:10%; margin-right:10%;">
-              <img class="illustration" src="{{restau.Image}}" ></img>
-              <h3> {{restau.Nom}}</h3>
-              <p> {{restau.Adresse}} <br /> {{restau.Ville}} <br /> {{restau.NbEtoiles}}</img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
-            </div>
-            <p class="description">
+              <div class="boite">
+                <img class="illustration" src="{{restau.Image}}" ></img>
+              </div>
+              <div class="boite2">
+                <h4>{{restau.Nom}}</h4>
+                <p> {{restau.Adresse}}<br />
+                    {{restau.Ville}}<br />
+                    <span class="etoiles">{{restau.NbEtoiles}}</span><img class="etoile" src="img/ic_star_black_24dp.png"></img>
+                </p>
+              </div>
+            <div class="description">
               {{restau.Description}}
-            </p>
+            </div>
             <img class="photo" src="{{restau.Photo}}">
-
             <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">{{restau.Horaire}}</span>
             <div class="card" id="suggestions">
               <div class="item item-divider">
@@ -382,31 +380,27 @@
             </div>
             <p class="description"><b>Prix moyen : <span class="prix">{{restau.Tarif}}<span></b></p>
               <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-
-              <br><br>
+              <br /><br /><br />
             </ion-content>
           </ion-view>
         </script>
 
           <!--Page d'une activité-->
           <script id="activite.html" type="text/ng-template">
-            <ion-view title="{{decouv.Nom}}">
+            <ion-view title="Détails">
               <ion-header-bar class="bar-dark" >
                 <h1 class="title">Simulateur de vol sur Boeing</h1>
               </ion-header-bar>
               <ion-content class="padding" ng-controller="activiteActionController">
                 <img class="illustration" src="{{decouv.Image}}" ></img>
                 <h3> {{decouv.Nom}}</h3>
-                <p> {{decouv.Adresse}} <br /> {{decouv.Ville}} <br />  </p>
+                <p style="text-align: center;"> {{decouv.Adresse}} <br /> {{decouv.Ville}} <br />  </p>
                 <p class="description">
                   {{decouv.Description}}
                 </p>
-
                 <p class="description"><b><span class="prix">{{decouv.Tarif}} <span></b></p>
                   <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
                   <button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-
-
                 </ion-content>
               </ion-view>
             </script>
@@ -419,8 +413,6 @@
                 </ion-header-bar>
                 <ion-content class="padding">
                   Vos dernières reservations
-
-
                 </ion-content>
               </ion-view>
             </script>
@@ -437,23 +429,24 @@
                   <p>
                     <label for="nom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre nom</span>
-                      <input type="text" value="{{maReponseRecue[0].Nom}}" />
+                      <input type="text" value="{{NomRecu}}" id="nom" />
                     </label>
                     <label for="prenom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre prénom</span>
-                      <input type="text" value="{{maReponseRecue[0].Prenom}}"/>
+                      <input type="text" value="{{PrenomRecu}}" id="prenom"/>
                     </label>
                     <label for="mail" class="item item-input item-stacked-label">
                       <span class="input-label">Votre adresse mail</span>
-                      <input type="text" value="{{maReponseRecue[0].Mail}}" />
+                      <input type="text" value="{{MailRecu}}" id="mail" />
                     </label>
                     <label for="telephone" class="item item-input item-stacked-label">
                       <span class="input-label">Votre numéro de téléphone</span>
-                      <input type="tel" value="{{maReponseRecue[0].NumTel}}" />
+                      <input type="tel" value="{{TelRecu}}" id="tel" />
                     </label>
                     <label for="hotel" class="item item-input item-select">
                       <span class="input-label">Votre hôtel</span>
                       <select ng-model="hotel" id="hotel">
+                        <option selected>{{HotelRecu}}</option>
                         <option>Hostellerie du Marais</option>
                         <option>Hotel Signature St Germain des Prés</option>
                         <option>Hotel WO - Wilson Opera</option>
@@ -467,14 +460,14 @@
                     </label>
                     <label for="pseudo" class="item item-input item-stacked-label">
                       <span class="input-label">Votre pseudo</span>
-                      <input type="text" value="{{maReponseRecue[0].Pseudo}}" />
+                      <input type="text" value="{{PseudoRecu}}" id="pseudo"/>
                     </label>
                     <label for="motdepasse" class="item item-input item-stacked-label">
                       <span class="input-label">Votre mot de passe</span>
-                      <input type="text" value="{{maReponseRecue[0].Password}}" />
+                      <input type="text" value="{{MotDePasseRecu}}" id="mdp" />
                     </label>
                   </p>
-                  <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
+                  <a class="button button-block button-dark" ng-click="modifierInfos(nom, prenom, mail, tel, hotel, pseudo, mdp)">Enregistrer les modifications</a>
                 </ion-content>
               </ion-view>
             </script>

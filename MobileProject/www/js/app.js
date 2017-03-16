@@ -360,8 +360,14 @@ angular.module('starter', ['ionic'])
       $state.go('onglets.accueil')
     }
   })
-  .controller('restaurantActionController', function ($scope, $state, $ionicPopup) {
+  .controller('restaurantActionController', function ($scope, $state, $ionicPopup, $http) {
     //controller d'actions au sein de la page
+
+    var url = 'https://ke-services.azurewebsites.net/tables/Restauration/' +  + '?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.restau = response
+    })
+
     $scope.showPopup = function () {
       Confirm = $ionicPopup.show({
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Effectuer une r&eacute;servation</h1></div>',

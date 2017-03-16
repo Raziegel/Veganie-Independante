@@ -264,7 +264,7 @@
                 </p>
                 <p>
                   <br />
-                  <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails du restaurant</a>
+                  <a ui-sref="onglets.restaurant" class="button button-dark"> Détails du restaurant</a>
                 </p>
                 <br />
                 <a class="item item-icon-left dark" ng-click="EmmenePopup()">
@@ -291,7 +291,7 @@
                 <h2>{{decouverte.Nom}}</h2>
                 <p >{{decouverte.Adresse}}</p>
                 <br />
-                <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
+                <a ui-sref="onglets.activite" class="button button-dark"> Détails de l'activité</a>
                 <p><br /></p>
                 <a class="item item-icon-left dark" ng-click="EmmenePopup()">
                   <i class="icon ion-ios-navigate-outline"></i>
@@ -361,72 +361,28 @@
           </ion-header-bar>
           <ion-content class="padding" ng-controller="restaurantActionController">
             <div style="margin-left:10%; margin-right:10%;">
-              <img class="illustration" src="img/exemple_logo.jpg" ></img>
-              <h3> Le Taillevent </h3>
-              <p> 15, Rue Lamennais <br /> 75008 Paris <br /> </img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+              <img class="illustration" src="{{restau.Image}}" ></img>
+              <h3> {{restau.Nom}} </h3>
+              <p> {{restau.Adresse}} </img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
             </div>
-            <p class="description">Taillevent est un nom historique. D’abord celui d’un Chef de cuisine ; Guillaume Tirel, qui officie auprès
-              de Charles VI, roi de France et est considéré comme le père fondateur de la gastronomie française ; il devient ensuite celui
-              d’un restaurant où les accords mets & vins se dévoilent avec douceur et maturité. Le Taillevent incarne cet art de vivre
-              tant admiré, dont il n’est pas le conservatoire mais le laboratoire dynamique.
-            </p>
+            <p class="description"> {{restau.Description}}</p>
             <img class="photo" src="img\exemple.jpg">
-
-            <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">Ouvert du Lundi au Samedi de 12h à 23h</span>
+            <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">{{restau.Horaire}}</span>
             <div class="card" id="suggestions">
               <div class="item item-divider">
                 <b>Suggestion</b>
               </div>
               <div class="item item-text-wrap">
-                Dégustez un plat passerelle entre la haute cuisine et les grands vins, où l’on révèle les saveurs des meilleurs produits au meilleur de la saison
-              </div>
+                {{restau.Specialite}}
             </div>
-            <p class="description"><b>Prix moyen : <span class="prix"> 88 - 230€ <span></b></p>
+            </div>
+            <p class="description"><b>Prix moyen : <span class="prix"> {{restau.Tarif}} <span></b></p>
               <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
               <br><br>
             </ion-content>
           </ion-view>
         </script>
-
-
-
-
-        <!--Page d'un restaurant3-->
-        <script id="restaurant3.html" type="text/ng-template">
-          <ion-view title="Pierre Gagnaire">
-            <ion-header-bar class="bar-dark" >
-              <h1 class="title"> Détails</h1>
-            </ion-header-bar>
-            <ion-content class="padding" ng-controller="restaurantActionController">
-              <img class="illustration" src="img/logo_pierre_gagnaire.jpg" ></img>
-              <h3> Pierre Gagnaire </h3>
-              <p> 6 Rue Balzac <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
-              <p class="description">Une longue histoire qui continue. Toute la cohérence de
-                mon développement passe par la rigueur, la régularité, l’absolue nécessité
-                de ne pas tricher. Ici tout se joue, c’est le modèle originel. L’esthétique
-                formelle de l’assiette est toujours la règle, mais je m’attache depuis
-                plusieurs années à produire des mets qui soient bien assaisonnés, bien cuits.
-                J’essaie d’éviter les fausses bonnes idées ! Après l'époque où je réglais
-                les plats de la carte sur un produit, j’aime maintenant développer des
-                thèmes, une ambiance, une sensation.
-              </p>
-              <div class="card" id="suggestions">
-                <div class="item item-divider">
-                  <b>Suggestions</b>
-                </div>
-                <div class="item item-text-wrap">
-                  Salade vegan à seulement 32€ <br />
-                  Desserts vegan dès 58€
-                </div>
-              </div>
-              <p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
-                <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-                <br /> <br />
-
-              </ion-content>
-            </ion-view>
-          </script>
 
           <!--Page d'une activité-->
           <script id="activite.html" type="text/ng-template">
@@ -437,13 +393,13 @@
               <ion-content class="padding" ng-controller="activiteActionController">
                 <img class="illustration" src="img/simulateurvol.jpg" ></img>
                 <h3> Simulateur de vol sur Boeing </h3>
-                <p> 21 Quai d'Austerlitz, <br />  75013 Paris <br />  </p>
-                <p class="description">Piloter un avion, c'est un rêve de gosse pour beaucoup
+                <p> 21, Quai d'Austerlitz <br />  75013 Paris <br />  </p>
+                <p class="description">Piloter un avion, c'est un rêve d'enfance pour beaucoup
                   d'entre nous. Dans ce simulateur de Boeing 737-800 NG, vous pourrez choisir
                   plusieurs circuits de 30 ou 60 minutes pour vous glisser dans la peau
                   d'un vrai pilote de ligne.
                 </p>
-
+                <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">Ouvert du Lundi au Samedi de 10h à 18h</span>
                 <p class="description"><b>Prix à partir de : <span class="prix"> 179 € <span></b></p>
                   <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
                   <button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>

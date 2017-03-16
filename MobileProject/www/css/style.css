@@ -12,6 +12,12 @@ input{
   width: 97.5% !important;
 }
 
+#erreur{
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
+
 select{
   background-color: #EAEAEA !important;
   margin: 2%;

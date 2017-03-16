@@ -67,21 +67,41 @@ ion-content{
   background-color: #F1F1F1;
 }
 
-.illustration{
-  width: auto;
-  height: 100px;
+.boite{
+  width: 49%;
+  height: 110px;
   float: left;
-  margin-right: 10px;
+  display: flex;
+  margin-right: 2px;
+  margin-bottom: 30px;
+}
+
+.boite2{
+  width: 49%;
+  height: 110px;
+  float: right;
+  margin-left: 2px;
+  margin-bottom: 30px;
+}
+
+.illustration{
+  margin-top: auto;
+  width: 100%;
 }
 
 .photo{
   width: 100%;
+  display: block;
 }
 
 .etoile{
   width: auto;
+  display: inline-block;
 }
 
+.etoiles{
+  font-size: 20px;
+}
 
 .test{
   position: relative;
@@ -109,9 +129,9 @@ ion-content{
 }
 
 .description{
-  margin-top: 25px !important;
   text-align: center !important;
   font-size: 15px;
+  position: relative;
 }
 
 .prix{

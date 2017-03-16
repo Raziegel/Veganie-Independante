@@ -377,7 +377,12 @@ angular.module('starter', ['ionic'])
   .controller('reservationsController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
   })
-  .controller('inscriptionFormController', function (Touriste, $scope, $state) {
+  .controller('inscriptionFormController', function (Touriste, $scope, $state, $http) {
+    var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.etablissements = response
+    })
+
     $scope.chercher = function (nom, prenom, mail, tel, hotel, pseudo, motdepasse) {
       Touriste.Nom = nom
       Touriste.Prenom = prenom
@@ -386,6 +391,33 @@ angular.module('starter', ['ionic'])
       Touriste.Hotel = hotel
       Touriste.Pseudo = pseudo
       Touriste.MotDePasse = motdepasse
+      $scope.etablissements.forEach(function(hotel) {
+        if(hotel.Nom == hotel){
+          $scope.idhotel = hotel.Id
+        }
+      })
+      var url = "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0"
+      data = JSON.stringify({
+        "Id": x,
+        "Nom": Touriste.Nom,
+        "Prenom": Touriste.Prenom,
+        "NumTel": Touriste.NumTel,
+        "Mail": Touriste.Mail,
+        "Pseudo": Touriste.Pseudo,
+        "Password": Touriste.MotDePasse,
+        "Id_Etablissement": $scope.idhotel,
+      })
+      $http({
+        method: "POST",
+        url: "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0",
+        data: data,
+        headers: {"Content-Type": 'application/json' },
+        timeout: 10000
+      })
+      .success(function(data, status, headers, config){
+      })
+      .error(function(data, status, headers, config){
+      })
       $state.go('onglets.accueil')
     }
   })

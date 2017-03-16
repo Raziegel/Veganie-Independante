@@ -234,7 +234,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
 
   }
 
-  //ici on créer le modèle de la popup
+  //Popup d'annulation de la réservation
   $scope.confirmPopup= function(){
     var Confirm = $ionicPopup.confirm({
       title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',

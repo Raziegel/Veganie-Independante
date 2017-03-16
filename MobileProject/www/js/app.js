@@ -358,8 +358,16 @@ angular.module('starter', ['ionic'])
     console.log(idr)
     console.log(Restau.getid())
     var url = 'https://ke-services.azurewebsites.net/tables/Restauration/' + idr + '?ZUMO-API-VERSION=2.0.0'
+    console.log(url)
     $http.get(url).success(function (response) {
+      console.log("ok")
+      console.log(response);
       $scope.restau = response
+    }).error(function(data, status, headers, config){
+      console.log(data)
+      console.log(status)
+      console.log(headers)
+      console.log(config)
     })
 
   })
@@ -370,8 +378,16 @@ angular.module('starter', ['ionic'])
     console.log(idr)
     console.log(Decouv.getid())
     var url = 'https://ke-services.azurewebsites.net/tables/Decouverte/' + idr + '?ZUMO-API-VERSION=2.0.0'
+    console.log(url)
     $http.get(url).success(function (response) {
+      console.log("ok")
+      console.log(response);
       $scope.decouv = response
+    }).error(function(data, status, headers, config){
+      console.log(data)
+      console.log(status)
+      console.log(headers)
+      console.log(config)
     })
   })
   .controller('reservationsController', function ($scope, $state) {
@@ -406,7 +422,7 @@ angular.module('starter', ['ionic'])
         "Pseudo": Touriste.Pseudo,
         "Password": Touriste.MotDePasse,
         "Id_Etablissement": $scope.idhotel
-        
+
       })
       console.log(data)
       $http({
@@ -553,7 +569,7 @@ angular.module('starter', ['ionic'])
                 }
 
               })
-              .controller('restaurationActionController', function ($scope, $state, $ionicPopup) {
+              .controller('restaurationActionController', function (Restau,$scope, $state, $ionicPopup,$http) {
                 $scope.EmmenePopup = function () {
                   var pop2 = $ionicPopup.show({
                     title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
@@ -574,9 +590,12 @@ angular.module('starter', ['ionic'])
                       }]
                     })
                   }
-
+                  $scope.Factpushing = function(id){
+                    console.log(id)
+                    Restau.id = id
+                  }
                 })
-                .controller('decouverteActionController', function ($scope, $state, $ionicPopup) {
+                .controller('decouverteActionController', function (Decouv, $scope, $state, $ionicPopup, $http) {
                   $scope.EmmenePopup = function () {
                     pop2 = $ionicPopup.show({
                       title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
@@ -596,5 +615,9 @@ angular.module('starter', ['ionic'])
                           }
                         }]
                       })
+                    }
+                    $scope.Factpushing = function(id){
+                      console.log(id)
+                      Decouv.id = id
                     }
                   })

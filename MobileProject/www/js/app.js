@@ -24,13 +24,13 @@ angular.module('starter', ['ionic'])
 
 })
 .factory('Touriste', function () {
-  Pseudo
-  MotDePasse
-  Nom
-  Prenom
-  NumTel
-  Mail
-  Hotel
+  var Pseudo
+  var MotDePasse
+  var Nom
+  var Prenom
+  var NumTel
+  var Mail
+  var Hotel
   return{
     getNom: function () {
       return this.Nom

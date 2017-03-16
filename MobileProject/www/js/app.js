@@ -7,7 +7,7 @@ angular.module('starter', ['ionic'])
 
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
+    if (window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true)
@@ -17,7 +17,7 @@ angular.module('starter', ['ionic'])
       // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true)
     }
-    if(window.StatusBar) {
+    if (window.StatusBar) {
       StatusBar.styleDefault()
     }
   })
@@ -25,11 +25,11 @@ angular.module('starter', ['ionic'])
 })
 .factory('Touriste', function () {
   Pseudo
-   MotDePasse
-   Nom
-   Prenom
-   NumTel
-   Mail
+  MotDePasse
+  Nom
+  Prenom
+  NumTel
+  Mail
   Hotel
   return{
     getNom: function () {
@@ -57,37 +57,37 @@ angular.module('starter', ['ionic'])
 })
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.platform.android.tabs.position('bottom')
-   $stateProvider
-   /*à partir d'ici, décrire les différents
-états posiibles dans l'application.*/
+  $stateProvider
+  /* à partir d'ici, décrire les différents
+états posiibles dans l'application. */
 .state('onglets', {
-    url: '/onglets',
-    templateUrl: 'onglets.html',
-    abstract: true
-  })
-     //Accueil
+  url: '/onglets',
+  templateUrl: 'onglets.html',
+  abstract: true
+})
+  // Accueil
      .state('onglets.accueil', {
-         url: '/accueil',
-         views: {
-        'accueil-tab': {
-          templateUrl: 'accueil.html',
-          controller: 'accueilController'
-        }
-      }
-       })
-       //Inscription
+       url: '/accueil',
+       views: {
+         'accueil-tab': {
+           templateUrl: 'accueil.html',
+           controller: 'accueilController'
+         }
+       }
+     })
+       // Inscription
        .state('inscription', {
-           url: '/inscription',
-           templateUrl: 'inscription.html',
-           controller: 'inscriptionController'
-         })
-       //Connexion
+         url: '/inscription',
+         templateUrl: 'inscription.html',
+         controller: 'inscriptionController'
+       })
+       // Connexion
        .state('connexion', {
-           url: '/connexion',
-           templateUrl: 'connexion.html',
-           controller: 'connexionController'
-         })
-       // Restauration
+         url: '/connexion',
+         templateUrl: 'connexion.html',
+         controller: 'connexionController'
+       })
+       // Restauration -- linting
        .state('onglets.restauration', {
            url: '/restauration',
            views: {

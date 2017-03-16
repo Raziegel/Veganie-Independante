@@ -158,7 +158,8 @@ angular.module('starter', ['ionic'])
         'decouverte-tab': {
           templateUrl: 'activite.html',
           controller: 'activiteController'
-        }
+        }        
+
       }
     })
     // Mes reservations
@@ -362,8 +363,16 @@ angular.module('starter', ['ionic'])
     })
 
   })
-  .controller('activiteController', function ($scope, $state) {
+  .controller('activiteController', function (Decouv, $scope, $state, $http) {
     //Choses à faire à l'initialisation de la page
+    //Choses à faire à l'initialisation de la page
+    var idr = Decouv.getid()
+    console.log(idr)
+    console.log(Decouv.getid())
+    var url = 'https://ke-services.azurewebsites.net/tables/Decouverte/' + idr + '?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.decouv = response
+    })
   })
   .controller('reservationsController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page

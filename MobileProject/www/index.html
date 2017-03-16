@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-    <title></title>
+  <title></title>
 
-    <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
+  <!-- un-comment this code to enable service worker
+  <script>
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+  .then(() => console.log('service worker installed'))
+  .catch(err => console.log('Error', err));
+}
+</script>-->
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+<link href="css/ionic.app.css" rel="stylesheet">
+-->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+<!-- ionic/angularjs js -->
+<script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+<!-- cordova script (this will be a 404 during development) -->
+<script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+<!-- your app's js -->
+<script src="js/app.js"></script>
+</head>
+<body ng-app="starter">
 
- <ion-nav-bar class="bar-dark">
-   <ion-nav-back-button>
-   </ion-nav-back-button>
- </ion-nav-bar>
-      <ion-nav-view></ion-nav-view>
-      <!-- Menu -->
-      <script id="onglets.html" type="text/ng-template">
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+  <!-- Menu -->
+  <script id="onglets.html" type="text/ng-template">
 
-      <ion-tabs class="tabs-icon-top tabs-dark">
+    <ion-tabs class="tabs-icon-top tabs-dark">
 
       <ion-tab title="Accueil" icon="ion-home" ui-sref="onglets.accueil">
 
@@ -67,436 +67,407 @@
 
 
   <!--Page d'accueil-->
-<script id="accueil.html" type="text/ng-template">
-<ion-view title="Accueil">
-<ion-header-bar class="bar-dark" >
-  <h1 class="title"> K  E Pro - Driver</h1>
-</ion-header-bar>
-<ion-content class="padding">
-  <div class="bar bar-dark" style="position: relative; top: 0px;">
-    <h1 class="title">Bienvenue {{PrenomRecu}} {{NomRecu}}</h1>
-  </div>
-  <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
-  <div style="text-align: center">
-    K&E Service Premium vous propose un large choix d'activités aux alentours de votre hôtel
-    (restauration, visites, dégustations, soirées, ...) ainsi que la possibilité de vous y emmener.
-  </div>
-  <div class="bar bar-dark" style="position: relative; top: 5px;">
-    <h1 class="title">Quelques idées</h1>
-  </div>
-    <div class="list" style="top: 15px;">
-      <a class="item item-thumbnail-left" href="#">
-        <img src="img/veggie_avenue_logo.jpg">
-        <h2>Veggie Avenue</h2>
-        <p>Découvrir la culture et les valeurs<br />
-          végans dans une magnifique <br />
-          avenue.</p>
-        </a>
-        <a class="item item-thumbnail-left" href="#">
-          <img src="img/veggie_world_logo.png">
-          <h2>Veggie World</h2>
-          <p>Découvrir les plats végans dans <br />
-            une atmosphère détendue.</p>
+  <script id="accueil.html" type="text/ng-template">
+    <ion-view title="Accueil">
+      <ion-header-bar class="bar-dark" >
+        <h1 class="title"> K  E Pro - Driver</h1>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <div class="bar bar-dark" style="position: relative; top: 0px;">
+          <h1 class="title">Bienvenue {{PrenomRecu}} {{NomRecu}}</h1>
+        </div>
+        <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+        <div style="text-align: center">
+          Premium Service vous propose un large choix d'activités aux alentours de votre hôtel
+          (restauration, visites, dégustations, soirées, ...) ainsi que la possibilité de vous y emmener.
+        </div>
+        <div class="bar bar-dark" style="position: relative; top: 5px;">
+          <h1 class="title">Quelques idées</h1>
+        </div>
+        <div class="list" style="top: 15px;">
+          <a class="item item-thumbnail-left item-text-wrap" href="#">
+            <img src="{{exRestau.Image}}">
+            <h2>{{exRestau.Nom}}</h2>
+            <p>{{exRestau.Description.substring(0,100)}} ...</p>
           </a>
-          <a class="item item-thumbnail-left" href="#">
-            <img src="img/veggie_avenue_logo.jpg">
-            <h2>Veggie Avenue</h2>
-            <p>Découvrir la culture et les valeurs<br />
-              végans dans une magnifique <br />
-              avenue.</p>
-            </a>
-            <a class="item item-thumbnail-left" href="#">
-              <img src="img/veggie_world_logo.png">
-              <h2>Veggie World</h2>
-              <p>Découvrir les plats végans dans <br />
-                une atmosphère détendue.</p>
-              </a>
-              <a class="item item-thumbnail-left" href="#">
-                <img src="img/veggie_avenue_logo.jpg">
-                <h2>Veggie Avenue</h2>
-                <p>Découvrir la culture et les valeurs<br />
-                  végans dans une magnifique <br />
-                  avenue.</p>
-                </a>
-                <a class="item item-thumbnail-left" href="#">
-                  <img src="img/veggie_world_logo.png">
-                  <h2>Veggie World</h2>
-                  <p>Découvrir les plats végans dans <br />
-                    une atmosphère détendue.</p>
-                  </a>
-                </div>
-      </ion-content>
-  </ion-view>
-</script>
-  <!--Page d'inscription-->
-<script id="inscription.html" type="text/ng-template">
-<ion-view title="Inscription">
-  <ion-header-bar class="bar-dark" >
-  <h1 class="title">Inscription</h1>
-</ion-header-bar>
-  <ion-content class="padding" ng-controller="inscriptionFormController">
-    <!-- formulaire d'inscription-->
-    <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
-      <label for="nom"  class="item item-input item-stacked-label">
-        <span class="input-label">Nom</span>
-        <input type="text" placeholder="Votre nom" ng-model="nom" id="nom" required>
-      </label>
-      <label for="prenom" class="item item-input item-stacked-label">
-        <span class="input-label">Prénom</span>
-        <input type="text" placeholder="Votre prénom" ng-model="prenom" id="prenom" required>
-      </label>
-      <label for="email" class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="Votre adresse mail" ng-model="email" id="email" required>
-      </label>
-      <label for="tel" class="item item-input item-stacked-label">
-        <span class="input-label">Numéro de télephone</span>
-        <input type="text" placeholder="Votre numéro de télephone" ng-model="tel" id="tel" required>
-      </label>
-      <label for="hotel" class="item item-input item-select">
-        <div class="input-label">
-          Hôtel
-        </div>
-        <select ng-model="hotel" id="hotel" >
-          <option>Hostellerie du Marais</option>
-          <option>Hotel Signature St Germain des Prés</option>
-          <option>Hotel WO - Wilson Opera</option>
-          <option>Hôtel Monge</option>
-          <option>Hotel La Tamise - Esprit de France</option>
-          <option>Le 10 Bis Hôtel</option>
-          <option>La Réserve Paris - Hotel and Spa</option>
-          <option>Maison Souquet</option>
-          <option>Le Bristol Paris</option>
-        </select>
-      </label>
-      <label for="pseudo"  class="item item-input item-stacked-label">
-        <span class="input-label">Pseudo</span>
-        <input type="text" placeholder="Choisissez votre pseudo ..." ng-model="pseudo" id="pseudo" required>
-      </label>
-      <label for="motdepasse" class="item item-input item-stacked-label">
-        <span class="input-label">Mot de passe</span>
-        <input type="password" placeholder="Choisissez votre mot de passe ..." ng-model="motdepasse" id="motdepasse" required>
-      </label>
-      <div class="submit">
-        <button class="button button-block button-dark">
-          S'inscrire
-        </button>
-      </div>
-    </form>
+          <a class="item item-thumbnail-left item-text-wrap" href="#">
+            <img src="{{exDecou.Image}}">
+            <h2>{{exDecou.Nom}}</h2>
+            <p>{{exDecou.Description.substring(0,100)}} ...</p>
+          </a>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+    <!--Page d'inscription-->
+    <script id="inscription.html" type="text/ng-template">
+      <ion-view title="Inscription">
+        <ion-header-bar class="bar-dark" >
+          <h1 class="title">Inscription</h1>
+        </ion-header-bar>
+        <ion-content class="padding" ng-controller="inscriptionFormController">
+          <!-- formulaire d'inscription-->
+          <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
+            <label for="nom"  class="item item-input item-stacked-label">
+              <span class="input-label">Nom</span>
+              <input type="text" placeholder="Votre nom" ng-model="nom" id="nom" required>
+            </label>
+            <label for="prenom" class="item item-input item-stacked-label">
+              <span class="input-label">Prénom</span>
+              <input type="text" placeholder="Votre prénom" ng-model="prenom" id="prenom" required>
+            </label>
+            <label for="email" class="item item-input item-stacked-label">
+              <span class="input-label">Email</span>
+              <input type="text" placeholder="Votre adresse mail" ng-model="email" id="email" required>
+            </label>
+            <label for="tel" class="item item-input item-stacked-label">
+              <span class="input-label">Numéro de télephone</span>
+              <input type="text" placeholder="Votre numéro de télephone" ng-model="tel" id="tel" required>
+            </label>
+            <label for="hotel" class="item item-input item-select">
+              <div class="input-label">
+                Hôtel
+              </div>
+              <select ng-model="hotel" id="hotel" >
+                <option>Hostellerie du Marais</option>
+                <option>Hotel Signature St Germain des Prés</option>
+                <option>Hotel WO - Wilson Opera</option>
+                <option>Hôtel Monge</option>
+                <option>Hotel La Tamise - Esprit de France</option>
+                <option>Le 10 Bis Hôtel</option>
+                <option>La Réserve Paris - Hotel and Spa</option>
+                <option>Maison Souquet</option>
+                <option>Le Bristol Paris</option>
+              </select>
+            </label>
+            <label for="pseudo"  class="item item-input item-stacked-label">
+              <span class="input-label">Pseudo</span>
+              <input type="text" placeholder="Choisissez votre pseudo ..." ng-model="pseudo" id="pseudo" required>
+            </label>
+            <label for="motdepasse" class="item item-input item-stacked-label">
+              <span class="input-label">Mot de passe</span>
+              <input type="password" placeholder="Choisissez votre mot de passe ..." ng-model="motdepasse" id="motdepasse" required>
+            </label>
+            <div class="submit">
+              <button class="button button-block button-dark">
+                S'inscrire
+              </button>
+            </div>
+          </form>
 
-    </ion-content>
-  </ion-view>
-</script>
-  <!--Page de connexion-->
-<script id="connexion.html" type="text/ng-template">
-<ion-view title="Connexion">
-  <ion-header-bar class="bar-positive" >
-  <h1 class="title">Connexion</h1>
-</ion-header-bar>
-  <ion-content class="padding" ng-controller="connexionFormController">
-<h4>Veuillez vous connecter :</h4>
-      <!-- formulaire de connexion-->
-      <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
-        <label for="pseudo"  class="item item-input item-stacked-label">
-          <span class="input-label">Pseudo</span>
-          <input type="text" placeholder="Votre pseudo" ng-model="pseudo" id="pseudo" required>
-        </label>
-        <label for="motdepasse" class="item item-input item-stacked-label">
-          <span class="input-label">Mot de passe</span>
-          <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
-        </label>
-        <div class="submit">
-          <button class="button button-block button-dark">
-            Se connecter
-          </button>
-        </div>
-      </form>
-      Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a>
-      <br />
-      <br />
-      <br />
-      <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
-    </ion-content>
-  </ion-view>
-</script>
-<!--Page de restauration-->
-<script id="restauration.html" type="text/ng-template">
-<ion-view title="Restauration">
-<ion-header-bar class="bar-dark" >
-<h1 class="title">Restauration</h1>
-</ion-header-bar>
-<ion-content class="padding" ng-controller="restaurantActionController">
-
-Voici des restaurants qui pourraient vous intéresser
-
-
-  <div id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
-    <div  class="card">
-      <div class="item item-avatar item-divider" >
-        <img src="{{restaurant.Image}}">
-        <h2>{{restaurant.Nom}}</h2>
-        <p >{{restaurant.Adresse}}</p>
-        <p>
-          {{restaurant.Specialite}}
-        </p>
-        <p>
+        </ion-content>
+      </ion-view>
+    </script>
+    <!--Page de connexion-->
+    <script id="connexion.html" type="text/ng-template">
+      <ion-view title="Connexion">
+        <ion-header-bar class="bar-positive" >
+          <h1 class="title">Connexion</h1>
+        </ion-header-bar>
+        <ion-content class="padding" ng-controller="connexionFormController">
+          <h4>Veuillez vous connecter :</h4>
+          <!-- formulaire de connexion-->
+          <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
+            <label for="pseudo"  class="item item-input item-stacked-label">
+              <span class="input-label">Pseudo</span>
+              <input type="text" placeholder="Votre pseudo" ng-model="pseudo" id="pseudo" required>
+            </label>
+            <label for="motdepasse" class="item item-input item-stacked-label">
+              <span class="input-label">Mot de passe</span>
+              <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
+            </label>
+            <div class="submit">
+              <button class="button button-block button-dark">
+                Se connecter
+              </button>
+            </div>
+          </form>
+          Vous n'avez pas de compte ? <a href="#/inscription" uisref="inscription"> Créer son compte </a>
           <br />
-        <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails du restaurant</a>
-        </p>
-        <br />
-        <a class="item item-icon-left dark" ng-click="EmmenePopup()">
-          <i class="icon ion-ios-navigate-outline"></i>
-        M'y emmener
-        </a>
-      </div>
-    </div>
-  </div>
-  </ion-content>
-</ion-view>
-</script>
-<!--Page de découverte-->
-<script id="decouverte.html" type="text/ng-template">
-<ion-view title="Découverte">
-<ion-header-bar class="bar-dark" >
-<h1 class="title">Découverte</h1>
-</ion-header-bar>
-<ion-content class="padding" ng-controller="decouverteActionController">
-  <div id="listeDecouverte"  ng-repeat="decouverte in maReponseRecue">
-    <div class="card">
-      <div class="item item-avatar item-divider" >
-        <img src="{{decouverte.Image}}">
-        <h2>{{decouverte.Nom}}</h2>
-        <p >{{decouverte.Adresse}}</p>
-        <br />
-        <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
-        <p><br /></p>
-        <a class="item item-icon-left dark" ng-click="EmmenePopup()">
-          <i class="icon ion-ios-navigate-outline"></i>
-        M'y emmener
-        </a>
-      </div>
-    </div>
-  </div>
-  </ion-content>
-</ion-view>
-</script>
+          <br />
+          <br />
+          <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+        </ion-content>
+      </ion-view>
+    </script>
+    <!--Page de restauration-->
+    <script id="restauration.html" type="text/ng-template">
+      <ion-view title="Restauration">
+        <ion-header-bar class="bar-dark" >
+          <h1 class="title">Restauration</h1>
+        </ion-header-bar>
+        <ion-content class="padding" ng-controller="restaurantActionController">
 
-<!--Page Mon Compte-->
-<script id="moncompte.html" type="text/ng-template">
-  <ion-view title="Mon Compte">
-    <ion-header-bar class="bar-dark" >
-      <h1 class="title">Mon compte</h1>
-    </ion-header-bar>
+          Voici des restaurants qui pourraient vous intéresser
 
-    <ion-content class="padding">
-      <div class="bar bar-dark" >
-        <h2 class="title">Vos informations personnelles</h2>
-      </div>
-      <p style="position: relative; top: 50px;">
-        <b> Nom : </b> {{NomRecu}}  <br />
-        <b> Prénom : </b> {{PrenomRecu}} <br />
-        <b> Adresse mail : </b> {{MailRecu}}  <br />
-        <b> Numéro de télephone : </b> {{TelRecu}}  <br />
-        <b> Hôtel : </b> {{HotelRecu}}  <br />
-        <b> Pseudo : </b> {{PseudoRecu}}  <br />
 
-      </p>
-      <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()">Se deconnecter</a>
-
-      <div class="bar bar-dark" style="position: relative; top: 60px;">
-        <h2 class="title">Vos activités</h2>
-      </div>
-      <div class="list" style="position: relative; top: 70px; font-size: 15px;">
-        <div class="test">
-          <a ng-click="confirmPopup()" ><img class="annuler" src="img\ic_cancel_black_24dp.png"></a>
-          <a class="item item-avatar" href="#">
-            <img src="img/veggie_world_logo.png">
-            <h2>Veggie World</h2>
-            <p>Samedi 18 Mars - 15h00 <br />
-              Chauffeur demandé pour 14h30.</p>
-            </a>
+          <div id="listeRestau"  ng-repeat="restaurant in maReponseRecue">
+            <div  class="card">
+              <div class="item item-avatar item-text-wrap" >
+                <img src="{{restaurant.Image}}">
+                <h2>{{restaurant.Nom}}</h2>
+                <p >{{restaurant.Adresse}}</p>
+                <p>
+                  {{restaurant.Specialite}}
+                </p>
+                <p>
+                  <br />
+                  <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails du restaurant</a>
+                </p>
+                <br />
+                <a class="item item-icon-left dark" ng-click="EmmenePopup()">
+                  <i class="icon ion-ios-navigate-outline"></i>
+                  M'y emmener
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="test">
-            <a ng-click="confirmPopup()" ><img class="annuler" src="img\ic_cancel_black_24dp.png"></a>
-            <a class="item item-avatar" href="#">
-              <img src="img/veggie_avenue_logo.jpg">
-              <h2>Veggie Avenue</h2>
-              <p>Samedi 18 Mars - 19h30</p>
-            </a>
+        </ion-content>
+      </ion-view>
+    </script>
+    <!--Page de découverte-->
+    <script id="decouverte.html" type="text/ng-template">
+      <ion-view title="Découverte">
+        <ion-header-bar class="bar-dark" >
+          <h1 class="title">Découverte</h1>
+        </ion-header-bar>
+        <ion-content class="padding" ng-controller="decouverteActionController">
+          <div id="listeDecouverte"  ng-repeat="decouverte in maReponseRecue">
+            <div class="card">
+              <div class="item item-avatar item-text-wrap" >
+                <img src="{{decouverte.Image}}">
+                <h2>{{decouverte.Nom}}</h2>
+                <p >{{decouverte.Adresse}}</p>
+                <br />
+                <a ui-sref="onglets.restaurant3" class="button button-dark"> Détails de l'activité</a>
+                <p><br /></p>
+                <a class="item item-icon-left dark" ng-click="EmmenePopup()">
+                  <i class="icon ion-ios-navigate-outline"></i>
+                  M'y emmener
+                </a>
+              </div>
+            </div>
           </div>
+        </ion-content>
+      </ion-view>
+    </script>
 
-      </div>
-    </ion-content>
-  </ion-view>
-</script>
+    <!--Page Mon Compte-->
+    <script id="moncompte.html" type="text/ng-template">
+      <ion-view title="Mon Compte">
+        <ion-header-bar class="bar-dark" >
+          <h1 class="title">Mon compte</h1>
+        </ion-header-bar>
 
-<!--Page d'un restaurant-->
-<script id="restaurant.html" type="text/ng-template">
-<ion-view title="Veggie Avenue">
-<ion-header-bar class="bar-dark" >
-<h1 class="title"> Détails</h1>
-</ion-header-bar>
-<ion-content class="padding" ng-controller="restaurantActionController">
-  <div style="margin-left:10%; margin-right:10%;">
-    <img class="illustration" src="img/exemple_logo.jpg" ></img>
-    <h3> Le Taillevent </h3>
-    <p> 15, Rue Lamennais <br /> 75008 Paris <br /> </img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
-  </div>
-<p class="description">Taillevent est un nom historique. D’abord celui d’un Chef de cuisine ; Guillaume Tirel, qui officie auprès
-  de Charles VI, roi de France et est considéré comme le père fondateur de la gastronomie française ; il devient ensuite celui
-   d’un restaurant où les accords mets & vins se dévoilent avec douceur et maturité. Le Taillevent incarne cet art de vivre
-   tant admiré, dont il n’est pas le conservatoire mais le laboratoire dynamique.
-  </p>
- <img class="photo" src="img\exemple.jpg">
+        <ion-content class="padding">
+          <div class="bar bar-dark" >
+            <h2 class="title">Vos informations personnelles</h2>
+          </div>
+          <p style="position: relative; top: 50px;">
+            <b> Nom : </b> {{NomRecu}}  <br />
+            <b> Prénom : </b> {{PrenomRecu}} <br />
+            <b> Adresse mail : </b> {{MailRecu}}  <br />
+            <b> Numéro de télephone : </b> {{TelRecu}}  <br />
+            <b> Hôtel : </b> {{HotelRecu}}  <br />
+            <b> Pseudo : </b> {{PseudoRecu}}  <br />
 
-   <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">Ouvert du Lundi au Samedi de 12h à 23h</span>
-    <div class="card" id="suggestions">
-      <div class="item item-divider">
-        <b>Suggestion</b>
-      </div>
-      <div class="item item-text-wrap">
-        Dégustez un plat passerelle entre la haute cuisine et les grands vins, où l’on révèle les saveurs des meilleurs produits au meilleur de la saison
-      </div>
-    </div>
-<p class="description"><b>Prix moyen : <span class="prix"> 88 - 230€ <span></b></p>
-<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+          </p>
+          <a id="boutdeco" class="button button-dark" ui-sref="onglets.modifinfos">Modifier mes informations</a>    <a id="boutdeco" class="button button-dark" ng-click="deconnexion()">Se deconnecter</a>
 
-<br><br>
-  </ion-content>
-</ion-view>
-</script>
+          <div class="bar bar-dark" style="position: relative; top: 60px;">
+            <h2 class="title">Vos activités</h2>
+          </div>
+          <div class="list" style="position: relative; top: 70px; font-size: 15px;">
+            <div class="test">
+              <a ng-click="confirmPopup()" ><img class="annuler" src="img\ic_cancel_black_24dp.png"></a>
+              <a class="item item-avatar" href="#">
+                <img src="img/veggie_world_logo.png">
+                <h2>Veggie World</h2>
+                <p>Samedi 18 Mars - 15h00 <br />
+                  Chauffeur demandé pour 14h30.</p>
+                </a>
+              </div>
+              <div class="test">
+                <a ng-click="confirmPopup()" ><img class="annuler" src="img\ic_cancel_black_24dp.png"></a>
+                <a class="item item-avatar" href="#">
+                  <img src="img/veggie_avenue_logo.jpg">
+                  <h2>Veggie Avenue</h2>
+                  <p>Samedi 18 Mars - 19h30</p>
+                </a>
+              </div>
 
+            </div>
+          </ion-content>
+        </ion-view>
+      </script>
 
+      <!--Page d'un restaurant-->
+      <script id="restaurant.html" type="text/ng-template">
+        <ion-view title="Veggie Avenue">
+          <ion-header-bar class="bar-dark" >
+            <h1 class="title"> Détails</h1>
+          </ion-header-bar>
+          <ion-content class="padding" ng-controller="restaurantActionController">
+            <div style="margin-left:10%; margin-right:10%;">
+              <img class="illustration" src="img/exemple_logo.jpg" ></img>
+              <h3> Le Taillevent </h3>
+              <p> 15, Rue Lamennais <br /> 75008 Paris <br /> </img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+            </div>
+            <p class="description">Taillevent est un nom historique. D’abord celui d’un Chef de cuisine ; Guillaume Tirel, qui officie auprès
+              de Charles VI, roi de France et est considéré comme le père fondateur de la gastronomie française ; il devient ensuite celui
+              d’un restaurant où les accords mets & vins se dévoilent avec douceur et maturité. Le Taillevent incarne cet art de vivre
+              tant admiré, dont il n’est pas le conservatoire mais le laboratoire dynamique.
+            </p>
+            <img class="photo" src="img\exemple.jpg">
 
+            <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">Ouvert du Lundi au Samedi de 12h à 23h</span>
+            <div class="card" id="suggestions">
+              <div class="item item-divider">
+                <b>Suggestion</b>
+              </div>
+              <div class="item item-text-wrap">
+                Dégustez un plat passerelle entre la haute cuisine et les grands vins, où l’on révèle les saveurs des meilleurs produits au meilleur de la saison
+              </div>
+            </div>
+            <p class="description"><b>Prix moyen : <span class="prix"> 88 - 230€ <span></b></p>
+              <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
-<!--Page d'un restaurant3-->
-<script id="restaurant3.html" type="text/ng-template">
-<ion-view title="Pierre Gagnaire">
-<ion-header-bar class="bar-dark" >
-<h1 class="title"> Détails</h1>
-</ion-header-bar>
-<ion-content class="padding" ng-controller="restaurantActionController">
-<img class="illustration" src="img/logo_pierre_gagnaire.jpg" ></img>
-<h3> Pierre Gagnaire </h3>
-<p> 6 Rue Balzac <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
-<p class="description">Une longue histoire qui continue. Toute la cohérence de
-   mon développement passe par la rigueur, la régularité, l’absolue nécessité
-   de ne pas tricher. Ici tout se joue, c’est le modèle originel. L’esthétique
-   formelle de l’assiette est toujours la règle, mais je m’attache depuis
-   plusieurs années à produire des mets qui soient bien assaisonnés, bien cuits.
-    J’essaie d’éviter les fausses bonnes idées ! Après l'époque où je réglais
-    les plats de la carte sur un produit, j’aime maintenant développer des
-    thèmes, une ambiance, une sensation.
-  </p>
-    <div class="card" id="suggestions">
-      <div class="item item-divider">
-        <b>Suggestions</b>
-      </div>
-      <div class="item item-text-wrap">
-        Salade vegan à seulement 32€ <br />
-        Desserts vegan dès 58€
-      </div>
-    </div>
-<p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
-<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
-<br /> <br />
-
-  </ion-content>
-</ion-view>
-</script>
-
-<!--Page d'une activité-->
-<script id="activite.html" type="text/ng-template">
-<ion-view title="Simulateur de vol sur Boeing">
-<ion-header-bar class="bar-dark" >
-<h1 class="title">Simulateur de vol sur Boeing</h1>
-</ion-header-bar>
-<ion-content class="padding" ng-controller="activiteActionController">
-  <img class="illustration" src="img/simulateurvol.jpg" ></img>
-  <h3> Simulateur de vol sur Boeing </h3>
-  <p> 21 Quai d'Austerlitz, <br />  75013 Paris <br />  </p>
-  <p class="description">Piloter un avion, c'est un rêve de gosse pour beaucoup
-     d'entre nous. Dans ce simulateur de Boeing 737-800 NG, vous pourrez choisir
-      plusieurs circuits de 30 ou 60 minutes pour vous glisser dans la peau
-       d'un vrai pilote de ligne.
-    </p>
-
-  <p class="description"><b>Prix à partir de : <span class="prix"> 179 € <span></b></p>
-<button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
-<button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+              <br><br>
+            </ion-content>
+          </ion-view>
+        </script>
 
 
-  </ion-content>
-</ion-view>
-</script>
-
-<!--Page de mes reservations-->
-<script id="reservations.html" type="text/ng-template">
-<ion-view title="Mes reservations ">
-<ion-header-bar class="bar-dark" >
-<h1 class="title">Mes réservations</h1>
-</ion-header-bar>
-<ion-content class="padding">
-  Vos dernières reservations
 
 
-  </ion-content>
-</ion-view>
-</script>
+        <!--Page d'un restaurant3-->
+        <script id="restaurant3.html" type="text/ng-template">
+          <ion-view title="Pierre Gagnaire">
+            <ion-header-bar class="bar-dark" >
+              <h1 class="title"> Détails</h1>
+            </ion-header-bar>
+            <ion-content class="padding" ng-controller="restaurantActionController">
+              <img class="illustration" src="img/logo_pierre_gagnaire.jpg" ></img>
+              <h3> Pierre Gagnaire </h3>
+              <p> 6 Rue Balzac <br /> 75008 Paris 08 <br /> <img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+              <p class="description">Une longue histoire qui continue. Toute la cohérence de
+                mon développement passe par la rigueur, la régularité, l’absolue nécessité
+                de ne pas tricher. Ici tout se joue, c’est le modèle originel. L’esthétique
+                formelle de l’assiette est toujours la règle, mais je m’attache depuis
+                plusieurs années à produire des mets qui soient bien assaisonnés, bien cuits.
+                J’essaie d’éviter les fausses bonnes idées ! Après l'époque où je réglais
+                les plats de la carte sur un produit, j’aime maintenant développer des
+                thèmes, une ambiance, une sensation.
+              </p>
+              <div class="card" id="suggestions">
+                <div class="item item-divider">
+                  <b>Suggestions</b>
+                </div>
+                <div class="item item-text-wrap">
+                  Salade vegan à seulement 32€ <br />
+                  Desserts vegan dès 58€
+                </div>
+              </div>
+              <p class="description"><b>Prix moyen : <span class="prix"> 155 - 350 € <span></b></p>
+                <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+                <br /> <br />
 
-<!--Page Modifier mes informations-->
-<script id="modifinfos.html" type="text/ng-template">
-  <ion-view title="Modifier mes informations">
-    <ion-header-bar class="bar-dark" >
-      <h1 class="title">Modifier mes informations</h1>
-    </ion-header-bar>
+              </ion-content>
+            </ion-view>
+          </script>
 
-    <ion-content class="padding">
-      <!-- Formulaire de modifications d'informations -->
-      <p>
-        <label for="nom" class="item item-input item-stacked-label">
-          <span class="input-label">Votre nom</span>
-          <input type="text" value="{{maReponseRecue[0].Nom}}" />
-        </label>
-        <label for="prenom" class="item item-input item-stacked-label">
-          <span class="input-label">Votre prénom</span>
-           <input type="text" value="{{maReponseRecue[0].Prenom}}"/>
-         </label>
-         <label for="mail" class="item item-input item-stacked-label">
-           <span class="input-label">Votre adresse mail</span>
-           <input type="text" value="{{maReponseRecue[0].Mail}}" />
-         </label>
-         <label for="telephone" class="item item-input item-stacked-label">
-           <span class="input-label">Votre numéro de téléphone</span>
-           <input type="tel" value="{{maReponseRecue[0].NumTel}}" />
-         </label>
-         <label for="hotel" class="item item-input item-select">
-           <span class="input-label">Votre hôtel</span>
-           <select ng-model="hotel" id="hotel">
-             <option>Hostellerie du Marais</option>
-             <option>Hotel Signature St Germain des Prés</option>
-             <option>Hotel WO - Wilson Opera</option>
-             <option>Hôtel Monge</option>
-             <option>Hotel La Tamise - Esprit de France</option>
-             <option>Le 10 Bis Hôtel</option>
-             <option>La Réserve Paris - Hotel and Spa</option>
-             <option>Maison Souquet</option>
-             <option>Le Bristol Paris</option>
-           </select>
-         </label>
-         <label for="pseudo" class="item item-input item-stacked-label">
-           <span class="input-label">Votre pseudo</span>
-           <input type="text" value="{{maReponseRecue[0].Pseudo}}" />
-         </label>
-         <label for="motdepasse" class="item item-input item-stacked-label">
-           <span class="input-label">Votre mot de passe</span>
-            <input type="text" value="{{maReponseRecue[0].Password}}" />
-          </label>
-      </p>
-      <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
-    </ion-content>
-  </ion-view>
-</script>
+          <!--Page d'une activité-->
+          <script id="activite.html" type="text/ng-template">
+            <ion-view title="Simulateur de vol sur Boeing">
+              <ion-header-bar class="bar-dark" >
+                <h1 class="title">Simulateur de vol sur Boeing</h1>
+              </ion-header-bar>
+              <ion-content class="padding" ng-controller="activiteActionController">
+                <img class="illustration" src="img/simulateurvol.jpg" ></img>
+                <h3> Simulateur de vol sur Boeing </h3>
+                <p> 21 Quai d'Austerlitz, <br />  75013 Paris <br />  </p>
+                <p class="description">Piloter un avion, c'est un rêve de gosse pour beaucoup
+                  d'entre nous. Dans ce simulateur de Boeing 737-800 NG, vous pourrez choisir
+                  plusieurs circuits de 30 ou 60 minutes pour vous glisser dans la peau
+                  d'un vrai pilote de ligne.
+                </p>
 
-  </body>
-</html>
+                <p class="description"><b>Prix à partir de : <span class="prix"> 179 € <span></b></p>
+                  <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button>
+                  <button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
+
+
+                </ion-content>
+              </ion-view>
+            </script>
+
+            <!--Page de mes reservations-->
+            <script id="reservations.html" type="text/ng-template">
+              <ion-view title="Mes reservations ">
+                <ion-header-bar class="bar-dark" >
+                  <h1 class="title">Mes réservations</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                  Vos dernières reservations
+
+
+                </ion-content>
+              </ion-view>
+            </script>
+
+            <!--Page Modifier mes informations-->
+            <script id="modifinfos.html" type="text/ng-template">
+              <ion-view title="Modifier mes informations">
+                <ion-header-bar class="bar-dark" >
+                  <h1 class="title">Modifier mes informations</h1>
+                </ion-header-bar>
+
+                <ion-content class="padding">
+                  <!-- Formulaire de modifications d'informations -->
+                  <p>
+                    <label for="nom" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre nom</span>
+                      <input type="text" value="{{maReponseRecue[0].Nom}}" />
+                    </label>
+                    <label for="prenom" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre prénom</span>
+                      <input type="text" value="{{maReponseRecue[0].Prenom}}"/>
+                    </label>
+                    <label for="mail" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre adresse mail</span>
+                      <input type="text" value="{{maReponseRecue[0].Mail}}" />
+                    </label>
+                    <label for="telephone" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre numéro de téléphone</span>
+                      <input type="tel" value="{{maReponseRecue[0].NumTel}}" />
+                    </label>
+                    <label for="hotel" class="item item-input item-select">
+                      <span class="input-label">Votre hôtel</span>
+                      <select ng-model="hotel" id="hotel">
+                        <option>Hostellerie du Marais</option>
+                        <option>Hotel Signature St Germain des Prés</option>
+                        <option>Hotel WO - Wilson Opera</option>
+                        <option>Hôtel Monge</option>
+                        <option>Hotel La Tamise - Esprit de France</option>
+                        <option>Le 10 Bis Hôtel</option>
+                        <option>La Réserve Paris - Hotel and Spa</option>
+                        <option>Maison Souquet</option>
+                        <option>Le Bristol Paris</option>
+                      </select>
+                    </label>
+                    <label for="pseudo" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre pseudo</span>
+                      <input type="text" value="{{maReponseRecue[0].Pseudo}}" />
+                    </label>
+                    <label for="motdepasse" class="item item-input item-stacked-label">
+                      <span class="input-label">Votre mot de passe</span>
+                      <input type="text" value="{{maReponseRecue[0].Password}}" />
+                    </label>
+                  </p>
+                  <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
+                </ion-content>
+              </ion-view>
+            </script>
+
+          </body>
+          </html>

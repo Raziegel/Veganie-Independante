@@ -340,6 +340,30 @@ angular.module('starter', ['ionic'])
         }
       })
     }
+    $scope.confirmPopup1 = function(){
+      var Confirm = $ionicPopup.confirm({
+        title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer la déconnexion</h1></div>',
+        template : "<br>Confirmez vous la déconnexion ?",
+        buttons: [
+          { text: 'NON' },
+          {
+            text: "OUI",
+            type: "button-dark",
+            onTap: function() {
+               $scope.deconnexion()
+            }
+          }
+        ]
+      })
+      Confirm.then(function(res){
+        if(res){
+          $scope.deconnexion()
+        }else{
+          // si "cancel" pressé
+          //si vide ferme juste la popup
+        }
+      })
+    } 
 
   })
 
@@ -351,6 +375,7 @@ angular.module('starter', ['ionic'])
     $scope.HotelRecu = Touriste.getHotel()
     $scope.PseudoRecu = Touriste.getPseudo()
     $scope.MotDePasseRecu = Touriste.getMotDePasse()
+
   })
   .controller('restaurantController', function (Restau, $scope, $state, $http) {
     //Choses à faire à l'initialisation de la page

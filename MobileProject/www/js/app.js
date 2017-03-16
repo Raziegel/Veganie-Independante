@@ -59,127 +59,84 @@ angular.module('starter', ['ionic'])
   $ionicConfigProvider.platform.android.tabs.position('bottom')
   $stateProvider
   /* à partir d'ici, décrire les différents
-états posiibles dans l'application. */
-.state('onglets', {
-  url: '/onglets',
-  templateUrl: 'onglets.html',
-  abstract: true
-})
+  états posiibles dans l'application. */
+  .state('onglets', {
+    url: '/onglets',
+    templateUrl: 'onglets.html',
+    abstract: true
+  })
   // Accueil
-     .state('onglets.accueil', {
-       url: '/accueil',
-       views: {
-         'accueil-tab': {
-           templateUrl: 'accueil.html',
-           controller: 'accueilController'
-         }
-       }
-     })
-       // Inscription
-       .state('inscription', {
-         url: '/inscription',
-         templateUrl: 'inscription.html',
-         controller: 'inscriptionController'
-       })
-       // Connexion
-       .state('connexion', {
-         url: '/connexion',
-         templateUrl: 'connexion.html',
-         controller: 'connexionController'
-       })
-       // Restauration -- linting
-       .state('onglets.restauration', {
-           url: '/restauration',
-           views: {
-          'restauration-tab': {
-            templateUrl: 'restauration.html',
-            controller: 'restaurationController'
-          }}
-          })
-       // Decouverte
-       .state('onglets.decouverte', {
-           url: '/decouverte',
-           views: {
-          'decouverte-tab': {
-           templateUrl: 'decouverte.html',
-           controller: 'decouverteController'
-         }
-       }
-       })
-       //Mon compte
-       .state('onglets.moncompte', {
-           url: '/moncompte',
-           views: {
-          'moncompte-tab': {
-           templateUrl: 'moncompte.html',
-           controller: 'moncompteController'
-         }
-       }
-       })
-       // Modifier mes informations
-       .state('onglets.modifinfos', {
-           url: '/modifinfos',
-           views: {
-          'moncompte-tab': {
-           templateUrl: 'modifinfos.html',
-           controller: 'modifinfosController'
-         }
-       }
-       })
-       // un restaurant
-       .state('onglets.restaurant', {
-           url: '/restaurant',
-           views: {
-          'restauration-tab': {
-           templateUrl: 'restaurant.html',
-           controller: 'restaurantController'
-         }
-       }
-       })
-
-       // un restaurant3
-       .state('onglets.restaurant3', {
-           url: '/restaurant3',
-           views: {
-          'restauration-tab': {
-           templateUrl: 'restaurant3.html',
-           controller: 'restaurantController'
-         }
-       }
-       })
-       // une activité
-       .state('onglets.activite', {
-           url: '/activite',
-           views: {
-          'decouverte-tab': {
-           templateUrl: 'activite.html',
-           controller: 'activiteController'
-         }
-       }
-       })
-       // Mes reservations
-       .state('onglets.reservations', {
-           url: '/reservations',
-           views: {
-          'reservations-tab': {
-           templateUrl: 'reservations.html',
-           controller: 'reservationsController'
-         }
-       }
-       })
-   //Par défaut, redirection sur la page d'accueil'
-   $urlRouterProvider.otherwise('/connexion')
-
-    // un restaurant3
-    .state('onglets.restaurant3', {
-      url: '/restaurant3',
+  .state('onglets.accueil', {
+    url: '/accueil',
+    views: {
+      'accueil-tab': {
+        templateUrl: 'accueil.html',
+        controller: 'accueilController'
+      }
+    }
+  })
+  // Inscription
+  .state('inscription', {
+    url: '/inscription',
+    templateUrl: 'inscription.html',
+    controller: 'inscriptionController'
+  })
+  // Connexion
+  .state('connexion', {
+    url: '/connexion',
+    templateUrl: 'connexion.html',
+    controller: 'connexionController'
+  })
+  // Restauration -- linting
+  .state('onglets.restauration', {
+    url: '/restauration',
+    views: {
+      'restauration-tab': {
+        templateUrl: 'restauration.html',
+        controller: 'restaurationController'
+      }}
+    })
+    // Decouverte
+    .state('onglets.decouverte', {
+      url: '/decouverte',
+      views: {
+        'decouverte-tab': {
+          templateUrl: 'decouverte.html',
+          controller: 'decouverteController'
+        }
+      }
+    })
+    //Mon compte
+    .state('onglets.moncompte', {
+      url: '/moncompte',
+      views: {
+        'moncompte-tab': {
+          templateUrl: 'moncompte.html',
+          controller: 'moncompteController'
+        }
+      }
+    })
+    // Modifier mes informations
+    .state('onglets.modifinfos', {
+      url: '/modifinfos',
+      views: {
+        'moncompte-tab': {
+          templateUrl: 'modifinfos.html',
+          controller: 'modifinfosController'
+        }
+      }
+    })
+    // un restaurant
+    .state('onglets.restaurant', {
+      url: '/restaurant',
       views: {
         'restauration-tab': {
-          templateUrl: 'restaurant3.html',
+          templateUrl: 'restaurant.html',
           controller: 'restaurantController'
         }
       }
     })
+
     // une activité
     .state('onglets.activite', {
       url: '/activite',
@@ -203,89 +160,41 @@ angular.module('starter', ['ionic'])
     //Par défaut, redirection sur la page d'accueil'
     $urlRouterProvider.otherwise('/connexion')
 
+  })
 
-/*controleur de la page d'accueil,
-il sera activé à l'initialisation de celle-ci
-dans les paramètres de la fonction,
-on ajoute toutes les dépendances
-dont on a besoin (ici en exemple $scope et $state)*/
-.controller('accueilController', function (Touriste, $scope, $state) {
-  $scope.NomRecu = Touriste.getNom()
-  $scope.PrenomRecu = Touriste.getPrenom()
-})
 
-.controller('inscriptionController', function ($scope, $state) {
- //Choses à faire à l'initialisation de la page
-})
-.controller('connexionController', function ($scope, $state) {
- //Choses à faire à l'initialisation de la page
-})
-.controller('restaurationController', function ($scope, $state, $http) {
- //Choses à faire à l'initialisation de la page
- var url = 'https://ke-services.azurewebsites.net/tables/Restauration?ZUMO-API-VERSION=2.0.0'
- $http.get(url)
- .success(function (response) {
-   console.log(response)
-   $scope.maReponseRecue = response
- })
- .error(function (data, status, headers, config) {
+  /*controleur de la page d'accueil,
+  il sera activé à l'initialisation de celle-ci
+  dans les paramètres de la fonction,
+  on ajoute toutes les dépendances
+  dont on a besoin (ici en exemple $scope et $state)*/
+  .controller('accueilController', function (Touriste, $scope, $state, $http) {
+    $scope.NomRecu = Touriste.getNom()
+    $scope.PrenomRecu = Touriste.getPrenom()
+    $scope.activites = [];
 
-   alert('erreur')
-   alert(data)
-   alert(status)
-   alert(headers)
-   alert(config)
- })
-})
-.controller('decouverteController', function ($scope, $state, $http) {
- //Choses à faire à l'initialisation de la page
- var url = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
- $http.get(url).success(function (response) {
-   console.log(response)
-   $scope.maReponseRecue = response
- })
- .error(function (data, status, headers, config) {
-
-   alert('erreur')
-   alert(data)
-   alert(status)
-   alert(headers)
-   alert(config)
- })
-})
-.controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup) {
-  $scope.NomRecu = Touriste.getNom()
-  $scope.PrenomRecu = Touriste.getPrenom()
-  $scope.MailRecu = Touriste.getMail()
-  $scope.TelRecu = Touriste.getNumTel()
-  $scope.HotelRecu = Touriste.getHotel()
-  $scope.PseudoRecu = Touriste.getPseudo()
-  $scope.MotDePasseRecu = Touriste.getMotDePasse()
-  $scope.deconnexion = function () {
-
-  }
-
-  //Popup d'annulation de la réservation
-  $scope.confirmPopup= function(){
-    var Confirm = $ionicPopup.confirm({
-      title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',
-      template : "<br />",
-      buttons: [
-             { text: 'Retour' },
-             {
-               text: "Annuler l'évènement",
-               type: "button-dark",
-               onTap: function() {
-                 // supprimer l'évènement dans la bdd
-                }
-             }
-      ]
+    $scope.randomActivites = function () {
+        return Math.floor(Math.random() * 3)
     }
-  )
-  .controller('accueilActionController', function (Target, $scope, $state) {
 
-    }
-  )
+    var urlr = 'https://ke-services.azurewebsites.net/tables/Restauration/?ZUMO-API-VERSION=2.0.0'
+    $http.get(urlr)
+    .success(function (response) {
+      var rd = $scope.randomActivites()
+      var maReponseRecue1 = response;
+      $scope.exRestau = maReponseRecue1[rd]
+    })
+
+    var urld = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
+    $http.get(urld)
+    .success(function (response) {
+      var rd = $scope.randomActivites()
+      var maReponseRecue2 = response;
+      $scope.exDecou = maReponseRecue2[rd]
+    })
+
+  })
+
 
   .controller('inscriptionController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
@@ -382,9 +291,6 @@ dont on a besoin (ici en exemple $scope et $state)*/
     }
 
   })
-  .error(function (data, status, headers, config) {
-
-  }
 
   .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
@@ -395,10 +301,27 @@ dont on a besoin (ici en exemple $scope et $state)*/
     $scope.PseudoRecu = Touriste.getPseudo()
     $scope.MotDePasseRecu = Touriste.getMotDePasse()
   })
-  .controller('restaurantController', function (Target, $scope, $state, $stateParams, $http) {
+  .controller('restaurantController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
-    $scope.value = Target.getId()
 
+  })
+  .controller('activiteController', function ($scope, $state) {
+    //Choses à faire à l'initialisation de la page
+  })
+  .controller('reservationsController', function ($scope, $state) {
+    //Choses à faire à l'initialisation de la page
+  })
+  .controller('inscriptionFormController', function (Touriste, $scope, $state) {
+    $scope.chercher = function (nom, prenom, mail, tel, hotel, pseudo, motdepasse) {
+      Touriste.Nom = nom
+      Touriste.Prenom = prenom
+      Touriste.Mail = mail
+      Touriste.NumTel = tel
+      Touriste.Hotel = hotel
+      Touriste.Pseudo = pseudo
+      Touriste.MotDePasse = motdepasse
+      $state.go('onglets.accueil')
+    }
   })
 
   .controller('connexionFormController', function (Touriste, $scope, $state, $http) {
@@ -408,11 +331,9 @@ dont on a besoin (ici en exemple $scope et $state)*/
     $http.get(url).success(function (response) {
       $scope.maReponseRecue = response
     })
-
     $scope.seconnecter = function(pseudo, motdepasse){
       $scope.maReponseRecue.forEach(function(user) {
         if(user.Pseudo == pseudo){
-
           if(user.Password == motdepasse){
             Touriste.Nom = user.Nom
             Touriste.Prenom = user.Prenom
@@ -436,11 +357,11 @@ dont on a besoin (ici en exemple $scope et $state)*/
         $scope.mauvaismdp()
       }
     }
-
     $scope.mauvaismdp = function(){
       document.getElementById('erreur').innerHTML = "Pseudo ou mot de passe non reconnu(s)";
     }
   })
+
   .controller('restaurantActionController', function ($scope, $state, $ionicPopup, $http) {
     //controller d'actions au sein de la page
 
@@ -461,100 +382,119 @@ dont on a besoin (ici en exemple $scope et $state)*/
             onTap: function(e) {
               if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
                 //don't allow the user to close unless he enters wifi password
-                e.preventDefault()
+                e.preventDefault();
               } else {
                 //do things
               }
-           }
-    }]
-  })
-}
-})
-.controller('activiteActionController', function ($scope, $state, $ionicPopup) {
- //controller d'actions au sein de la page
- $scope.showPopup = function () {
- pop1 = $ionicPopup.show({
-title : "<div class='bar bar-header bar-dark'><h1 class='title'>Effectuer une r&eacute;servation</h1></div>",
-template : '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
-buttons: [
-       { text: 'Annuler' },
-       {
-         text: 'Envoyer',
-         type: 'button-dark',
-         onTap: function (e) {
-          if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault()
-          } else {
-            //do things
+            }
+          }]})
+        }
+        $scope.EmmenePopup = function () {
+          pop2 = $ionicPopup.show({
+            title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+            template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+            buttons: [
+              { text: 'Annuler' },
+              {
+                text: 'Envoyer',
+                type: 'button-dark',
+                onTap: function (e) {
+                  if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                    //don't allow the user to close unless he enters wifi password
+                    e.preventDefault()
+                  } else {
+                    //do things
+                  }
+                }
+              }]
+            })
           }
-       }
-}]})
-}
-  $scope.EmmenePopup = function () {
-   pop2 = $ionicPopup.show({
-    title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
-    template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
-    buttons: [
-           { text: 'Annuler' },
-           {
-             text: 'Envoyer',
-             type: 'button-dark',
-             onTap: function (e) {
-              if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
-                //don't allow the user to close unless he enters wifi password
-                e.preventDefault()
-              } else {
-                //do things
+        })
+        .controller('activiteActionController', function ($scope, $state, $ionicPopup) {
+          //controller d'actions au sein de la page
+          $scope.showPopup = function () {
+            pop1 = $ionicPopup.show({
+              title : "<div class='bar bar-header bar-dark'><h1 class='title'>Effectuer une r&eacute;servation</h1></div>",
+              template : '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+              buttons: [
+                { text: 'Annuler' },
+                {
+                  text: 'Envoyer',
+                  type: 'button-dark',
+                  onTap: function (e) {
+                    if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                      //don't allow the user to close unless he enters wifi password
+                      e.preventDefault()
+                    } else {
+                      //do things
+                    }
+                  }
+                }]})
               }
-           }
-    }]
-  })
-}
-
-})
-.controller('restaurationActionController', function ($scope, $state, $ionicPopup) {
-  $scope.EmmenePopup = function () {
-    var pop2 = $ionicPopup.show({
-      title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
-      template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
-      buttons: [
-             { text: 'Annuler' },
-             {
-               text: 'Envoyer',
-               type: 'button-dark',
-               onTap: function (e) {
-                if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
-                  //don't allow the user to close unless he enters wifi password
-                  e.preventDefault()
-                } else {
-                  //do things
+              $scope.EmmenePopup = function () {
+                pop2 = $ionicPopup.show({
+                  title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+                  template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+                  buttons: [
+                    { text: 'Annuler' },
+                    {
+                      text: 'Envoyer',
+                      type: 'button-dark',
+                      onTap: function (e) {
+                        if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                          //don't allow the user to close unless he enters wifi password
+                          e.preventDefault()
+                        } else {
+                          //do things
+                        }
+                      }
+                    }]
+                  })
                 }
-             }
-      }]
-    })
-  }
 
-})
-.controller('decouverteActionController', function ($scope, $state, $ionicPopup) {
-  $scope.EmmenePopup = function () {
-    pop2 = $ionicPopup.show({
-      title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
-      template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
-      buttons: [
-             { text: 'Annuler' },
-             {
-               text: 'Envoyer',
-               type: 'button-dark',
-               onTap: function (e) {
-                if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
-                  //don't allow the user to close unless he enters wifi password
-                  e.preventDefault()
-                } else {
-                  //do things
-                }
-             }
-      }]
-    })
-}
-})
+              })
+              .controller('restaurationActionController', function ($scope, $state, $ionicPopup) {
+                $scope.EmmenePopup = function () {
+                  var pop2 = $ionicPopup.show({
+                    title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+                    template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+                    buttons: [
+                      { text: 'Annuler' },
+                      {
+                        text: 'Envoyer',
+                        type: 'button-dark',
+                        onTap: function (e) {
+                          if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                            //don't allow the user to close unless he enters wifi password
+                            e.preventDefault()
+                          } else {
+                            //do things
+                          }
+                        }
+                      }]
+                    })
+                  }
+
+                })
+                .controller('decouverteActionController', function ($scope, $state, $ionicPopup) {
+                  $scope.EmmenePopup = function () {
+                    pop2 = $ionicPopup.show({
+                      title: "<div class='bar bar-header bar-dark'><h1 class='title'>Commander un transport</h1></div>",
+                      template: '<label for="motdepasse" class="item item-input item-stacked-label" style="top: 10px;"><span class="input-label">Votre nom</span><input type="text" ng-model="client.nom" placeholder="Nom" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Nombre de participants</span><input type="number" ng-model="client.participants" placeholder="Nombre de participants" style="background-color: #EAEAEA;" required></label><br><label for="motdepasse" class="item item-input item-stacked-label"><span class="input-label">Date de rerservation</span><input type="datetime-local" ng-model="client.date" style="background-color: #EAEAEA;" required></label>',
+                      buttons: [
+                        { text: 'Annuler' },
+                        {
+                          text: 'Envoyer',
+                          type: 'button-dark',
+                          onTap: function (e) {
+                            if (!$scope.client.nom && !$scope.client.participants && !$scope.client.date) {
+                              //don't allow the user to close unless he enters wifi password
+                              e.preventDefault()
+                            } else {
+                              //do things
+                            }
+                          }
+                        }]
+                      })
+                    }
+                  })

@@ -28,7 +28,7 @@ angular.module('starter', ['ionic'])
   return{
     getNom: function () {
       return this.Nom
-    },
+    }}
 })
 .factory('Touriste', function () {
   var Pseudo

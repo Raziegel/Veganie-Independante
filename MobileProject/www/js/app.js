@@ -137,16 +137,6 @@ angular.module('starter', ['ionic'])
       }
     })
 
-    // un restaurant3
-    .state('onglets.restaurant3', {
-      url: '/restaurant3',
-      views: {
-        'restauration-tab': {
-          templateUrl: 'restaurant3.html',
-          controller: 'restaurantController'
-        }
-      }
-    })
     // une activité
     .state('onglets.activite', {
       url: '/activite',
@@ -210,9 +200,11 @@ angular.module('starter', ['ionic'])
   .controller('inscriptionController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
   })
+
   .controller('connexionController', function ($scope, $state) {
-    //Choses à faire à l'initialisation de la page
+
   })
+
   .controller('restaurationController', function ($scope, $state, $http) {
     //Popup d'annulation de la réservation
     $scope.confirmPopup= function(){
@@ -249,20 +241,7 @@ angular.module('starter', ['ionic'])
     })
 })
   .controller('decouverteController', function ($scope, $state, $http) {
-    //Choses à faire à l'initialisation de la page
-    var url = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
-    $http.get(url).success(function (response) {
-      console.log(response)
-      $scope.maReponseRecue = response
-    })
-    .error(function (data, status, headers, config) {
 
-      alert('erreur')
-      alert(data)
-      alert(status)
-      alert(headers)
-      alert(config)
-    })
   })
   .controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup) {
     $scope.NomRecu = Touriste.getNom()
@@ -277,7 +256,7 @@ angular.module('starter', ['ionic'])
     }
 
     //ici on créer le modèle de la popup
-    $scope.confirmPopup= function(){
+    $scope.confirmPopup = function(){
       var Confirm = $ionicPopup.confirm({
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',
         template : "<br>Confirmez vous l'annulation de cet évènement ?",
@@ -353,11 +332,46 @@ angular.module('starter', ['ionic'])
     }
   })
 
-  .controller('connexionFormController', function (Touriste, $scope, $state) {
-    $scope.seconnecter = function (pseudo, motdepasse) {
-      Touriste.Pseudo = pseudo
-      Touriste.MotDePasse = motdepasse
-      $state.go('onglets.accueil')
+  .controller('connexionFormController', function (Touriste, $scope, $state, $http) {
+    //Choses à faire à l'initialisation de la page
+    var connexionOK = false
+    var url = 'https://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.maReponseRecue = response
+    })
+
+    $scope.seconnecter = function(pseudo, motdepasse){
+      $scope.maReponseRecue.forEach(function(user) {
+        if(user.Pseudo == pseudo){
+
+          if(user.Password == motdepasse){
+            Touriste.Nom = user.Nom
+            Touriste.Prenom = user.Prenom
+            Touriste.Mail = user.Mail
+            Touriste.NumTel = user.NumTel
+            Touriste.Pseudo = user.Pseudo
+            Touriste.MotDePasse = user.Password
+            var url = 'https://ke-services.azurewebsites.net/tables/Etablissement/' + user.Id_Etablissement + '?ZUMO-API-VERSION=2.0.0'
+            $http.get(url).success(function (response) {
+
+              $scope.hotelrecu = response
+              console.log(response)
+              Touriste.Hotel = $scope.hotelrecu.Nom
+            })
+            connexionOK = true
+            $state.go('onglets.accueil')
+          } else {
+            $scope.mauvaismdp()
+          }
+        }
+      });
+      if (!connexionOK){
+        $scope.mauvaismdp()
+      }
+    }
+
+    $scope.mauvaismdp = function(){
+      document.getElementById('erreur').innerHTML = "Pseudo ou mot de passe non reconnu(s)";
     }
   })
   .controller('restaurantActionController', function ($scope, $state, $ionicPopup, $http) {

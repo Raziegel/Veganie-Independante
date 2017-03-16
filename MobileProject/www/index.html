@@ -210,6 +210,7 @@
         </ion-content>
       </ion-view>
     </script>
+
     <!--Page de connexion-->
     <script id="connexion.html" type="text/ng-template">
       <ion-view title="Connexion">
@@ -217,7 +218,8 @@
           <h1 class="title">Connexion</h1>
         </ion-header-bar>
         <ion-content class="padding" ng-controller="connexionFormController">
-          <h4>Veuillez vous connecter :</h4>
+          <h4>Veuillez vous connecter : </h4>
+
           <!-- formulaire de connexion-->
           <form method="post" ng-submit="seconnecter(pseudo, motdepasse)">
             <label for="pseudo"  class="item item-input item-stacked-label">
@@ -228,6 +230,7 @@
               <span class="input-label">Mot de passe</span>
               <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
             </label>
+          <div id="erreur" ></div>
             <div class="submit">
               <button class="button button-block button-dark">
                 Se connecter
@@ -242,6 +245,7 @@
         </ion-content>
       </ion-view>
     </script>
+
     <!--Page de restauration-->
     <script id="restauration.html" type="text/ng-template">
       <ion-view title="Restauration">

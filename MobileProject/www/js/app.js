@@ -206,6 +206,7 @@ angular.module('starter', ['ionic'])
 
   })
 
+<<<<<<< HEAD
   .controller('inscriptionController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
   })
@@ -219,6 +220,23 @@ angular.module('starter', ['ionic'])
     .success(function (response) {
       console.log(response)
       $scope.maReponseRecue = response
+=======
+  //Popup d'annulation de la réservation
+  $scope.confirmPopup= function(){
+    var Confirm = $ionicPopup.confirm({
+      title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',
+      template : "<br />",
+      buttons: [
+             { text: 'Retour' },
+             {
+               text: "Annuler l'évènement",
+               type: "button-dark",
+               onTap: function() {
+                 // supprimer l'évènement dans la bdd
+                }
+             }
+      ]
+>>>>>>> master
     })
     .error(function (data, status, headers, config) {
       alert('erreur')

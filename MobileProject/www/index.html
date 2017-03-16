@@ -67,6 +67,7 @@
 
 
   <!--Page d'accueil-->
+<<<<<<< HEAD
   <script id="accueil.html" type="text/ng-template">
     <ion-view title="Accueil">
       <ion-header-bar class="bar-dark" >
@@ -75,6 +76,97 @@
       <ion-content class="padding">
         <div class="bar bar-dark" style="position: relative; top: 0px;">
           <h1 class="title">Bienvenue {{PrenomRecu}} {{NomRecu}}</h1>
+=======
+<script id="accueil.html" type="text/ng-template">
+<ion-view title="Accueil">
+<ion-header-bar class="bar-dark" >
+  <h1 class="title"> K  E Pro - Driver</h1>
+</ion-header-bar>
+<ion-content class="padding">
+  <div class="bar bar-dark" style="position: relative; top: 0px;">
+    <h1 class="title">Bienvenue {{PrenomRecu}} {{NomRecu}}</h1>
+  </div>
+  <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
+  <div style="text-align: center">
+    K&E Premium Service vous propose un large choix d'activités aux alentours de votre hôtel
+    (restauration, visites, dégustations, soirées, ...) ainsi que la possibilité de vous y emmener.
+  </div>
+  <div class="bar bar-dark" style="position: relative; top: 5px;">
+    <h1 class="title">Quelques idées</h1>
+  </div>
+    <div class="list" style="top: 15px;">
+      <a class="item item-thumbnail-left" href="#">
+        <img src="img/veggie_avenue_logo.jpg">
+        <h2>Veggie Avenue</h2>
+        <p>Découvrir la culture et les valeurs<br />
+          végans dans une magnifique <br />
+          avenue.</p>
+        </a>
+        <a class="item item-thumbnail-left" href="#">
+          <img src="img/veggie_world_logo.png">
+          <h2>Veggie World</h2>
+          <p>Découvrir les plats végans dans <br />
+            une atmosphère détendue.</p>
+          </a>
+          <a class="item item-thumbnail-left" href="#">
+            <img src="img/veggie_avenue_logo.jpg">
+            <h2>Veggie Avenue</h2>
+            <p>Découvrir la culture et les valeurs<br />
+              végans dans une magnifique <br />
+              avenue.</p>
+            </a>
+            <a class="item item-thumbnail-left" href="#">
+              <img src="img/veggie_world_logo.png">
+              <h2>Veggie World</h2>
+              <p>Découvrir les plats végans dans <br />
+                une atmosphère détendue.</p>
+              </a>
+              <a class="item item-thumbnail-left" href="#">
+                <img src="img/veggie_avenue_logo.jpg">
+                <h2>Veggie Avenue</h2>
+                <p>Découvrir la culture et les valeurs<br />
+                  végans dans une magnifique <br />
+                  avenue.</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#">
+                  <img src="img/veggie_world_logo.png">
+                  <h2>Veggie World</h2>
+                  <p>Découvrir les plats végans dans <br />
+                    une atmosphère détendue.</p>
+                  </a>
+                </div>
+      </ion-content>
+  </ion-view>
+</script>
+  <!--Page d'inscription-->
+<script id="inscription.html" type="text/ng-template">
+<ion-view title="Inscription">
+  <ion-header-bar class="bar-dark" >
+  <h1 class="title">Inscription</h1>
+</ion-header-bar>
+  <ion-content class="padding" ng-controller="inscriptionFormController">
+    <!-- formulaire d'inscription-->
+    <form method="post" ng-submit="chercher(nom, prenom, email, tel, hotel, pseudo, motdepasse)">
+      <label for="nom"  class="item item-input item-stacked-label">
+        <span class="input-label">Nom</span>
+        <input type="text" placeholder="Votre nom" ng-model="nom" id="nom" required>
+      </label>
+      <label for="prenom" class="item item-input item-stacked-label">
+        <span class="input-label">Prénom</span>
+        <input type="text" placeholder="Votre prénom" ng-model="prenom" id="prenom" required>
+      </label>
+      <label for="email" class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Votre adresse mail" ng-model="email" id="email" required>
+      </label>
+      <label for="tel" class="item item-input item-stacked-label">
+        <span class="input-label">Numéro de télephone</span>
+        <input type="text" placeholder="Votre numéro de télephone" ng-model="tel" id="tel" required>
+      </label>
+      <label for="hotel" class="item item-input item-select">
+        <div class="input-label">
+          Hôtel
+>>>>>>> master
         </div>
         <img id="logoAcc" src="img/kegroupe.png" alt="logo de l'entreprise"></img>
         <div style="text-align: center">

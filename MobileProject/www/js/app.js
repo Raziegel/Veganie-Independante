@@ -23,6 +23,14 @@ angular.module('starter', ['ionic'])
   })
 
 })
+.factory('Target', function(){
+  var id
+  return{
+    getId: function () {
+      return this.id
+    }
+  }
+})
 .factory('Touriste', function () {
   var Pseudo
   var MotDePasse
@@ -129,6 +137,7 @@ angular.module('starter', ['ionic'])
     // un restaurant
     .state('onglets.restaurant', {
       url: '/restaurant',
+
       views: {
         'restauration-tab': {
           templateUrl: 'restaurant.html',
@@ -178,7 +187,7 @@ angular.module('starter', ['ionic'])
   dans les paramètres de la fonction,
   on ajoute toutes les dépendances
   dont on a besoin (ici en exemple $scope et $state)*/
-  .controller('accueilController', function (Touriste, $scope, $state, $http) {
+  .controller('accueilController', function (Target,Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()
     $scope.activites = [];
@@ -194,6 +203,7 @@ angular.module('starter', ['ionic'])
       console.log(rd);
       var maReponseRecue1 = response;
       $scope.exRestau = maReponseRecue1[rd]
+      Target.id = $scope.exRestau.Id
     })
 
     var urld = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
@@ -203,9 +213,11 @@ angular.module('starter', ['ionic'])
       var maReponseRecue2 = response;
       $scope.exDecou = maReponseRecue2[rd]
     })
-
   })
-
+  .controller('accueilActionController', function (Target, $scope, $state) {
+  
+    }
+  )
 
   .controller('inscriptionController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page
@@ -330,8 +342,9 @@ angular.module('starter', ['ionic'])
     })
 
   })
-  .controller('restaurantController', function ($scope, $state) {
+  .controller('restaurantController', function (Target, $scope, $state, $stateParams, $http) {
     //Choses à faire à l'initialisation de la page
+    $scope.value = Target.getId()
 
   })
   .controller('activiteController', function ($scope, $state) {

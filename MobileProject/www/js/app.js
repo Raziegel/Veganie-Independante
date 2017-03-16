@@ -30,6 +30,13 @@ angular.module('starter', ['ionic'])
       return this.id
     }}
 })
+.factory( 'Decouv', function(){
+  var id
+  return{
+    getid: function () {
+      return this.id
+    }}
+})
 .factory('Touriste', function () {
   var Pseudo
   var MotDePasse
@@ -151,7 +158,8 @@ angular.module('starter', ['ionic'])
         'decouverte-tab': {
           templateUrl: 'activite.html',
           controller: 'activiteController'
-        }
+        }        
+
       }
     })
     // Mes reservations
@@ -175,7 +183,7 @@ angular.module('starter', ['ionic'])
   dans les paramètres de la fonction,
   on ajoute toutes les dépendances
   dont on a besoin (ici en exemple $scope et $state)*/
-  .controller('accueilController', function (Restau,Touriste, $scope, $state, $http) {
+  .controller('accueilController', function (Decouv, Restau,Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()
     $scope.activites = [];
@@ -200,6 +208,7 @@ angular.module('starter', ['ionic'])
       var rd = $scope.randomActivites()
       var maReponseRecue2 = response;
       $scope.exDecou = maReponseRecue2[rd]
+      Decouv.id = $scope.exDecou.Id
     })
 
   })
@@ -354,8 +363,16 @@ angular.module('starter', ['ionic'])
     })
 
   })
-  .controller('activiteController', function ($scope, $state) {
+  .controller('activiteController', function (Decouv, $scope, $state, $http) {
     //Choses à faire à l'initialisation de la page
+    //Choses à faire à l'initialisation de la page
+    var idr = Decouv.getid()
+    console.log(idr)
+    console.log(Decouv.getid())
+    var url = 'https://ke-services.azurewebsites.net/tables/Decouverte/' + idr + '?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.decouv = response
+    })
   })
   .controller('reservationsController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page

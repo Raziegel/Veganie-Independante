@@ -158,7 +158,7 @@ angular.module('starter', ['ionic'])
         'decouverte-tab': {
           templateUrl: 'activite.html',
           controller: 'activiteController'
-        }        
+        }
 
       }
     })
@@ -398,15 +398,17 @@ angular.module('starter', ['ionic'])
       })
       var url = "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0"
       data = JSON.stringify({
-        "Id": x,
+        "Id": 10,
         "Nom": Touriste.Nom,
         "Prenom": Touriste.Prenom,
         "NumTel": Touriste.NumTel,
         "Mail": Touriste.Mail,
         "Pseudo": Touriste.Pseudo,
         "Password": Touriste.MotDePasse,
-        "Id_Etablissement": $scope.idhotel,
+        "Id_Etablissement": $scope.idhotel
+        
       })
+      console.log(data)
       $http({
         method: "POST",
         url: "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0",

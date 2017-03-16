@@ -222,7 +222,7 @@ dont on a besoin (ici en exemple $scope et $state)*/
    alert(config)
  })
 })
-.controller('moncompteController', function (Touriste, $scope, $state) {
+.controller('moncompteController', function (Touriste, $scope, $state, $ionicPopup) {
   $scope.NomRecu = Touriste.getNom()
   $scope.PrenomRecu = Touriste.getPrenom()
   $scope.MailRecu = Touriste.getMail()
@@ -234,7 +234,35 @@ dont on a besoin (ici en exemple $scope et $state)*/
 
   }
 
+  //ici on créer le modèle de la popup
+  $scope.confirmPopup= function(){
+    var Confirm = $ionicPopup.confirm({
+      title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer l\'annulation</h1></div>',
+      template : "<br />",
+      buttons: [
+             { text: 'Retour' },
+             {
+               text: "Annuler l'évènement",
+               type: "button-dark",
+               onTap: function() {
+                 // supprimer l'évènement dans la bdd
+                }
+             }
+      ]
+    })
+    Confirm.then(function(res){
+      if(res){
+        //si "ok" pressé
+        //si vide ferme juste la popup
+      }else{
+        // si "cancel" pressé
+        //si vide ferme juste la popup
+      }
+    })
+  }
+
 })
+
 .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
   $scope.NomRecu = Touriste.getNom()
   $scope.PrenomRecu = Touriste.getPrenom()

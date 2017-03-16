@@ -301,22 +301,6 @@ angular.module('starter', ['ionic'])
     $scope.HotelRecu = Touriste.getHotel()
     $scope.PseudoRecu = Touriste.getPseudo()
     $scope.MotDePasseRecu = Touriste.getMotDePasse()
-    var url = 'https://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0'
-    $http.get(url)
-
-    .success(function (response) {
-      $scope.maReponseRecue = response
-    })
-    .error(function (data, status, headers, config) {
-
-      alert('erreur')
-      alert(data)
-      alert(status)
-      alert(headers)
-      alert(config)
-
-    })
-
   })
   .controller('restaurantController', function ($scope, $state) {
     //Choses à faire à l'initialisation de la page

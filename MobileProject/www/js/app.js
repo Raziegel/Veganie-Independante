@@ -26,8 +26,8 @@ angular.module('starter', ['ionic'])
 .factory( 'Restau', function(){
   var id
   return{
-    getNom: function () {
-      return this.Nom
+    getid: function () {
+      return this.id
     }}
 })
 .factory('Touriste', function () {
@@ -175,7 +175,7 @@ angular.module('starter', ['ionic'])
   dans les paramètres de la fonction,
   on ajoute toutes les dépendances
   dont on a besoin (ici en exemple $scope et $state)*/
-  .controller('accueilController', function (Touriste, $scope, $state, $http) {
+  .controller('accueilController', function (Restau,Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()
     $scope.activites = [];
@@ -190,6 +190,8 @@ angular.module('starter', ['ionic'])
       var rd = $scope.randomActivites()
       var maReponseRecue1 = response;
       $scope.exRestau = maReponseRecue1[rd]
+      Restau.id = $scope.exRestau.Id
+
     })
 
     var urld = 'https://ke-services.azurewebsites.net/tables/Decouverte?ZUMO-API-VERSION=2.0.0'
@@ -308,8 +310,15 @@ angular.module('starter', ['ionic'])
     $scope.PseudoRecu = Touriste.getPseudo()
     $scope.MotDePasseRecu = Touriste.getMotDePasse()
   })
-  .controller('restaurantController', function ($scope, $state) {
+  .controller('restaurantController', function (Restau, $scope, $state, $http) {
     //Choses à faire à l'initialisation de la page
+    var idr = Restau.getid()
+    console.log(idr)
+    console.log(Restau.getid())
+    var url = 'https://ke-services.azurewebsites.net/tables/Restauration/' + idr + '?ZUMO-API-VERSION=2.0.0'
+    $http.get(url).success(function (response) {
+      $scope.restau = response
+    })
 
   })
   .controller('activiteController', function ($scope, $state) {

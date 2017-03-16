@@ -212,7 +212,7 @@
     </script>
     <!--Page de connexion-->
     <script id="connexion.html" type="text/ng-template">
-      <ion-view title="Connexion">
+      <ion-view cache-view="false" title="Connexion">
         <ion-header-bar class="bar-positive" >
           <h1 class="title">Connexion</h1>
         </ion-header-bar>
@@ -228,6 +228,7 @@
               <span class="input-label">Mot de passe</span>
               <input type="password" placeholder="Votre mot de passe" ng-model="motdepasse" id="motdepasse" required>
             </label>
+            <div id="erreur"></div>
             <div class="submit">
               <button class="button button-block button-dark">
                 Se connecter

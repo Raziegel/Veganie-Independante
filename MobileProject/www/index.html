@@ -429,23 +429,24 @@
                   <p>
                     <label for="nom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre nom</span>
-                      <input type="text" value="{{maReponseRecue[0].Nom}}" />
+                      <input type="text" value="{{NomRecu}}" id="nom" />
                     </label>
                     <label for="prenom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre prénom</span>
-                      <input type="text" value="{{maReponseRecue[0].Prenom}}"/>
+                      <input type="text" value="{{PrenomRecu}}" id="prenom"/>
                     </label>
                     <label for="mail" class="item item-input item-stacked-label">
                       <span class="input-label">Votre adresse mail</span>
-                      <input type="text" value="{{maReponseRecue[0].Mail}}" />
+                      <input type="text" value="{{MailRecu}}" id="mail" />
                     </label>
                     <label for="telephone" class="item item-input item-stacked-label">
                       <span class="input-label">Votre numéro de téléphone</span>
-                      <input type="tel" value="{{maReponseRecue[0].NumTel}}" />
+                      <input type="tel" value="{{TelRecu}}" id="tel" />
                     </label>
                     <label for="hotel" class="item item-input item-select">
                       <span class="input-label">Votre hôtel</span>
                       <select ng-model="hotel" id="hotel">
+                        <option selected>{{HotelRecu}}</option>
                         <option>Hostellerie du Marais</option>
                         <option>Hotel Signature St Germain des Prés</option>
                         <option>Hotel WO - Wilson Opera</option>
@@ -459,14 +460,14 @@
                     </label>
                     <label for="pseudo" class="item item-input item-stacked-label">
                       <span class="input-label">Votre pseudo</span>
-                      <input type="text" value="{{maReponseRecue[0].Pseudo}}" />
+                      <input type="text" value="{{PseudoRecu}}" id="pseudo"/>
                     </label>
                     <label for="motdepasse" class="item item-input item-stacked-label">
                       <span class="input-label">Votre mot de passe</span>
-                      <input type="text" value="{{maReponseRecue[0].Password}}" />
+                      <input type="text" value="{{MotDePasseRecu}}" id="mdp" />
                     </label>
                   </p>
-                  <a class="button button-block button-dark" ng-click="modifierInfos()">Enregistrer les modifications</a>
+                  <a class="button button-block button-dark" ng-click="modifierInfos(nom, prenom, mail, tel, hotel, pseudo, mdp)">Enregistrer les modifications</a>
                 </ion-content>
               </ion-view>
             </script>

@@ -23,6 +23,13 @@ angular.module('starter', ['ionic'])
   })
 
 })
+.factory( 'Restau', function(){
+  var id
+  return{
+    getNom: function () {
+      return this.Nom
+    },
+})
 .factory('Touriste', function () {
   var Pseudo
   var MotDePasse

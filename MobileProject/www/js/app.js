@@ -181,7 +181,6 @@ angular.module('starter', ['ionic'])
     $http.get(urlr)
     .success(function (response) {
       var rd = $scope.randomActivites()
-      console.log(rd);
       var maReponseRecue1 = response;
       $scope.exRestau = maReponseRecue1[rd]
     })

@@ -356,33 +356,31 @@
 
       <!--Page d'un restaurant-->
       <script id="restaurant.html" type="text/ng-template">
-        <ion-view title="Veggie Avenue / {{value}} /">
+        <ion-view title="{{restau.Nom}}">
           <ion-header-bar class="bar-dark" >
             <h1 class="title"> Détails </h1>
           </ion-header-bar>
           <ion-content class="padding" ng-controller="restaurantActionController">
             <div style="margin-left:10%; margin-right:10%;">
-              <img class="illustration" src="img/exemple_logo.jpg" ></img>
-              <h3> Le Taillevent </h3>
-              <p> 15, Rue Lamennais <br /> 75008 Paris <br /> </img><img class="etoile" src="img/ic_star_black_24dp.png"></img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
+              <img class="illustration" src="{{restau.Image}}" ></img>
+              <h3> {{restau.Nom}}</h3>
+              <p> {{restau.Adresse}} <br /> {{restau.Ville}} <br /> {{restau.NbEtoiles}}</img><img class="etoile" src="img/ic_star_black_24dp.png"></img> </p>
             </div>
-            <p class="description">Taillevent est un nom historique. D’abord celui d’un Chef de cuisine ; Guillaume Tirel, qui officie auprès
-              de Charles VI, roi de France et est considéré comme le père fondateur de la gastronomie française ; il devient ensuite celui
-              d’un restaurant où les accords mets & vins se dévoilent avec douceur et maturité. Le Taillevent incarne cet art de vivre
-              tant admiré, dont il n’est pas le conservatoire mais le laboratoire dynamique."{{restau.Nom}}"
+            <p class="description">
+              {{restau.Description}}
             </p>
-            <img class="photo" src="img\exemple.jpg">
+            <img class="photo" src="{{restau.Photo}}">
 
-            <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">Ouvert du Lundi au Samedi de 12h à 23h</span>
+            <img class="clock" src="img\ic_access_time_black_24dp.png"> <span class="horaire">{{restau.Horaire}}</span>
             <div class="card" id="suggestions">
               <div class="item item-divider">
                 <b>Suggestion</b>
               </div>
               <div class="item item-text-wrap">
-                Dégustez un plat passerelle entre la haute cuisine et les grands vins, où l’on révèle les saveurs des meilleurs produits au meilleur de la saison
+              {{restau.Specialite}}
               </div>
             </div>
-            <p class="description"><b>Prix moyen : <span class="prix"> 88 - 230€ <span></b></p>
+            <p class="description"><b>Prix moyen : <span class="prix">{{restau.Tarif}}<span></b></p>
               <button id="boutresa" class="button button-dark" ng-click='showPopup()'>Réserver</button><button id="boutemmen" class="button button-dark" ng-click='EmmenePopup()'>M'y emmener</button>
 
               <br><br>

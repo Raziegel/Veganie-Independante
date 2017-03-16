@@ -30,6 +30,13 @@ angular.module('starter', ['ionic'])
       return this.id
     }}
 })
+.factory( 'Decouv', function(){
+  var id
+  return{
+    getid: function () {
+      return this.id
+    }}
+})
 .factory('Touriste', function () {
   var Pseudo
   var MotDePasse
@@ -175,7 +182,7 @@ angular.module('starter', ['ionic'])
   dans les paramètres de la fonction,
   on ajoute toutes les dépendances
   dont on a besoin (ici en exemple $scope et $state)*/
-  .controller('accueilController', function (Restau,Touriste, $scope, $state, $http) {
+  .controller('accueilController', function (Decouv, Restau,Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
     $scope.PrenomRecu = Touriste.getPrenom()
     $scope.activites = [];
@@ -200,6 +207,7 @@ angular.module('starter', ['ionic'])
       var rd = $scope.randomActivites()
       var maReponseRecue2 = response;
       $scope.exDecou = maReponseRecue2[rd]
+      Decouv.id = $scope.exDecou.Id
     })
 
   })

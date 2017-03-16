@@ -280,10 +280,10 @@ dont on a besoin (ici en exemple $scope et $state)*/
                 }
              }
       ]
-    })
-  })
+    }
+  )
   .controller('accueilActionController', function (Target, $scope, $state) {
-  
+
     }
   )
 
@@ -383,6 +383,8 @@ dont on a besoin (ici en exemple $scope et $state)*/
 
   })
   .error(function (data, status, headers, config) {
+
+  }
 
   .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
     $scope.NomRecu = Touriste.getNom()
@@ -554,6 +556,5 @@ buttons: [
              }
       }]
     })
-  }
-
+}
 })

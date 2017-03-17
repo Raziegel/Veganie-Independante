@@ -347,8 +347,8 @@ angular.module('starter', ['ionic'])
           })
         }
 
-      })
-    }
+
+
     $scope.confirmPopup1 = function(){
       var Confirm = $ionicPopup.confirm({
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer la déconnexion</h1></div>',
@@ -373,7 +373,7 @@ angular.module('starter', ['ionic'])
         }
       })
     }
-
+      })
       .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
         var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
         $http.get(url).success(function (response) {

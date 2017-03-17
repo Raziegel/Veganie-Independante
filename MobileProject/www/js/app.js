@@ -487,11 +487,13 @@ angular.module('starter', ['ionic'])
       Touriste.Hotel = hotel
       Touriste.Pseudo = pseudo
       Touriste.MotDePasse = motdepasse
-      $scope.etablissements.forEach(function(hotel) {
-        if(hotel.Nom == hotel){
-          $scope.idhotel = hotel.Id
+      $scope.etablissements.forEach(function(Hotel) {
+      console.log(hotel)
+        if(hotel == Hotel.Nom){
+          $scope.idhotel = Hotel.Id
         }
       })
+      console.log($scope.idhotel)
       var url = "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0"
       data = JSON.stringify({
         "Id": Touriste.Id,

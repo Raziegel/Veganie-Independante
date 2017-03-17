@@ -347,8 +347,8 @@ angular.module('starter', ['ionic'])
           })
         }
 
-
-
+      })
+    }
     $scope.confirmPopup1 = function(){
       var Confirm = $ionicPopup.confirm({
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer la déconnexion</h1></div>',
@@ -373,7 +373,7 @@ angular.module('starter', ['ionic'])
         }
       })
     }
-      })
+
       .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
         var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
         $http.get(url).success(function (response) {
@@ -429,60 +429,6 @@ angular.module('starter', ['ionic'])
         }
   })
 
-  .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
-    var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
-    $http.get(url).success(function (response) {
-      $scope.etablissements = response
-    })
-    $scope.IdRecu = Touriste.getId()
-    $scope.NomRecu = Touriste.getNom()
-    $scope.PrenomRecu = Touriste.getPrenom()
-    $scope.MailRecu = Touriste.getMail()
-    $scope.TelRecu = Touriste.getNumTel()
-    $scope.HotelRecu = Touriste.getHotel()
-    $scope.PseudoRecu = Touriste.getPseudo()
-    $scope.MotDePasseRecu = Touriste.getMotDePasse()
-
-    $scope.modifierInfos = function(nom, prenom, mail, tel, hotel, pseudo, mdp){
-      $scope.etablissements.forEach(function(hotel) {
-        if($scope.hotel == hotel.Nom){
-          $scope.idhotel = hotel.Id
-        }
-      })
-      console.log(nom)
-      Touriste.Nom = nom
-      Touriste.Prenom = prenom
-      Touriste.Mail = mail
-      Touriste.NumTel = tel
-      Touriste.Hotel = hotel
-      Touriste.Pseudo = pseudo
-      Touriste.MotDePasse = mdp
-      var url = "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0"
-      data = JSON.stringify({
-        "Id": Touriste.Id,
-        "Nom": Touriste.Nom,
-        "Prenom": Touriste.Prenom,
-        "NumTel": Touriste.NumTel,
-        "Mail": Touriste.Mail,
-        "Pseudo": Touriste.Pseudo,
-        "Password": Touriste.MotDePasse,
-        "Id_Etablissement": $scope.idhotel
-      })
-      console.log(data)
-      $http({
-        method: "PATCH",
-        url: "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0",
-        data: data,
-        headers: {"Content-Type": 'application/json' },
-        timeout: 10000
-      })
-      .success(function(data, status, headers, config){
-      })
-      .error(function(data, status, headers, config){
-      })
-      $state.go('onglets.moncompte')
-    }
-})
   .controller('restaurantController', function (Restau, $scope, $state, $http) {
     //Choses à faire à l'initialisation de la page
     var idr = Restau.getid()

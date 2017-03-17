@@ -380,9 +380,9 @@ angular.module('starter', ['ionic'])
           $scope.etablissements = response
 
         $scope.IdRecu = Touriste.getId()
-        console.log($scope.IdRecu);
+
         $scope.NomRecu = Touriste.getNom()
-        console.log($scope.NomRecu);
+
         $scope.PrenomRecu = Touriste.getPrenom()
         $scope.MailRecu = Touriste.getMail()
         $scope.TelRecu = Touriste.getNumTel()

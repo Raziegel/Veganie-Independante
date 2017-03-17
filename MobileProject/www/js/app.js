@@ -404,7 +404,7 @@ angular.module('starter', ['ionic'])
           Touriste.Hotel = hotel
           Touriste.Pseudo = pseudo
           Touriste.MotDePasse = mdp
-          var url = "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0"
+          var url = "http://ke-services.azurewebsites.net/tables/Utilisateur/"+Touriste.Id+"?ZUMO-API-VERSION=2.0.0"
           data = JSON.stringify({
             "Id": Touriste.Id,
             "Nom": Touriste.Nom,
@@ -418,7 +418,7 @@ angular.module('starter', ['ionic'])
           console.log(data)
           $http({
             method: "PATCH",
-            url: "http://ke-services.azurewebsites.net/tables/Utilisateur?ZUMO-API-VERSION=2.0.0",
+            url: "http://ke-services.azurewebsites.net/tables/Utilisateur/"+Touriste.Id+"?ZUMO-API-VERSION=2.0.0",
             data: data,
             headers: {"Content-Type": 'application/json' },
             timeout: 10000

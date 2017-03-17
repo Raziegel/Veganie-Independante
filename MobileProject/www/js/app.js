@@ -354,9 +354,9 @@ angular.module('starter', ['ionic'])
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer la déconnexion</h1></div>',
         template : "<br>Confirmez vous la déconnexion ?",
         buttons: [
-          { text: 'NON' },
+          { text: 'Non' },
           {
-            text: "OUI",
+            text: "Oui",
             type: "button-dark",
             onTap: function() {
                $scope.deconnexion()

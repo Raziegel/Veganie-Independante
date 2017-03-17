@@ -426,22 +426,22 @@
 
                 <ion-content class="padding">
                   <!-- Formulaire de modifications d'informations -->
-                  <p>
+                  <form >
                     <label for="nom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre nom</span>
-                      <input type="text" value="{{NomRecu}}" id="nom" />
+                      <input type="text" value="{{NomRecu}}" ng-model="nom" id="nom" />
                     </label>
                     <label for="prenom" class="item item-input item-stacked-label">
                       <span class="input-label">Votre prénom</span>
-                      <input type="text" value="{{PrenomRecu}}" id="prenom"/>
+                      <input type="text" value="{{PrenomRecu}}" ng-model="prenom" id="prenom"/>
                     </label>
                     <label for="mail" class="item item-input item-stacked-label">
                       <span class="input-label">Votre adresse mail</span>
-                      <input type="text" value="{{MailRecu}}" id="mail" />
+                      <input type="text" value="{{MailRecu}}" ng-model="mail"  id="mail"/>
                     </label>
                     <label for="telephone" class="item item-input item-stacked-label">
                       <span class="input-label">Votre numéro de téléphone</span>
-                      <input type="tel" value="{{TelRecu}}" id="tel" />
+                      <input type="tel" value="{{TelRecu}}" ng-model="tel" id=="tel"/>
                     </label>
                     <label for="hotel" class="item item-input item-select">
                       <span class="input-label">Votre hôtel</span>
@@ -460,13 +460,13 @@
                     </label>
                     <label for="pseudo" class="item item-input item-stacked-label">
                       <span class="input-label">Votre pseudo</span>
-                      <input type="text" value="{{PseudoRecu}}" id="pseudo"/>
+                      <input type="text" value="{{PseudoRecu}}" ng-model="pseudo" id="pseudo"/>
                     </label>
                     <label for="motdepasse" class="item item-input item-stacked-label">
                       <span class="input-label">Votre mot de passe</span>
-                      <input type="text" value="{{MotDePasseRecu}}" id="mdp" />
+                      <input type="text" value="{{MotDePasseRecu}}" ng-model="mdp" id="mdp"/>
                     </label>
-                  </p>
+                  </form>
                   <a class="button button-block button-dark" ng-click="modifierInfos(nom, prenom, mail, tel, hotel, pseudo, mdp)">Enregistrer les modifications</a>
                 </ion-content>
               </ion-view>

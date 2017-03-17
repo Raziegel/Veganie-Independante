@@ -347,8 +347,8 @@ angular.module('starter', ['ionic'])
           })
         }
 
-      })
-    }
+
+
     $scope.confirmPopup1 = function(){
       var Confirm = $ionicPopup.confirm({
         title : '<div class="bar bar-header bar-dark"><h1 class="title">Confirmer la déconnexion</h1></div>',
@@ -373,22 +373,26 @@ angular.module('starter', ['ionic'])
         }
       })
     }
-
+})
       .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
         var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
         $http.get(url).success(function (response) {
           $scope.etablissements = response
-        })
+
         $scope.IdRecu = Touriste.getId()
+        console.log($scope.IdRecu);
         $scope.NomRecu = Touriste.getNom()
+        console.log($scope.NomRecu);
         $scope.PrenomRecu = Touriste.getPrenom()
         $scope.MailRecu = Touriste.getMail()
         $scope.TelRecu = Touriste.getNumTel()
         $scope.HotelRecu = Touriste.getHotel()
         $scope.PseudoRecu = Touriste.getPseudo()
         $scope.MotDePasseRecu = Touriste.getMotDePasse()
-
+        console.log(Touriste)
+      })
         $scope.modifierInfos = function(nom, prenom, mail, tel, hotel, pseudo, mdp){
+
           $scope.etablissements.forEach(function(hotel) {
             if($scope.hotel == hotel.Nom){
               $scope.idhotel = hotel.Id

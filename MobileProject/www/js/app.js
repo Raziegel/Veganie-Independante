@@ -372,7 +372,7 @@ angular.module('starter', ['ionic'])
           //si vide ferme juste la popup
         }
       })
-    } 
+    }
 
       .controller('modifinfosController', function (Touriste, $scope, $state, $http) {
         var url = 'https://ke-services.azurewebsites.net/tables/Etablissement?ZUMO-API-VERSION=2.0.0'
